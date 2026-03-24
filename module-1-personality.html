@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pathfinder | Module 1: Unlocking Your Personality</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary-fixed": "#3a1600",
+              "surface": "#f9f9ff",
+              "on-tertiary-fixed-variant": "#6b2d00",
+              "surface-container-low": "#f1f3ff",
+              "surface-container-highest": "#d7e2ff",
+              "on-secondary-fixed": "#004840",
+              "on-background": "#1e3256",
+              "tertiary-container": "#ffa26c",
+              "on-surface": "#1e3256",
+              "inverse-on-surface": "#939db5",
+              "surface-tint": "#005cc0",
+              "secondary": "#006b5f",
+              "on-secondary": "#e2fff8",
+              "error-dim": "#70030f",
+              "on-primary": "#f9f8ff",
+              "on-error-container": "#65000b",
+              "outline": "#687ba3",
+              "tertiary-fixed": "#ffa26c",
+              "primary-fixed": "#a3c1ff",
+              "inverse-surface": "#040e20",
+              "surface-container-high": "#e0e8ff",
+              "outline-variant": "#9fb2dd",
+              "on-primary-fixed": "#002657",
+              "tertiary-dim": "#893c00",
+              "primary-fixed-dim": "#8db3ff",
+              "inverse-primary": "#498eff",
+              "primary-dim": "#0050a9",
+              "on-primary-container": "#003a7f",
+              "secondary-dim": "#005e53",
+              "background": "#f9f9ff",
+              "surface-bright": "#f9f9ff",
+              "primary-container": "#a3c1ff",
+              "surface-dim": "#cbdaff",
+              "secondary-container": "#79f7e3",
+              "error": "#ac3434",
+              "primary": "#005cc0",
+              "on-tertiary-container": "#5d2700",
+              "on-surface-variant": "#4c5f85",
+              "on-secondary-fixed-variant": "#00675c",
+              "tertiary": "#9c4600",
+              "error-container": "#f56965",
+              "tertiary-fixed-dim": "#fc8f4b",
+              "surface-container": "#e8edff",
+              "on-secondary-container": "#005d52",
+              "on-tertiary": "#fff7f5",
+              "on-primary-fixed-variant": "#00438f",
+              "secondary-fixed": "#79f7e3",
+              "on-error": "#fff7f6",
+              "surface-variant": "#d7e2ff",
+              "secondary-fixed-dim": "#69e9d5"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #f9f9ff;
+            color: #1e3256;
+            font-family: 'Manrope', sans-serif;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+<header class="bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl fixed top-0 w-full z-50 shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center px-8 h-20 max-w-screen-2xl mx-auto">
+<a class="text-2xl font-black tracking-tighter text-blue-700 dark:text-blue-400 font-['Plus_Jakarta_Sans']" href="./index.html">Pathfinder</a>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-blue-700 dark:text-blue-400 border-b-2 border-blue-600 pb-1 font-bold font-['Plus_Jakarta_Sans'] text-sm tracking-tight" href="./journey.html">Journey</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 transition-colors font-['Plus_Jakarta_Sans'] text-sm tracking-tight" href="#">Resources</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 transition-colors font-['Plus_Jakarta_Sans'] text-sm tracking-tight" href="#">Support</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="hover:bg-blue-50/50 dark:hover:bg-blue-900/20 rounded-full transition-all duration-300 p-2">
+<span class="material-symbols-outlined text-blue-700 dark:text-blue-400" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</div>
+<div class="bg-slate-100/50 dark:bg-slate-800/50 h-px w-full absolute bottom-0"></div>
+</header>
+<main class="pt-28 pb-20 px-6 max-w-6xl mx-auto">
+<div class="mb-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6">
+<div>
+<span class="text-tertiary font-bold tracking-widest uppercase text-[10px] mb-2 block">Student Orientation</span>
+<h1 class="text-4xl md:text-5xl font-extrabold font-headline text-on-surface tracking-tight leading-tight">Module 1: Unlocking Your Personality</h1>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-on-surface-variant font-medium text-sm">25% complete</span>
+<div class="w-48 h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="w-1/4 h-full bg-tertiary rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16">
+<div class="lg:col-span-4 bg-primary-fixed rounded-xl p-8 flex flex-col justify-center items-center text-center overflow-hidden relative">
+<div class="relative z-10">
+<div class="w-32 h-32 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center mb-6 mx-auto">
+<span class="material-symbols-outlined text-on-primary-fixed text-5xl" data-icon="psychology" style="font-variation-settings: 'FILL' 1;">psychology</span>
+</div>
+<h2 class="text-on-primary-fixed font-headline font-bold text-xl mb-3">Discover Your Strength</h2>
+<p class="text-on-primary-fixed-variant text-sm leading-relaxed max-w-[200px] mx-auto">Understanding how you interact with others is the first step to academic success.</p>
+</div>
+<div class="absolute -bottom-10 -right-10 w-40 h-40 bg-on-primary-fixed/5 rounded-full blur-2xl"></div>
+<div class="absolute -top-10 -left-10 w-32 h-32 bg-on-primary-fixed/10 rounded-full blur-xl"></div>
+</div>
+<div class="lg:col-span-8 bg-surface-container-lowest rounded-xl p-8 md:p-12 shadow-sm">
+<div class="mb-10">
+<span class="text-on-surface-variant text-xs font-semibold mb-4 block">Question 4 of 16</span>
+<h3 class="text-2xl font-bold font-headline text-on-surface mb-8">In a group project, do you prefer to:</h3>
+<div class="grid grid-cols-1 gap-4">
+<button class="group flex items-center p-5 rounded-xl border border-outline-variant/20 hover:border-primary/40 hover:bg-surface-container-low transition-all text-left w-full" type="button">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center mr-4 group-hover:bg-primary-container group-hover:text-primary transition-colors">
+<span class="font-bold font-headline">A</span>
+</div>
+<span class="text-on-surface-variant group-hover:text-on-surface font-medium">Design the final presentation</span>
+</button>
+<button class="group flex items-center p-5 rounded-xl border-2 border-primary bg-primary-container/20 text-left w-full" type="button">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center mr-4 text-on-primary">
+<span class="material-symbols-outlined text-xl" data-icon="check">check</span>
+</div>
+<span class="text-on-surface font-bold">Coordinate the team tasks</span>
+</button>
+<button class="group flex items-center p-5 rounded-xl border border-outline-variant/20 hover:border-primary/40 hover:bg-surface-container-low transition-all text-left w-full" type="button">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center mr-4 group-hover:bg-primary-container group-hover:text-primary transition-colors">
+<span class="font-bold font-headline">C</span>
+</div>
+<span class="text-on-surface-variant group-hover:text-on-surface font-medium">Research the data</span>
+</button>
+<button class="group flex items-center p-5 rounded-xl border border-outline-variant/20 hover:border-primary/40 hover:bg-surface-container-low transition-all text-left w-full" type="button">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center mr-4 group-hover:bg-primary-container group-hover:text-primary transition-colors">
+<span class="font-bold font-headline">D</span>
+</div>
+<span class="text-on-surface-variant group-hover:text-on-surface font-medium">Present the results</span>
+</button>
+</div>
+</div>
+<div class="flex items-center justify-between pt-8 border-t border-surface-container-high">
+<button class="flex items-center gap-2 text-on-surface-variant hover:text-primary font-bold text-sm transition-colors px-6 py-3 rounded-full hover:bg-surface-container-low" type="button">
+<span class="material-symbols-outlined text-xl" data-icon="arrow_back">arrow_back</span>
+                        Previous
+                    </button>
+<button class="flex items-center gap-2 bg-primary hover:bg-primary-dim text-on-primary px-8 py-3 rounded-full font-bold text-sm shadow-md transition-all active:scale-95" type="button">
+                        Next
+                        <span class="material-symbols-outlined text-xl" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="bg-surface-container-low p-6 rounded-xl flex flex-col">
+<div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center mb-6 shadow-sm">
+<span class="material-symbols-outlined text-primary" data-icon="lightbulb">lightbulb</span>
+</div>
+<h4 class="font-bold font-headline mb-2">Pro Tip</h4>
+<p class="text-sm text-on-surface-variant">There are no wrong answers. Be as honest as possible to get the most accurate academic roadmap for your first semester.</p>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl flex flex-col">
+<div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center mb-6 shadow-sm">
+<span class="material-symbols-outlined text-secondary" data-icon="timer">timer</span>
+</div>
+<h4 class="font-bold font-headline mb-2">Time Estimate</h4>
+<p class="text-sm text-on-surface-variant">Most students finish this personality module in about 12 minutes. You can pause and resume at any time.</p>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl flex flex-col md:col-span-2 lg:col-span-1">
+<div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center mb-6 shadow-sm">
+<span class="material-symbols-outlined text-tertiary" data-icon="help">help</span>
+</div>
+<h4 class="font-bold font-headline mb-2">Need Help?</h4>
+<p class="text-sm text-on-surface-variant">Our orientation advisors are available via chat if you're unsure about any of the module requirements.</p>
+</div>
+</section>
+</main>
+<footer class="bg-slate-50 dark:bg-slate-900 w-full py-12 px-8">
+<div class="bg-blue-100 dark:bg-blue-900/30 h-px w-full mb-8"></div>
+<div class="flex flex-col md:flex-row justify-between items-center max-w-screen-xl mx-auto gap-4">
+<div class="font-['Manrope'] text-xs font-medium text-slate-500 dark:text-slate-400">© 2024 Pathfinder Orientation. All rights reserved.</div>
+<div class="flex gap-8">
+<a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-['Manrope'] text-xs font-medium hover:underline decoration-blue-400 underline-offset-4" href="#">Privacy Policy</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-['Manrope'] text-xs font-medium hover:underline decoration-blue-400 underline-offset-4" href="#">Terms</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-['Manrope'] text-xs font-medium hover:underline decoration-blue-400 underline-offset-4" href="#">Contact</a>
+</div>
+</div>
+</footer>
+</body></html>

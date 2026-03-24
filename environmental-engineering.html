@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pathfinder | Environmental Engineering</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Manrope:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary-fixed": "#3a1600",
+              "surface": "#f9f9ff",
+              "on-tertiary-fixed-variant": "#6b2d00",
+              "surface-container-low": "#f1f3ff",
+              "surface-container-highest": "#d7e2ff",
+              "on-secondary-fixed": "#004840",
+              "on-background": "#1e3256",
+              "tertiary-container": "#ffa26c",
+              "on-surface": "#1e3256",
+              "inverse-on-surface": "#939db5",
+              "surface-tint": "#005cc0",
+              "secondary": "#006b5f",
+              "on-secondary": "#e2fff8",
+              "error-dim": "#70030f",
+              "on-primary": "#f9f8ff",
+              "on-error-container": "#65000b",
+              "outline": "#687ba3",
+              "tertiary-fixed": "#ffa26c",
+              "primary-fixed": "#a3c1ff",
+              "inverse-surface": "#040e20",
+              "surface-container-high": "#e0e8ff",
+              "outline-variant": "#9fb2dd",
+              "on-primary-fixed": "#002657",
+              "tertiary-dim": "#893c00",
+              "primary-fixed-dim": "#8db3ff",
+              "inverse-primary": "#498eff",
+              "primary-dim": "#0050a9",
+              "on-primary-container": "#003a7f",
+              "secondary-dim": "#005e53",
+              "background": "#f9f9ff",
+              "surface-bright": "#f9f9ff",
+              "primary-container": "#a3c1ff",
+              "surface-dim": "#cbdaff",
+              "secondary-container": "#79f7e3",
+              "error": "#ac3434",
+              "primary": "#005cc0",
+              "on-tertiary-container": "#5d2700",
+              "on-surface-variant": "#4c5f85",
+              "on-secondary-fixed-variant": "#00675c",
+              "tertiary": "#9c4600",
+              "error-container": "#f56965",
+              "tertiary-fixed-dim": "#fc8f4b",
+              "surface-container": "#e8edff",
+              "on-secondary-container": "#005d52",
+              "on-tertiary": "#fff7f5",
+              "on-primary-fixed-variant": "#00438f",
+              "secondary-fixed": "#79f7e3",
+              "on-error": "#fff7f6",
+              "surface-variant": "#d7e2ff",
+              "secondary-fixed-dim": "#69e9d5"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased">
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl shadow-sm dark:shadow-none h-20">
+<div class="flex justify-between items-center px-8 h-full max-w-screen-2xl mx-auto relative">
+<a class="text-2xl font-black tracking-tighter text-blue-700 dark:text-blue-400 font-headline" href="./index.html">Pathfinder</a>
+<div class="hidden md:flex items-center gap-8 font-headline font-medium text-sm tracking-tight">
+<a class="text-blue-700 dark:text-blue-400 border-b-2 border-blue-600 pb-1 font-bold" href="./journey.html">Journey</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 transition-colors" href="#">Resources</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 transition-colors" href="#">Support</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 hover:bg-blue-50/50 dark:hover:bg-blue-900/20 rounded-full transition-all duration-300 active:scale-95" type="button">
+<span class="material-symbols-outlined text-blue-700 dark:text-blue-400">account_circle</span>
+</button>
+</div>
+<div class="bg-slate-100/50 dark:bg-slate-800/50 h-px w-full absolute bottom-0 left-0"></div>
+</div>
+</nav>
+<main class="pt-20">
+<section class="relative min-h-[716px] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover" data-alt="modern clean engineering laboratory with glass equipment and bright natural lighting through large windows overlooking a green forest" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJdbixHq878pPBFih8WLrh8U10zoWUxj5FOkX-K9pXAxnPUdSDUyRSHHS4TfJ1Eub0p8qEQAeBL8wodHBVPkHVbBFC3544rZFqx75ZRRorFqhktt30ANPf97ImPDVQgtrdMWHZ1W6CN-FouHjdSCKddYAn9Ou1drJD5z4NS2L3NIOohdZjaKB7-ulALF9MtA9hPJDxnkEtwOcM4SmkgcwSSI1V1We3dwE4ZQhW2PEXQR1iOhPeqnQkAWADwOtLYZZLPCKVz3kOWiOF"/>
+<div class="absolute inset-0 bg-gradient-to-r from-surface via-surface/90 to-transparent"></div>
+</div>
+<div class="container mx-auto px-8 relative z-10 grid grid-cols-1 md:grid-cols-12 gap-8">
+<div class="md:col-span-8 lg:col-span-7">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-container text-on-primary-container text-xs font-bold tracking-widest uppercase mb-6">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">eco</span>
+                        Interest Mapping Path
+                    </div>
+<h1 class="font-headline text-5xl md:text-7xl font-extrabold tracking-tighter text-on-background leading-[0.9] mb-6">
+                        Environmental Engineering
+                    </h1>
+<p class="text-xl md:text-2xl text-on-surface-variant font-medium max-w-2xl leading-relaxed">
+                        Engineering a sustainable future for our planet.
+                    </p>
+<div class="mt-12 flex flex-wrap gap-4">
+<button class="bg-gradient-to-r from-primary to-primary-dim text-on-primary px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:shadow-primary/20 transition-all active:scale-95" type="button">
+                            Save to My Journey
+                        </button>
+<button class="bg-surface-container-lowest text-primary px-8 py-4 rounded-full font-bold text-lg flex items-center gap-2 hover:bg-surface-container-low transition-all active:scale-95" type="button">
+<span class="material-symbols-outlined">chat_bubble</span>
+                            Chat with an Ambassador
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-surface-container-low">
+<div class="container mx-auto px-8">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+<div class="space-y-8">
+<h2 class="font-headline text-4xl font-bold tracking-tight text-primary">Program Overview</h2>
+<div class="space-y-6 text-lg text-on-surface-variant leading-relaxed">
+<p>
+                                The Environmental Engineering curriculum at Pathfinder University integrates rigorous scientific principles with innovative design thinking. Students learn to address the world's most pressing challenges—from climate change mitigation to sustainable urban infrastructure.
+                            </p>
+<p>
+                                You won't just study the environment; you'll build the systems that protect it. Our program emphasizes hands-on laboratory work, real-world case studies, and cross-disciplinary collaboration with urban planners and policy experts.
+                            </p>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-6">
+<div class="bg-surface-container-lowest p-8 rounded-xl flex flex-col justify-center">
+<span class="text-4xl font-black text-tertiary mb-2">94%</span>
+<span class="text-sm font-bold text-on-surface-variant uppercase tracking-widest">Placement Rate</span>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-xl flex flex-col justify-center">
+<span class="text-4xl font-black text-primary mb-2">#12</span>
+<span class="text-sm font-bold text-on-surface-variant uppercase tracking-widest">Global Ranking</span>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-xl flex flex-col justify-center">
+<span class="text-4xl font-black text-secondary mb-2">400+</span>
+<span class="text-sm font-bold text-on-surface-variant uppercase tracking-widest">Lab Hours</span>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-xl flex flex-col justify-center">
+<span class="text-4xl font-black text-on-primary-fixed-variant mb-2">Top 5</span>
+<span class="text-sm font-bold text-on-surface-variant uppercase tracking-widest">Research Funding</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-surface">
+<div class="container mx-auto px-8">
+<h2 class="font-headline text-4xl font-bold tracking-tight mb-16 text-center">Core Curriculum Pillars</h2>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 h-auto md:h-[600px]">
+<div class="md:col-span-6 lg:col-span-5 bg-primary-container rounded-xl p-10 flex flex-col justify-between relative overflow-hidden group">
+<div class="relative z-10">
+<span class="material-symbols-outlined text-4xl mb-6 text-primary" style="font-variation-settings: 'FILL' 1;">water_drop</span>
+<h3 class="text-3xl font-bold mb-4 font-headline text-on-primary-container">Water Resource Management</h3>
+<p class="text-on-primary-container/80 text-lg">Engineering solutions for global water scarcity, purification technologies, and sustainable watershed protection.</p>
+</div>
+<div class="mt-8 flex gap-3 flex-wrap">
+<span class="bg-surface-container-lowest/40 px-3 py-1 rounded-md text-sm font-bold">Hydraulics</span>
+<span class="bg-surface-container-lowest/40 px-3 py-1 rounded-md text-sm font-bold">Desalination</span>
+</div>
+</div>
+<div class="md:col-span-6 lg:col-span-7 bg-surface-container-highest rounded-xl p-10 flex flex-col justify-between hover:bg-surface-container-high transition-colors">
+<div>
+<span class="material-symbols-outlined text-4xl mb-6 text-on-surface" style="font-variation-settings: 'FILL' 1;">thermostat</span>
+<h3 class="text-2xl font-bold mb-4 font-headline">Climate Modeling</h3>
+<p class="text-on-surface-variant text-lg max-w-md">Utilizing computational fluid dynamics and big data to predict atmospheric shifts and urban heat island effects.</p>
+</div>
+<div class="mt-8">
+<div class="h-1 w-full bg-outline-variant/30 rounded-full overflow-hidden">
+<div class="h-full bg-primary w-2/3"></div>
+</div>
+<span class="text-xs font-bold mt-2 inline-block">ADVANCED MODULE</span>
+</div>
+</div>
+<div class="md:col-span-7 lg:col-span-4 bg-secondary-container rounded-xl p-8 flex flex-col justify-between">
+<div>
+<h3 class="text-xl font-bold mb-2 font-headline text-on-secondary-container">Renewable Energy Systems</h3>
+<p class="text-on-secondary-container/80">Integration of solar, wind, and geothermal grids into existing urban frameworks.</p>
+</div>
+<span class="material-symbols-outlined text-3xl self-end text-on-secondary-container">wb_sunny</span>
+</div>
+<div class="md:col-span-5 lg:col-span-8 bg-surface-container-lowest rounded-xl p-8 shadow-sm flex items-center gap-8">
+<div class="flex-1">
+<h3 class="text-xl font-bold mb-2 font-headline">Waste Engineering</h3>
+<p class="text-on-surface-variant">Circular economy principles applied to municipal and industrial solid waste systems.</p>
+</div>
+<div class="w-24 h-24 bg-tertiary-container rounded-full flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-4xl text-on-tertiary-container" style="font-variation-settings: 'FILL' 1;">recycling</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-surface-container-low overflow-hidden">
+<div class="container mx-auto px-8 relative">
+<div class="max-w-3xl mb-16">
+<h2 class="font-headline text-4xl font-bold tracking-tight mb-4">Launch Your Impact</h2>
+<p class="text-xl text-on-surface-variant">Our graduates lead global initiatives at NGOs, tech giants, and government agencies.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm border border-outline-variant/10 group hover:-translate-y-2 transition-transform">
+<div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary">strategy</span>
+</div>
+<h4 class="text-2xl font-bold mb-4 font-headline">Sustainability Consultant</h4>
+<p class="text-on-surface-variant mb-8">Advise Fortune 500 companies on carbon neutrality and ESG reporting frameworks.</p>
+<div class="pt-6 border-t border-outline-variant/20">
+<div class="flex justify-between items-center text-sm font-bold text-on-surface-variant mb-1">
+<span>Starting Salary</span>
+<span class="text-primary">$84k - $105k</span>
+</div>
+<div class="flex justify-between items-center text-sm font-bold text-on-surface-variant">
+<span>Demand Growth</span>
+<span class="text-secondary">+14% /yr</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm border border-outline-variant/10 group hover:-translate-y-2 transition-transform">
+<div class="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-secondary">gavel</span>
+</div>
+<h4 class="text-2xl font-bold mb-4 font-headline">Policy Advisor</h4>
+<p class="text-on-surface-variant mb-8">Craft environmental legislation and manage compliance for international regulatory bodies.</p>
+<div class="pt-6 border-t border-outline-variant/20">
+<div class="flex justify-between items-center text-sm font-bold text-on-surface-variant mb-1">
+<span>Starting Salary</span>
+<span class="text-primary">$72k - $98k</span>
+</div>
+<div class="flex justify-between items-center text-sm font-bold text-on-surface-variant">
+<span>Demand Growth</span>
+<span class="text-secondary">+9% /yr</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm border border-outline-variant/10 group hover:-translate-y-2 transition-transform">
+<div class="w-12 h-12 bg-tertiary/10 rounded-lg flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-tertiary">engineering</span>
+</div>
+<h4 class="text-2xl font-bold mb-4 font-headline">Environmental Engineer</h4>
+<p class="text-on-surface-variant mb-8">Design remediation systems for contaminated sites and optimize urban air filtration.</p>
+<div class="pt-6 border-t border-outline-variant/20">
+<div class="flex justify-between items-center text-sm font-bold text-on-surface-variant mb-1">
+<span>Starting Salary</span>
+<span class="text-primary">$89k - $115k</span>
+</div>
+<div class="flex justify-between items-center text-sm font-bold text-on-surface-variant">
+<span>Demand Growth</span>
+<span class="text-secondary">+11% /yr</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24">
+<div class="container mx-auto px-8">
+<div class="bg-on-background rounded-3xl p-12 md:p-20 text-center relative overflow-hidden">
+<div class="absolute inset-0 opacity-10">
+<div class="absolute -top-24 -left-24 w-96 h-96 bg-primary rounded-full blur-[100px]"></div>
+<div class="absolute -bottom-24 -right-24 w-96 h-96 bg-secondary rounded-full blur-[100px]"></div>
+</div>
+<div class="relative z-10 max-w-3xl mx-auto">
+<h2 class="font-headline text-4xl md:text-6xl font-extrabold text-surface mb-8 leading-tight">Ready to chart your environmental path?</h2>
+<p class="text-xl text-surface-variant mb-12">Connect with current students and faculty to learn how you can make a tangible difference.</p>
+<div class="flex flex-col sm:flex-row gap-6 justify-center">
+<button class="bg-primary text-on-primary px-10 py-5 rounded-full font-bold text-xl hover:scale-105 transition-transform active:scale-95 shadow-xl shadow-primary/20" type="button">
+                                Save to My Journey
+                            </button>
+<button class="bg-surface/10 backdrop-blur-md border border-surface/20 text-surface px-10 py-5 rounded-full font-bold text-xl hover:bg-surface/20 transition-all active:scale-95" type="button">
+                                Explore Other Majors
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="w-full py-12 px-8 bg-slate-50 dark:bg-slate-900">
+<div class="max-w-screen-xl mx-auto">
+<div class="bg-blue-100 dark:bg-blue-900/30 h-px w-full mb-8"></div>
+<div class="flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-['Manrope'] text-xs font-medium text-slate-500 dark:text-slate-400">© 2024 Pathfinder Orientation. All rights reserved.</p>
+<div class="flex gap-8">
+<a class="font-['Manrope'] text-xs font-medium text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors hover:underline decoration-blue-400 underline-offset-4 opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="font-['Manrope'] text-xs font-medium text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors hover:underline decoration-blue-400 underline-offset-4 opacity-80 hover:opacity-100" href="#">Terms</a>
+<a class="font-['Manrope'] text-xs font-medium text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors hover:underline decoration-blue-400 underline-offset-4 opacity-80 hover:opacity-100" href="#">Contact</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

@@ -82,6 +82,25 @@
         .tonal-shift {
             transition: background-color 0.3s ease;
         }
+        .interest-chip {
+            transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+        }
+        .interest-chip[aria-pressed="true"] {
+            background: #a3c1ff;
+            border-color: #005cc0;
+            color: #003a7f;
+        }
+        .interest-chip[aria-pressed="true"] .chip-label {
+            color: #003a7f;
+        }
+        .interest-chip[aria-pressed="false"] {
+            background: #f1f3ff;
+            border-color: transparent;
+            color: #4c5f85;
+        }
+        .interest-chip[aria-pressed="false"] .chip-label {
+            color: #1e3256;
+        }
     </style>
 </head>
 <body class="bg-surface font-body text-on-surface antialiased">
@@ -90,7 +109,7 @@
 <a class="text-2xl font-black text-blue-800 dark:text-blue-300 font-headline tracking-tight" href="./index.html">Pathfinder</a>
 <div class="hidden md:flex items-center space-gap-8 gap-8">
 <a class="font-headline font-bold tracking-tight text-slate-500 dark:text-slate-400 hover:text-blue-600 transition-colors" href="./journey.html">Journey</a>
-<a class="font-headline font-bold tracking-tight text-blue-700 dark:text-blue-400 border-b-2 border-blue-600 pb-1" href="./interests.html">Resources</a>
+<a class="font-headline font-bold tracking-tight text-blue-700 dark:text-blue-400 border-b-2 border-blue-600 pb-1" href="./interest-profile.html">Resources</a>
 <a class="font-headline font-bold tracking-tight text-slate-500 dark:text-slate-400 hover:text-blue-600 transition-colors" href="#">Support</a>
 </div>
 <div class="flex items-center gap-4">
@@ -116,40 +135,40 @@
 <section class="mb-20">
 <div class="flex items-center justify-between mb-8">
 <h2 class="font-headline text-2xl font-bold text-on-surface">Build Your Interest Profile</h2>
-<span class="font-label text-sm font-semibold text-tertiary bg-tertiary-container/20 px-4 py-1 rounded-full">3 selected</span>
+<span class="font-label text-sm font-semibold text-tertiary bg-tertiary-container/20 px-4 py-1 rounded-full" id="selected-count">3 selected</span>
 </div>
 <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-<button class="group flex flex-col items-center justify-center p-6 rounded-xl bg-primary-container text-on-primary-container border-2 border-primary transition-all active:scale-95">
+<button aria-pressed="true" class="interest-chip group flex flex-col items-center justify-center p-6 rounded-xl border-2 transition-all active:scale-95" type="button">
 <span class="material-symbols-outlined text-3xl mb-3" style="font-variation-settings: 'FILL' 1;">extension</span>
-<span class="font-headline text-sm font-bold">Solving puzzles</span>
+<span class="chip-label font-headline text-sm font-bold">Solving puzzles</span>
 </button>
-<button class="group flex flex-col items-center justify-center p-6 rounded-xl bg-primary-container text-on-primary-container border-2 border-primary transition-all active:scale-95">
+<button aria-pressed="true" class="interest-chip group flex flex-col items-center justify-center p-6 rounded-xl border-2 transition-all active:scale-95" type="button">
 <span class="material-symbols-outlined text-3xl mb-3" style="font-variation-settings: 'FILL' 1;">favorite</span>
-<span class="font-headline text-sm font-bold">Helping people</span>
+<span class="chip-label font-headline text-sm font-bold">Helping people</span>
 </button>
-<button class="group flex flex-col items-center justify-center p-6 rounded-xl bg-primary-container text-on-primary-container border-2 border-primary transition-all active:scale-95">
+<button aria-pressed="true" class="interest-chip group flex flex-col items-center justify-center p-6 rounded-xl border-2 transition-all active:scale-95" type="button">
 <span class="material-symbols-outlined text-3xl mb-3" style="font-variation-settings: 'FILL' 1;">forest</span>
-<span class="font-headline text-sm font-bold">Nature</span>
+<span class="chip-label font-headline text-sm font-bold">Nature</span>
 </button>
-<button class="group flex flex-col items-center justify-center p-6 rounded-xl bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high transition-all active:scale-95">
+<button aria-pressed="false" class="interest-chip group flex flex-col items-center justify-center p-6 rounded-xl border-2 hover:bg-surface-container-high transition-all active:scale-95" type="button">
 <span class="material-symbols-outlined text-3xl mb-3">brush</span>
-<span class="font-headline text-sm font-bold text-on-surface">Creativity</span>
+<span class="chip-label font-headline text-sm font-bold text-on-surface">Creativity</span>
 </button>
-<button class="group flex flex-col items-center justify-center p-6 rounded-xl bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high transition-all active:scale-95">
+<button aria-pressed="false" class="interest-chip group flex flex-col items-center justify-center p-6 rounded-xl border-2 hover:bg-surface-container-high transition-all active:scale-95" type="button">
 <span class="material-symbols-outlined text-3xl mb-3">biotech</span>
-<span class="font-headline text-sm font-bold text-on-surface">Discovery</span>
+<span class="chip-label font-headline text-sm font-bold text-on-surface">Discovery</span>
 </button>
-<button class="group flex flex-col items-center justify-center p-6 rounded-xl bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high transition-all active:scale-95">
+<button aria-pressed="false" class="interest-chip group flex flex-col items-center justify-center p-6 rounded-xl border-2 hover:bg-surface-container-high transition-all active:scale-95" type="button">
 <span class="material-symbols-outlined text-3xl mb-3">public</span>
-<span class="font-headline text-sm font-bold text-on-surface">Culture</span>
+<span class="chip-label font-headline text-sm font-bold text-on-surface">Culture</span>
 </button>
-<button class="group flex flex-col items-center justify-center p-6 rounded-xl bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high transition-all active:scale-95">
+<button aria-pressed="false" class="interest-chip group flex flex-col items-center justify-center p-6 rounded-xl border-2 hover:bg-surface-container-high transition-all active:scale-95" type="button">
 <span class="material-symbols-outlined text-3xl mb-3">history_edu</span>
-<span class="font-headline text-sm font-bold text-on-surface">Storytelling</span>
+<span class="chip-label font-headline text-sm font-bold text-on-surface">Storytelling</span>
 </button>
-<button class="group flex flex-col items-center justify-center p-6 rounded-xl bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high transition-all active:scale-95">
+<button aria-pressed="false" class="interest-chip group flex flex-col items-center justify-center p-6 rounded-xl border-2 hover:bg-surface-container-high transition-all active:scale-95" type="button">
 <span class="material-symbols-outlined text-3xl mb-3">payments</span>
-<span class="font-headline text-sm font-bold text-on-surface">Economics</span>
+<span class="chip-label font-headline text-sm font-bold text-on-surface">Economics</span>
 </button>
 </div>
 </section>
@@ -172,10 +191,10 @@
 <p class="font-body text-lg text-primary-fixed leading-relaxed mb-6 max-w-xl">
                             Combining your love for <span class="text-white font-bold underline decoration-tertiary">Nature</span> and <span class="text-white font-bold underline decoration-tertiary">Solving puzzles</span> to create sustainable solutions for our planet's future.
                         </p>
-<button class="inline-flex items-center gap-2 bg-surface-container-lowest text-primary px-8 py-3 rounded-full font-bold hover:bg-primary-container transition-all">
+<a class="inline-flex items-center gap-2 bg-surface-container-lowest text-primary px-8 py-3 rounded-full font-bold hover:bg-primary-container transition-all" href="./environmental-engineering.html">
                             Explore Curriculum
                             <span class="material-symbols-outlined">arrow_forward</span>
-</button>
+</a>
 </div>
 </div>
 <div class="md:col-span-4 rounded-xl bg-surface-container-highest p-8 flex flex-col border-2 border-transparent hover:border-primary/20 transition-all">
@@ -244,4 +263,23 @@
 </a>
 </div>
 </nav>
+<script>
+        const chips = Array.from(document.querySelectorAll('.interest-chip'));
+        const selectedCount = document.getElementById('selected-count');
+
+        function updateSelectedCount() {
+            const count = chips.filter((chip) => chip.getAttribute('aria-pressed') === 'true').length;
+            selectedCount.textContent = `${count} selected`;
+        }
+
+        chips.forEach((chip) => {
+            chip.addEventListener('click', () => {
+                const isPressed = chip.getAttribute('aria-pressed') === 'true';
+                chip.setAttribute('aria-pressed', String(!isPressed));
+                updateSelectedCount();
+            });
+        });
+
+        updateSelectedCount();
+    </script>
 </body></html>

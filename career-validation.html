@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pathfinder | Career Validation</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary": "#e2fff8",
+              "error": "#ac3434",
+              "secondary-container": "#79f7e3",
+              "inverse-on-surface": "#939db5",
+              "inverse-surface": "#040e20",
+              "inverse-primary": "#498eff",
+              "secondary-dim": "#005e53",
+              "primary-dim": "#0050a9",
+              "secondary": "#006b5f",
+              "tertiary-fixed": "#ffa26c",
+              "surface-bright": "#f9f9ff",
+              "surface-container-lowest": "#ffffff",
+              "on-error-container": "#65000b",
+              "on-tertiary-container": "#5d2700",
+              "on-tertiary-fixed-variant": "#6b2d00",
+              "outline-variant": "#9fb2dd",
+              "on-primary-fixed": "#002657",
+              "secondary-fixed-dim": "#69e9d5",
+              "primary-fixed": "#a3c1ff",
+              "on-primary": "#f9f8ff",
+              "on-error": "#fff7f6",
+              "tertiary": "#9c4600",
+              "secondary-fixed": "#79f7e3",
+              "on-secondary-container": "#005d52",
+              "error-container": "#f56965",
+              "background": "#f9f9ff",
+              "on-tertiary": "#fff7f5",
+              "surface-variant": "#d7e2ff",
+              "surface-tint": "#005cc0",
+              "on-secondary-fixed-variant": "#00675c",
+              "surface-dim": "#cbdaff",
+              "on-secondary-fixed": "#004840",
+              "on-surface": "#1e3256",
+              "surface": "#f9f9ff",
+              "on-primary-fixed-variant": "#00438f",
+              "on-background": "#1e3256",
+              "on-primary-container": "#003a7f",
+              "primary": "#005cc0",
+              "outline": "#687ba3",
+              "tertiary-dim": "#893c00",
+              "surface-container-high": "#e0e8ff",
+              "tertiary-container": "#ffa26c",
+              "on-tertiary-fixed": "#3a1600",
+              "on-surface-variant": "#4c5f85",
+              "primary-container": "#a3c1ff",
+              "error-dim": "#70030f",
+              "primary-fixed-dim": "#8db3ff",
+              "surface-container": "#e8edff",
+              "surface-container-low": "#f1f3ff",
+              "surface-container-highest": "#d7e2ff"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface">
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+<a class="text-2xl font-black text-blue-800 dark:text-blue-300 font-['Plus_Jakarta_Sans'] tracking-tight" href="./journey.html">Pathfinder</a>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 transition-colors font-['Plus_Jakarta_Sans'] font-bold tracking-tight" href="#">Journey</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 transition-colors font-['Plus_Jakarta_Sans'] font-bold tracking-tight" href="#">Resources</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 transition-colors font-['Plus_Jakarta_Sans'] font-bold tracking-tight" href="#">Support</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-slate-500 hover:bg-blue-50/50 rounded-full transition-all active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-slate-500 hover:bg-blue-50/50 rounded-full transition-all active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</div>
+<div class="bg-slate-100 dark:bg-slate-800 h-[1px] w-full"></div>
+</nav>
+<main class="pt-24 pb-32 px-6 max-w-7xl mx-auto">
+<header class="mb-16">
+<h1 class="font-headline text-5xl md:text-6xl font-extrabold text-primary tracking-tight leading-tight mb-4">
+                Validating Your <br/><span class="text-on-surface-variant">North Star.</span>
+            </h1>
+<p class="text-on-surface-variant text-lg max-w-2xl font-medium">
+                You’ve got the vision. Let’s map the terrain. Enter your target career to generate a tailored roadmap of requirements and milestones.
+            </p>
+</header>
+<section class="mb-20">
+<div class="bg-surface-container-low p-8 md:p-12 rounded-[2.5rem] relative overflow-hidden">
+<div class="relative z-10 max-w-3xl">
+<label class="block font-headline text-2xl font-bold mb-6 text-on-surface">What is your dream role?</label>
+<div class="relative group">
+<input class="w-full bg-surface-container-lowest border-none ring-1 ring-outline-variant/20 focus:ring-2 focus:ring-primary rounded-full px-8 py-6 text-xl font-semibold shadow-sm transition-all placeholder:text-outline-variant" placeholder="e.g. Software Engineer" type="text" value="Software Engineer"/>
+<button class="absolute right-3 top-1/2 -translate-y-1/2 bg-primary text-on-primary h-12 px-8 rounded-full font-bold hover:bg-primary-dim transition-all active:scale-95">
+                            Verify Path
+                        </button>
+</div>
+<div class="mt-6 flex flex-wrap gap-3">
+<span class="text-sm font-semibold text-on-surface-variant px-2">Popular:</span>
+<button class="bg-surface-container-highest px-4 py-1.5 rounded-full text-sm font-bold text-on-primary-container hover:bg-primary-container transition-colors">Data Scientist</button>
+<button class="bg-surface-container-highest px-4 py-1.5 rounded-full text-sm font-bold text-on-primary-container hover:bg-primary-container transition-colors">UX Designer</button>
+<button class="bg-surface-container-highest px-4 py-1.5 rounded-full text-sm font-bold text-on-primary-container hover:bg-primary-container transition-colors">Cybersecurity Analyst</button>
+</div>
+</div>
+<div class="absolute -right-20 -top-20 w-96 h-96 bg-primary-container/30 rounded-full blur-[80px] pointer-events-none"></div>
+</div>
+</section>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<div class="lg:col-span-7 space-y-8">
+<div class="bg-surface-container-lowest p-8 rounded-[2rem] shadow-sm ring-1 ring-outline-variant/10">
+<div class="flex items-center gap-4 mb-8">
+<div class="w-12 h-12 rounded-2xl bg-primary-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="school">school</span>
+</div>
+<h3 class="font-headline text-2xl font-bold">Required Diplomas</h3>
+</div>
+<div class="space-y-4">
+<div class="flex items-start gap-4 p-4 rounded-2xl bg-surface-container-low transition-colors hover:bg-surface-container">
+<span class="material-symbols-outlined text-secondary mt-1" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div>
+<p class="font-bold text-on-surface">Bachelor of Science in Computer Science</p>
+<p class="text-sm text-on-surface-variant">Core fundamental for 85% of entry-level positions.</p>
+</div>
+</div>
+<div class="flex items-start gap-4 p-4 rounded-2xl bg-surface-container-low transition-colors hover:bg-surface-container">
+<span class="material-symbols-outlined text-outline-variant mt-1" data-icon="radio_button_unchecked">radio_button_unchecked</span>
+<div>
+<p class="font-bold text-on-surface">Post-Graduate Specialization (Optional)</p>
+<p class="text-sm text-on-surface-variant">Highly recommended for specialized roles like AI/ML.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-[2rem] shadow-sm ring-1 ring-outline-variant/10">
+<div class="flex items-center gap-4 mb-8">
+<div class="w-12 h-12 rounded-2xl bg-secondary-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" data-icon="bolt">bolt</span>
+</div>
+<h3 class="font-headline text-2xl font-bold">Key Skills to Master</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="p-4 rounded-2xl border border-outline-variant/20 flex flex-col gap-3">
+<span class="font-bold text-primary">Technical Hard Skills</span>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-container-high px-3 py-1 rounded-lg text-xs font-bold uppercase tracking-wider text-on-surface">Python</span>
+<span class="bg-surface-container-high px-3 py-1 rounded-lg text-xs font-bold uppercase tracking-wider text-on-surface">System Design</span>
+<span class="bg-surface-container-high px-3 py-1 rounded-lg text-xs font-bold uppercase tracking-wider text-on-surface">React/Vue</span>
+<span class="bg-surface-container-high px-3 py-1 rounded-lg text-xs font-bold uppercase tracking-wider text-on-surface">AWS Cloud</span>
+</div>
+</div>
+<div class="p-4 rounded-2xl border border-outline-variant/20 flex flex-col gap-3">
+<span class="font-bold text-secondary">Professional Soft Skills</span>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-container-high px-3 py-1 rounded-lg text-xs font-bold uppercase tracking-wider text-on-surface">Agile Workflow</span>
+<span class="bg-surface-container-high px-3 py-1 rounded-lg text-xs font-bold uppercase tracking-wider text-on-surface">Mentorship</span>
+<span class="bg-surface-container-high px-3 py-1 rounded-lg text-xs font-bold uppercase tracking-wider text-on-surface">Communication</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<aside class="lg:col-span-5">
+<div class="bg-primary p-8 md:p-10 rounded-[2.5rem] text-on-primary sticky top-28">
+<h3 class="font-headline text-2xl font-bold mb-8 flex items-center gap-3">
+<span class="material-symbols-outlined" data-icon="event_note">event_note</span>
+                        Timeline of Milestones
+                    </h3>
+<div class="space-y-0 relative">
+<div class="absolute left-[11px] top-2 bottom-8 w-[2px] bg-primary-container/30"></div>
+<div class="relative pl-10 pb-10">
+<div class="absolute left-0 top-1.5 w-6 h-6 rounded-full bg-secondary ring-4 ring-primary"></div>
+<span class="block text-primary-container text-xs font-black uppercase tracking-widest mb-1">Year 1-2</span>
+<h4 class="font-bold text-lg mb-1">Foundational Exploration</h4>
+<p class="text-on-primary/70 text-sm">Focus on Core Algorithms and early internship placements.</p>
+</div>
+<div class="relative pl-10 pb-10">
+<div class="absolute left-0 top-1.5 w-6 h-6 rounded-full bg-tertiary ring-4 ring-primary"></div>
+<span class="block text-primary-container text-xs font-black uppercase tracking-widest mb-1">Year 3</span>
+<h4 class="font-bold text-lg mb-1">Specialization Phase</h4>
+<p class="text-on-primary/70 text-sm">Contribute to Open Source and build a high-fidelity portfolio.</p>
+</div>
+<div class="relative pl-10 pb-10">
+<div class="absolute left-0 top-1.5 w-6 h-6 rounded-full bg-white/20 ring-4 ring-primary"></div>
+<span class="block text-primary-container text-xs font-black uppercase tracking-widest mb-1">Year 4</span>
+<h4 class="font-bold text-lg mb-1">Career Launch</h4>
+<p class="text-on-primary/70 text-sm">Graduate and transition into Junior Developer roles.</p>
+</div>
+<div class="pt-4">
+<button class="w-full bg-surface-container-lowest text-primary py-4 rounded-full font-bold shadow-lg transition-transform active:scale-95 hover:shadow-xl">
+                                Save This Roadmap
+                            </button>
+</div>
+</div>
+</div>
+<div class="mt-8 bg-surface-container-high p-8 rounded-[2rem] flex items-center justify-between">
+<div>
+<p class="font-bold text-on-surface">Need a Mentor?</p>
+<p class="text-sm text-on-surface-variant">Talk to real Software Engineers.</p>
+</div>
+<button class="w-12 h-12 rounded-full bg-white flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</aside>
+</div>
+</main>
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-3 bg-white dark:bg-slate-950 rounded-t-[2rem] z-50 shadow-[0_-4px_20px_0_rgba(30,50,86,0.04)]">
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-5 py-2">
+<span class="material-symbols-outlined mb-1" data-icon="explore">explore</span>
+<span class="font-['Manrope'] text-[10px] font-semibold uppercase tracking-wider">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-blue-100/50 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200 rounded-2xl px-5 py-2 transition-all">
+<span class="material-symbols-outlined mb-1" data-icon="verified">verified</span>
+<span class="font-['Manrope'] text-[10px] font-semibold uppercase tracking-wider">Validation</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-5 py-2">
+<span class="material-symbols-outlined mb-1" data-icon="insights">insights</span>
+<span class="font-['Manrope'] text-[10px] font-semibold uppercase tracking-wider">Interests</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-5 py-2">
+<span class="material-symbols-outlined mb-1" data-icon="psychology">psychology</span>
+<span class="font-['Manrope'] text-[10px] font-semibold uppercase tracking-wider">Assessment</span>
+</div>
+</nav>
+<button class="md:hidden fixed bottom-28 right-6 w-14 h-14 bg-tertiary text-on-tertiary rounded-full shadow-2xl flex items-center justify-center active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="share">share</span>
+</button>
+</body></html>

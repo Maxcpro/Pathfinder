@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pathfinder | Chart Your Academic Future</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-surface": "#1e3256",
+              "inverse-on-surface": "#939db5",
+              "on-secondary-fixed": "#004840",
+              "primary": "#005cc0",
+              "error-dim": "#70030f",
+              "on-tertiary": "#fff7f5",
+              "secondary-dim": "#005e53",
+              "on-secondary-container": "#005d52",
+              "surface-dim": "#cbdaff",
+              "tertiary-container": "#ffa26c",
+              "outline": "#687ba3",
+              "tertiary-fixed-dim": "#fc8f4b",
+              "on-primary": "#f9f8ff",
+              "surface-variant": "#d7e2ff",
+              "on-background": "#1e3256",
+              "on-secondary-fixed-variant": "#00675c",
+              "on-error-container": "#65000b",
+              "secondary-container": "#79f7e3",
+              "on-tertiary-container": "#5d2700",
+              "on-primary-container": "#003a7f",
+              "inverse-surface": "#040e20",
+              "secondary-fixed": "#79f7e3",
+              "surface-container-highest": "#d7e2ff",
+              "primary-fixed-dim": "#8db3ff",
+              "surface-bright": "#f9f9ff",
+              "on-tertiary-fixed": "#3a1600",
+              "inverse-primary": "#498eff",
+              "on-surface-variant": "#4c5f85",
+              "surface-container": "#e8edff",
+              "tertiary": "#9c4600",
+              "tertiary-fixed": "#ffa26c",
+              "tertiary-dim": "#893c00",
+              "on-primary-fixed-variant": "#00438f",
+              "primary-container": "#a3c1ff",
+              "on-error": "#fff7f6",
+              "on-primary-fixed": "#002657",
+              "surface-tint": "#005cc0",
+              "error": "#ac3434",
+              "primary-dim": "#0050a9",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary-fixed-variant": "#6b2d00",
+              "outline-variant": "#9fb2dd",
+              "surface-container-high": "#e0e8ff",
+              "secondary-fixed-dim": "#69e9d5",
+              "surface-container-low": "#f1f3ff",
+              "surface": "#f9f9ff",
+              "primary-fixed": "#a3c1ff",
+              "background": "#f9f9ff",
+              "on-secondary": "#e2fff8",
+              "error-container": "#f56965",
+              "secondary": "#006b5f"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .tonal-shift-bg { background-color: rgba(249, 249, 255, 0.8); }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-slate-50/80 dark:bg-slate-950/80 backdrop-blur-xl transition-all">
+<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+<div class="text-2xl font-black tracking-tighter text-blue-800 dark:text-blue-300 font-headline">Pathfinder</div>
+<!-- Desktop Links -->
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-blue-700 dark:text-blue-400 font-bold border-b-2 border-blue-700 dark:border-blue-400 pb-1 font-['Plus_Jakarta_Sans'] font-medium tracking-tight" href="#">For Students</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 transition-colors font-['Plus_Jakarta_Sans'] font-medium tracking-tight" href="#">For Families</a>
+</div>
+<!-- CTAs -->
+<div class="flex items-center space-x-4">
+<button class="text-slate-600 dark:text-slate-400 font-medium hover:opacity-80 transition-opacity px-4 py-2">Login</button>
+<a class="bg-gradient-to-r from-primary to-primary-dim text-on-primary px-6 py-2.5 rounded-full font-bold shadow-lg hover:opacity-90 transition-all transform active:scale-95 duration-200 inline-block" href="./journey.html">Start Your Journey</a>
+</div>
+</div>
+</nav>
+<main class="pt-24">
+<!-- Section 1: Hero -->
+<section class="relative px-8 py-20 md:py-32 max-w-7xl mx-auto overflow-hidden">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-7 z-10">
+<h1 class="font-headline font-extrabold text-5xl md:text-7xl leading-[1.1] text-on-surface tracking-tight mb-8">
+                        Chart Your Academic Future with <span class="text-primary italic">Confidence</span>
+</h1>
+<p class="text-lg md:text-xl text-on-surface-variant leading-relaxed mb-10 max-w-xl">
+                        Pathfinder gives you the structured guidance and personalized pathways you need to make informed, deliberate choices for your education.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-6 items-center">
+<a class="w-full sm:w-auto bg-gradient-to-r from-primary to-primary-dim text-on-primary px-10 py-4 rounded-full font-bold text-lg shadow-xl shadow-primary/20 hover:scale-105 active:scale-95 transition-all inline-block text-center" href="./journey.html">
+                            Find Your Path
+                        </a>
+<a class="text-primary font-bold text-lg flex items-center gap-2 hover:translate-x-1 transition-transform" href="#">
+                            Explore Programs 
+                            <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="lg:col-span-5 relative">
+<div class="relative w-full aspect-square rounded-[3rem] overflow-hidden shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-700">
+<img alt="Student collaborating" class="w-full h-full object-cover" data-alt="Group of diverse students working together on laptops in a modern bright study space" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtin4W0QO6rMhq_w9KGEG6l18DVU0GBvL68OPdnFnMOLYhH3ydL1IGGuS0HGGdOhT-vyiNPe9wWHtO1F0cRZt1KgMeNbaZTuAqFII_wvmugjTCkL2-D1aADqqdCe-Q_twIedmj2OBT6NaFsfDuqGZm7xSozM6ibrq1xXYFCUCCvgoVvMcHiH8YtqPoHC_pelNESmz9_sGDGlsXGb5iBNLCGOqO0wcTNqDlhxqU9uTrM0Tp-02bJ64AQKFtXYSqEDDfk92Sa-cDwNIu"/>
+</div>
+<!-- Floating Accent Card -->
+<div class="absolute -bottom-6 -left-12 glass-card p-6 rounded-2xl shadow-xl hidden md:block max-w-[240px]">
+<div class="flex items-center gap-4 mb-3">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</div>
+<span class="font-bold text-sm">Personalized AI Mentor</span>
+</div>
+<p class="text-xs text-on-surface-variant leading-tight">Ready to analyze your strengths and match you with the perfect degree.</p>
+</div>
+</div>
+</div>
+<!-- Decorative Elements -->
+<div class="absolute top-20 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -z-10"></div>
+<div class="absolute bottom-0 left-1/4 w-96 h-96 bg-tertiary/5 rounded-full blur-3xl -z-10"></div>
+</section>
+<!-- Section 2: The Challenge -->
+<section class="bg-surface-container-low py-20 px-8">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row items-center justify-between gap-12">
+<div class="md:w-1/2">
+<h2 class="font-headline text-3xl md:text-4xl font-extrabold text-on-surface mb-6">The Orientation Crisis</h2>
+<p class="text-xl text-on-surface-variant leading-relaxed italic">
+                            "Don't let your future be a default choice. Only 45% of students finish their bachelor's degree in three years. We're here to change that."
+                        </p>
+</div>
+<div class="md:w-1/3 flex justify-center">
+<div class="w-48 h-48 rounded-full border-8 border-tertiary-container/30 flex items-center justify-center relative">
+<div class="text-center">
+<span class="block text-4xl font-black text-tertiary">45%</span>
+<span class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Success Rate</span>
+</div>
+<!-- Circular progress accent -->
+<svg class="absolute inset-0 w-full h-full -rotate-90">
+<circle class="text-tertiary" cx="50%" cy="50%" fill="transparent" r="46%" stroke="currentColor" stroke-dasharray="290" stroke-dashoffset="160" stroke-width="8"></circle>
+</svg>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: Our Value (Bento-style Grid) -->
+<section class="py-24 px-8 max-w-7xl mx-auto">
+<div class="text-center mb-16">
+<span class="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">The Pathfinder Advantage</span>
+<h2 class="font-headline text-4xl md:text-5xl font-extrabold text-on-surface">Designed for Your Success</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 md:auto-rows-[240px]">
+<!-- Feature 1 -->
+<div class="md:col-span-8 bg-surface-container-highest rounded-3xl p-8 flex flex-col justify-between overflow-hidden relative group">
+<div class="relative z-10">
+<span class="material-symbols-outlined text-4xl text-primary mb-4" style="font-variation-settings: 'FILL' 1;">route</span>
+<h3 class="font-headline text-2xl font-bold mb-4">Personalized Orientation Pathways</h3>
+<p class="text-on-surface-variant max-w-md">Tailored journeys built specifically around your unique interests, hidden strengths, and long-term professional goals.</p>
+</div>
+<div class="absolute right-[-10%] bottom-[-10%] w-64 h-64 bg-primary/10 rounded-full blur-2xl group-hover:bg-primary/20 transition-all"></div>
+</div>
+<!-- Feature 2 -->
+<div class="md:col-span-4 bg-inverse-surface text-on-primary rounded-3xl p-8 flex flex-col justify-center text-center">
+<span class="material-symbols-outlined text-5xl text-primary-fixed mb-4">account_tree</span>
+<h3 class="font-headline text-xl font-bold mb-2">Structured Guidance</h3>
+<p class="text-inverse-on-surface text-sm">Crystal clear roadmaps for every program and admission requirement.</p>
+</div>
+<!-- Feature 3 -->
+<div class="md:col-span-4 bg-secondary-container rounded-3xl p-8 flex flex-col justify-between">
+<h3 class="font-headline text-xl font-bold text-on-secondary-container">Interactive Tools</h3>
+<p class="text-on-secondary-container/80 text-sm mb-4">Engage with virtual mentors and deep reflection tools to discover your true academic potential.</p>
+<div class="flex -space-x-2">
+<div class="w-10 h-10 rounded-full border-2 border-secondary-container bg-slate-300"></div>
+<div class="w-10 h-10 rounded-full border-2 border-secondary-container bg-slate-400"></div>
+<div class="w-10 h-10 rounded-full border-2 border-secondary-container bg-slate-500"></div>
+</div>
+</div>
+<!-- Feature 4 -->
+<div class="md:col-span-8 bg-tertiary-container/10 rounded-3xl p-8 flex items-center gap-8 overflow-hidden">
+<div class="flex-1">
+<h3 class="font-headline text-2xl font-bold text-on-tertiary-container mb-3">Affordable Support</h3>
+<p class="text-on-tertiary-container/70">Premium guidance shouldn't come with a premium price tag. We make expert orientation accessible to every single student.</p>
+</div>
+<div class="hidden sm:block">
+<span class="material-symbols-outlined text-8xl text-tertiary/20">payments</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 4: Student Success -->
+<section class="py-24 bg-surface overflow-hidden">
+<div class="max-w-7xl mx-auto px-8">
+<div class="bg-surface-container-low rounded-[3rem] p-12 md:p-20 relative">
+<span class="material-symbols-outlined text-7xl text-primary/10 absolute top-10 left-10">format_quote</span>
+<div class="flex flex-col md:flex-row gap-12 items-center relative z-10">
+<div class="w-full md:w-1/3">
+<div class="aspect-square rounded-3xl overflow-hidden shadow-2xl grayscale hover:grayscale-0 transition-all duration-500">
+<img alt="Successful graduate" class="w-full h-full object-cover" data-alt="Portrait of a confident young professional student smiling in a library" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdyM4VgLwnuREWGjozKDI1gJJu1khYibhBUmyCXAk7eMluF-1wnj1s3h2jaHybjbaF51zSeh1mf_t0VEixoLD35ypljbGvHgEJYkWLcXozM0UKz9sxotwxWWraUFm0JT9pvPStyY8GKp5HS0payG4c8wNeH09c8-Ieuqn2CMVsjWZ9LBRSxvIDMJDu00VfEUfCfYI8b8_xE1obZfGMrFcsY3WANlaCzGv05K11NSCHoFSP1uEo_ENJsTI5-CaQwGWecEBeXIfUiLmk"/>
+</div>
+</div>
+<div class="w-full md:w-2/3">
+<h2 class="font-headline text-2xl md:text-3xl font-bold mb-6 text-primary">Real Stories</h2>
+<blockquote class="text-2xl md:text-3xl font-medium leading-tight text-on-surface mb-8">
+                                "Before Pathfinder, I was just picking courses based on what my friends did. The personalized pathway showed me a career in Bio-Tech I hadn't even considered. Now I'm in my second year with a clear internship lined up."
+                            </blockquote>
+<div>
+<p class="font-extrabold text-lg text-on-surface">Jordan Chen</p>
+<p class="text-on-surface-variant">Class of 2026, Bio-Medical Sciences</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 5: Final CTA -->
+<section class="py-32 px-8">
+<div class="max-w-5xl mx-auto text-center bg-gradient-to-br from-primary to-primary-dim rounded-[3rem] py-20 px-8 text-on-primary shadow-3xl relative overflow-hidden">
+<div class="relative z-10">
+<h2 class="font-headline text-4xl md:text-6xl font-extrabold mb-8 tracking-tight">Ready to build a coherent academic project?</h2>
+<a class="bg-surface-container-lowest text-primary px-12 py-5 rounded-full font-black text-xl hover:scale-110 active:scale-95 transition-all shadow-2xl inline-block" href="./journey.html">
+                        Start Your Journey Today
+                    </a>
+</div>
+<!-- Abstract decorative backgrounds -->
+<div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"></div>
+<div class="absolute bottom-0 left-0 w-80 h-80 bg-black/10 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl"></div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-100 dark:bg-slate-900 w-full py-12 px-8">
+<div class="flex flex-col md:flex-row justify-between items-center gap-8 max-w-7xl mx-auto">
+<div class="flex flex-col items-center md:items-start gap-4">
+<div class="text-lg font-bold text-blue-800 dark:text-blue-300 font-headline">Pathfinder</div>
+<p class="font-['Manrope'] text-sm text-slate-500 dark:text-slate-400 max-w-xs text-center md:text-left">
+                    © 2024 Pathfinder Orientation. Empowering student journeys.
+                </p>
+</div>
+<div class="flex gap-8 flex-wrap justify-center">
+<a class="font-['Manrope'] text-sm text-slate-500 dark:text-slate-400 hover:text-blue-700 dark:hover:text-blue-300 transition-all" href="#">About Us</a>
+<a class="font-['Manrope'] text-sm text-slate-500 dark:text-slate-400 hover:text-blue-700 dark:hover:text-blue-300 transition-all" href="#">Contact</a>
+<a class="font-['Manrope'] text-sm text-slate-500 dark:text-slate-400 hover:text-blue-700 dark:hover:text-blue-300 transition-all" href="#">Privacy Policy</a>
+<a class="font-['Manrope'] text-sm text-slate-500 dark:text-slate-400 hover:text-blue-700 dark:hover:text-blue-300 transition-all" href="#">Terms of Service</a>
+</div>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-all" href="#">
+<span class="material-symbols-outlined text-xl">language</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-all" href="#">
+<span class="material-symbols-outlined text-xl">share</span>
+</a>
+</div>
+</div>
+</footer>
+</body></html>

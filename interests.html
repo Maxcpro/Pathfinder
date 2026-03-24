@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pathfinder | Build Your Interest Profile</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-secondary": "#e2fff8",
+                        "error": "#ac3434",
+                        "secondary-container": "#79f7e3",
+                        "inverse-on-surface": "#939db5",
+                        "inverse-surface": "#040e20",
+                        "inverse-primary": "#498eff",
+                        "secondary-dim": "#005e53",
+                        "primary-dim": "#0050a9",
+                        "secondary": "#006b5f",
+                        "tertiary-fixed": "#ffa26c",
+                        "surface-bright": "#f9f9ff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error-container": "#65000b",
+                        "on-tertiary-container": "#5d2700",
+                        "on-tertiary-fixed-variant": "#6b2d00",
+                        "outline-variant": "#9fb2dd",
+                        "on-primary-fixed": "#002657",
+                        "secondary-fixed-dim": "#69e9d5",
+                        "primary-fixed": "#a3c1ff",
+                        "on-primary": "#f9f8ff",
+                        "on-error": "#fff7f6",
+                        "tertiary": "#9c4600",
+                        "secondary-fixed": "#79f7e3",
+                        "on-secondary-container": "#005d52",
+                        "error-container": "#f56965",
+                        "background": "#f9f9ff",
+                        "on-tertiary": "#fff7f5",
+                        "surface-variant": "#d7e2ff",
+                        "surface-tint": "#005cc0",
+                        "on-secondary-fixed-variant": "#00675c",
+                        "surface-dim": "#cbdaff",
+                        "on-secondary-fixed": "#004840",
+                        "on-surface": "#1e3256",
+                        "surface": "#f9f9ff",
+                        "on-primary-fixed-variant": "#00438f",
+                        "on-background": "#1e3256",
+                        "on-primary-container": "#003a7f",
+                        "surface-container-highest": "#d7e2ff",
+                        "tertiary-fixed-dim": "#fc8f4b",
+                        "surface-container-low": "#f1f3ff",
+                        "primary": "#005cc0",
+                        "outline": "#687ba3",
+                        "tertiary-dim": "#893c00",
+                        "surface-container-high": "#e0e8ff",
+                        "tertiary-container": "#ffa26c",
+                        "on-tertiary-fixed": "#3a1600",
+                        "on-surface-variant": "#4c5f85",
+                        "primary-container": "#a3c1ff",
+                        "error-dim": "#70030f",
+                        "primary-fixed-dim": "#8db3ff",
+                        "surface-container": "#e8edff"
+                    },
+                    fontFamily: {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .tonal-shift {
+            transition: background-color 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased">
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+<a class="text-2xl font-black text-blue-800 dark:text-blue-300 font-headline tracking-tight" href="./index.html">Pathfinder</a>
+<div class="hidden md:flex items-center space-gap-8 gap-8">
+<a class="font-headline font-bold tracking-tight text-slate-500 dark:text-slate-400 hover:text-blue-600 transition-colors" href="./journey.html">Journey</a>
+<a class="font-headline font-bold tracking-tight text-blue-700 dark:text-blue-400 border-b-2 border-blue-600 pb-1" href="./interests.html">Resources</a>
+<a class="font-headline font-bold tracking-tight text-slate-500 dark:text-slate-400 hover:text-blue-600 transition-colors" href="#">Support</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-blue-50/50 dark:hover:bg-blue-900/20 transition-all active:scale-95 duration-200">
+<span class="material-symbols-outlined text-blue-700 dark:text-blue-400">notifications</span>
+</button>
+<button class="p-2 rounded-full hover:bg-blue-50/50 dark:hover:bg-blue-900/20 transition-all active:scale-95 duration-200">
+<span class="material-symbols-outlined text-blue-700 dark:text-blue-400">account_circle</span>
+</button>
+</div>
+</div>
+<div class="bg-slate-100 dark:bg-slate-800 h-[1px] w-full"></div>
+</nav>
+<main class="pt-24 pb-32 px-6 max-w-7xl mx-auto">
+<header class="mb-16 md:mb-20">
+<h1 class="font-headline text-5xl md:text-7xl font-extrabold tracking-tighter text-primary mb-6 leading-none">
+                I know what I like.
+            </h1>
+<p class="font-body text-xl text-on-surface-variant max-w-2xl leading-relaxed">
+                Design your academic future by following your curiosity. Select the areas that spark your interest to see your potential paths unfold.
+            </p>
+</header>
+<section class="mb-20">
+<div class="flex items-center justify-between mb-8">
+<h2 class="font-headline text-2xl font-bold text-on-surface">Build Your Interest Profile</h2>
+<span class="font-label text-sm font-semibold text-tertiary bg-tertiary-container/20 px-4 py-1 rounded-full">3 selected</span>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+<button class="group flex flex-col items-center justify-center p-6 rounded-xl bg-primary-container text-on-primary-container border-2 border-primary transition-all active:scale-95">
+<span class="material-symbols-outlined text-3xl mb-3" style="font-variation-settings: 'FILL' 1;">extension</span>
+<span class="font-headline text-sm font-bold">Solving puzzles</span>
+</button>
+<button class="group flex flex-col items-center justify-center p-6 rounded-xl bg-primary-container text-on-primary-container border-2 border-primary transition-all active:scale-95">
+<span class="material-symbols-outlined text-3xl mb-3" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="font-headline text-sm font-bold">Helping people</span>
+</button>
+<button class="group flex flex-col items-center justify-center p-6 rounded-xl bg-primary-container text-on-primary-container border-2 border-primary transition-all active:scale-95">
+<span class="material-symbols-outlined text-3xl mb-3" style="font-variation-settings: 'FILL' 1;">forest</span>
+<span class="font-headline text-sm font-bold">Nature</span>
+</button>
+<button class="group flex flex-col items-center justify-center p-6 rounded-xl bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high transition-all active:scale-95">
+<span class="material-symbols-outlined text-3xl mb-3">brush</span>
+<span class="font-headline text-sm font-bold text-on-surface">Creativity</span>
+</button>
+<button class="group flex flex-col items-center justify-center p-6 rounded-xl bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high transition-all active:scale-95">
+<span class="material-symbols-outlined text-3xl mb-3">biotech</span>
+<span class="font-headline text-sm font-bold text-on-surface">Discovery</span>
+</button>
+<button class="group flex flex-col items-center justify-center p-6 rounded-xl bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high transition-all active:scale-95">
+<span class="material-symbols-outlined text-3xl mb-3">public</span>
+<span class="font-headline text-sm font-bold text-on-surface">Culture</span>
+</button>
+<button class="group flex flex-col items-center justify-center p-6 rounded-xl bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high transition-all active:scale-95">
+<span class="material-symbols-outlined text-3xl mb-3">history_edu</span>
+<span class="font-headline text-sm font-bold text-on-surface">Storytelling</span>
+</button>
+<button class="group flex flex-col items-center justify-center p-6 rounded-xl bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high transition-all active:scale-95">
+<span class="material-symbols-outlined text-3xl mb-3">payments</span>
+<span class="font-headline text-sm font-bold text-on-surface">Economics</span>
+</button>
+</div>
+</section>
+<section class="space-y-8">
+<div class="flex items-center justify-between">
+<h2 class="font-headline text-3xl font-bold text-on-surface tracking-tight">Potential Academic Domains</h2>
+<div class="flex gap-2">
+<div class="h-2 w-8 rounded-full bg-primary"></div>
+<div class="h-2 w-2 rounded-full bg-primary-container"></div>
+<div class="h-2 w-2 rounded-full bg-primary-container"></div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<div class="md:col-span-8 group relative overflow-hidden rounded-xl bg-primary text-on-primary p-8 min-h-[400px] flex flex-col justify-end">
+<img alt="" class="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:scale-105 transition-transform duration-700" data-alt="Modern laboratory interior with blue ambient light, high-tech glass equipment, and students working collaboratively in the background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8UoDxFVvci3JW5TYeNwOClf0FINosG2myko9O4lv83shF29L8vgTfz-Mi5NRPeZX1fVPxTCRBBsoUJXbyvaisLmYpiHaUddTDSSrc-MPbDW_R1qZ9gXygDJCnvZQyv1AZZt1HBVJBtPr452GcGWfLrzjAtfUrn-4vVj8KIEQTIWGVFs7CC3FS12uYy7CA6sBBA0N9vQVnknmIAXgXPhLoi5c44RCFLI2mo-m_r0-gZ3TB-ui-rWuO_5EU4K3IGG77fr_nU5NazeYa"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/40 to-transparent"></div>
+<div class="relative z-10">
+<span class="font-label text-xs uppercase tracking-widest bg-white/20 backdrop-blur-md px-3 py-1 rounded-full mb-4 inline-block">98% Affinity Match</span>
+<h3 class="font-headline text-4xl font-bold mb-4">Environmental Engineering</h3>
+<p class="font-body text-lg text-primary-fixed leading-relaxed mb-6 max-w-xl">
+                            Combining your love for <span class="text-white font-bold underline decoration-tertiary">Nature</span> and <span class="text-white font-bold underline decoration-tertiary">Solving puzzles</span> to create sustainable solutions for our planet's future.
+                        </p>
+<button class="inline-flex items-center gap-2 bg-surface-container-lowest text-primary px-8 py-3 rounded-full font-bold hover:bg-primary-container transition-all">
+                            Explore Curriculum
+                            <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="md:col-span-4 rounded-xl bg-surface-container-highest p-8 flex flex-col border-2 border-transparent hover:border-primary/20 transition-all">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-on-secondary-container">psychology</span>
+</div>
+<h3 class="font-headline text-2xl font-bold text-on-surface mb-3">Cognitive Science</h3>
+<p class="font-body text-on-surface-variant flex-grow mb-8">
+                        Understand the complex puzzle of the human mind. Perfect for those who enjoy <span class="font-bold text-primary">Helping people</span> through analytical inquiry.
+                    </p>
+<div class="flex items-center justify-between mt-auto">
+<div class="flex -space-x-2">
+<div class="w-8 h-8 rounded-full border-2 border-surface bg-slate-200"></div>
+<div class="w-8 h-8 rounded-full border-2 border-surface bg-slate-300"></div>
+</div>
+<span class="text-xs font-label font-bold text-primary">124 Students Enrolled</span>
+</div>
+</div>
+<div class="md:col-span-4 rounded-xl bg-surface-container-low p-6 flex flex-col gap-4">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-tertiary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-tertiary-container">architecture</span>
+</div>
+<h4 class="font-headline font-bold text-on-surface">Urban Planning</h4>
+</div>
+<p class="font-body text-sm text-on-surface-variant">Design the cities of tomorrow by balancing human needs with environmental sustainability.</p>
+</div>
+<div class="md:col-span-4 rounded-xl bg-surface-container-low p-6 flex flex-col gap-4">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-secondary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary-fixed">health_and_safety</span>
+</div>
+<h4 class="font-headline font-bold text-on-surface">Public Health</h4>
+</div>
+<p class="font-body text-sm text-on-surface-variant">Solve large-scale community challenges by analyzing patterns in wellness and environment.</p>
+</div>
+<div class="md:col-span-4 rounded-xl bg-surface-container-low p-6 flex flex-col gap-4">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-container">auto_stories</span>
+</div>
+<h4 class="font-headline font-bold text-on-surface">Conservation Policy</h4>
+</div>
+<p class="font-body text-sm text-on-surface-variant">Advocate for the natural world through the lens of social structure and legal frameworks.</p>
+</div>
+</div>
+</section>
+</main>
+<nav class="md:hidden fixed bottom-0 w-full rounded-t-[2rem] z-50 bg-white dark:bg-slate-950 shadow-[0_-4px_20px_0_rgba(30,50,86,0.04)]">
+<div class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-3">
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-5 py-2 hover:text-blue-600 transition-colors active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined">explore</span>
+<span class="font-['Manrope'] text-[10px] font-semibold uppercase tracking-wider">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-5 py-2 hover:text-blue-600 transition-colors active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined">verified</span>
+<span class="font-['Manrope'] text-[10px] font-semibold uppercase tracking-wider">Validation</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-blue-100/50 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200 rounded-2xl px-5 py-2 transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">insights</span>
+<span class="font-['Manrope'] text-[10px] font-semibold uppercase tracking-wider">Interests</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-5 py-2 hover:text-blue-600 transition-colors active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined">psychology</span>
+<span class="font-['Manrope'] text-[10px] font-semibold uppercase tracking-wider">Assessment</span>
+</a>
+</div>
+</nav>
+</body></html>

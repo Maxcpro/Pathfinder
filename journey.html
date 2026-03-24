@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Path Selection - Pathfinder</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-dim": "#0050a9",
+              "surface-container-low": "#f1f3ff",
+              "tertiary-fixed": "#ffa26c",
+              "on-secondary-container": "#005d52",
+              "on-primary-fixed": "#002657",
+              "surface-variant": "#d7e2ff",
+              "inverse-on-surface": "#939db5",
+              "tertiary": "#9c4600",
+              "primary": "#005cc0",
+              "surface-container-highest": "#d7e2ff",
+              "surface-bright": "#f9f9ff",
+              "on-tertiary-fixed": "#3a1600",
+              "on-surface": "#1e3256",
+              "outline-variant": "#9fb2dd",
+              "primary-fixed": "#a3c1ff",
+              "on-background": "#1e3256",
+              "on-primary-container": "#003a7f",
+              "on-primary": "#f9f8ff",
+              "error-container": "#f56965",
+              "on-primary-fixed-variant": "#00438f",
+              "on-secondary-fixed": "#004840",
+              "inverse-primary": "#498eff",
+              "error": "#ac3434",
+              "surface": "#f9f9ff",
+              "secondary": "#006b5f",
+              "background": "#f9f9ff",
+              "secondary-container": "#79f7e3",
+              "on-tertiary-container": "#5d2700",
+              "tertiary-dim": "#893c00",
+              "tertiary-container": "#ffa26c",
+              "on-surface-variant": "#4c5f85",
+              "on-error-container": "#65000b",
+              "inverse-surface": "#040e20",
+              "surface-tint": "#005cc0",
+              "outline": "#687ba3",
+              "surface-container": "#e8edff",
+              "error-dim": "#70030f",
+              "on-error": "#fff7f6",
+              "surface-dim": "#cbdaff",
+              "primary-container": "#a3c1ff",
+              "secondary-dim": "#005e53",
+              "on-secondary-fixed-variant": "#00675c",
+              "primary-fixed-dim": "#8db3ff",
+              "on-tertiary-fixed-variant": "#6b2d00",
+              "surface-container-lowest": "#ffffff",
+              "tertiary-fixed-dim": "#fc8f4b",
+              "secondary-fixed-dim": "#69e9d5",
+              "on-tertiary": "#fff7f5",
+              "on-secondary": "#e2fff8",
+              "secondary-fixed": "#79f7e3",
+              "surface-container-high": "#e0e8ff"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hero-gradient {
+            background: radial-gradient(circle at 0% 0%, #a3c1ff 0%, transparent 50%),
+                        radial-gradient(circle at 100% 100%, #e8edff 0%, transparent 50%);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface min-h-screen flex flex-col selection:bg-primary-container selection:text-on-primary-container">
+<nav class="fixed top-0 w-full z-50 bg-slate-50/80 dark:bg-slate-950/80 backdrop-blur-xl transition-all">
+<div class="flex justify-between items-center w-full px-8 py-4 max-w-7xl mx-auto">
+<a class="text-2xl font-black text-blue-800 dark:text-blue-300 tracking-tighter font-headline" href="./index.html">Pathfinder</a>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-blue-700 dark:text-blue-400 font-bold border-b-2 border-blue-700 dark:border-blue-400 pb-1 font-headline font-medium tracking-tight" href="#">For Students</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 transition-colors font-headline font-medium tracking-tight" href="#">For Families</a>
+</div>
+<div class="flex items-center space-x-4">
+<button class="text-slate-600 dark:text-slate-400 font-medium hover:opacity-80 transition-opacity px-4 py-2 font-body">Login</button>
+<a class="bg-gradient-to-r from-primary to-primary-dim text-on-primary px-6 py-2.5 rounded-full font-bold shadow-lg hover:opacity-90 transition-all transform active:scale-95 duration-200 font-body" href="./journey.html">Start Your Journey</a>
+</div>
+</div>
+</nav>
+<main class="flex-grow pt-32 pb-20 px-6 hero-gradient">
+<div class="max-w-5xl mx-auto text-center mb-16">
+<h1 class="font-headline text-5xl md:text-7xl font-extrabold text-on-surface tracking-tight mb-8 leading-[1.1]">
+                How should we start your journey?
+            </h1>
+<p class="text-on-surface-variant text-lg md:text-xl max-w-2xl mx-auto font-medium leading-relaxed">
+                No pressure. Choose the path that feels right for where you are today.
+            </p>
+</div>
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+<a class="group relative flex flex-col items-start text-left bg-surface-container-lowest p-10 rounded-3xl transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_32px_64px_-16px_rgba(30,50,86,0.08)]" href="./career-validation.html">
+<div class="mb-8 w-16 h-16 rounded-full bg-primary-container flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined text-4xl" data-icon="target" style="font-variation-settings: 'FILL' 1;">target</span>
+</div>
+<h3 class="font-headline text-2xl font-bold text-on-surface mb-4 leading-tight tracking-tight">
+                    I have a specific career in mind
+                </h3>
+<p class="text-on-surface-variant text-base leading-relaxed mb-8 font-body">
+                    Guided validation for students with a clear goal. We'll map out the requirements and steps.
+                </p>
+<div class="mt-auto flex items-center gap-2 text-primary font-bold group-hover:gap-4 transition-all font-body">
+<span>Get started</span>
+<span class="material-symbols-outlined">arrow_forward</span>
+</div>
+</a>
+<a class="group relative flex flex-col items-start text-left bg-gradient-to-br from-primary to-primary-dim p-10 rounded-3xl transition-all duration-300 hover:-translate-y-2 shadow-2xl shadow-primary/20" href="./interests.html">
+<div class="mb-8 w-16 h-16 rounded-full bg-white/20 flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined text-4xl" data-icon="explore" style="font-variation-settings: 'FILL' 1;">explore</span>
+</div>
+<h3 class="font-headline text-2xl font-bold text-on-primary mb-4 leading-tight tracking-tight">
+                    I know what I like, but not what to study
+                </h3>
+<p class="text-on-primary/80 text-base leading-relaxed mb-8 font-body">
+                    Interest-based mapping. Connect your passions to potential academic programs.
+                </p>
+<div class="mt-auto flex items-center gap-2 text-white font-bold group-hover:gap-4 transition-all font-body">
+<span>Explore paths</span>
+<span class="material-symbols-outlined">arrow_forward</span>
+</div>
+</a>
+<a class="group relative flex flex-col items-start text-left bg-surface-container-lowest p-10 rounded-3xl transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_32px_64px_-16px_rgba(30,50,86,0.08)]" href="./assessment.html">
+<div class="mb-8 w-16 h-16 rounded-full bg-tertiary-container/20 flex items-center justify-center text-tertiary group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined text-4xl" data-icon="help" style="font-variation-settings: 'FILL' 1;">help</span>
+</div>
+<h3 class="font-headline text-2xl font-bold text-on-surface mb-4 leading-tight tracking-tight">
+                    I’m completely lost
+                </h3>
+<p class="text-on-surface-variant text-base leading-relaxed mb-8 font-body">
+                    A deep-dive assessment of your strengths, values, and personality to find your fit.
+                </p>
+<div class="mt-auto flex items-center gap-2 text-tertiary font-bold group-hover:gap-4 transition-all font-body">
+<span>Start assessment</span>
+<span class="material-symbols-outlined">arrow_forward</span>
+</div>
+</a>
+</div>
+<div class="max-w-4xl mx-auto mt-24 p-12 rounded-[2.5rem] bg-surface-container-low text-center shadow-sm">
+<h4 class="font-headline text-2xl font-bold text-on-surface mb-3 tracking-tight">Need a different kind of help?</h4>
+<p class="text-on-surface-variant mb-8 font-body text-lg">Our advisors are available for 1-on-1 virtual sessions to discuss your unique situation.</p>
+<div class="flex flex-wrap justify-center gap-4">
+<button class="px-10 py-4 bg-white text-primary font-bold rounded-full shadow-md hover:shadow-lg transition-all active:scale-95 font-body">
+                    Chat with Advisor
+                </button>
+<button class="px-10 py-4 bg-secondary-container text-on-secondary-container font-bold rounded-full hover:opacity-90 transition-all active:scale-95 font-body">
+                    View FAQ
+                </button>
+</div>
+</div>
+</main>
+<footer class="bg-slate-100 dark:bg-slate-900 w-full py-12 px-8">
+<div class="flex flex-col md:flex-row justify-between items-center gap-8 max-w-7xl mx-auto">
+<div class="flex flex-col items-center md:items-start gap-4">
+<a class="text-lg font-bold text-blue-800 dark:text-blue-300 font-headline" href="./index.html">Pathfinder</a>
+<p class="font-body text-sm text-slate-500 dark:text-slate-400 max-w-xs text-center md:text-left">
+                    © 2024 Pathfinder Orientation. Empowering student journeys.
+                </p>
+</div>
+<div class="flex gap-8 flex-wrap justify-center">
+<a class="font-body text-sm text-slate-500 dark:text-slate-400 hover:text-blue-700 dark:hover:text-blue-300 transition-all" href="#">About Us</a>
+<a class="font-body text-sm text-slate-500 dark:text-slate-400 hover:text-blue-700 dark:hover:text-blue-300 transition-all" href="#">Contact</a>
+<a class="font-body text-sm text-slate-500 dark:text-slate-400 hover:text-blue-700 dark:hover:text-blue-300 transition-all" href="#">Privacy Policy</a>
+<a class="font-body text-sm text-slate-500 dark:text-slate-400 hover:text-blue-700 dark:hover:text-blue-300 transition-all" href="#">Terms of Service</a>
+</div>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-all" href="#">
+<span class="material-symbols-outlined text-xl">language</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-all" href="#">
+<span class="material-symbols-outlined text-xl">share</span>
+</a>
+</div>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,1059 @@
+{
+  "version": "1.0",
+  "scoring_guide": {
+    "description": "Count each letter (A, B, C, D) in the user's 16 answers. Find the top 1 or top 2 letters. If one letter has 8+ answers, use single dominant. If two letters are close (within 2), use the combo profile. Profile keys follow the pattern: single letter (e.g. 'A') or two letters sorted alphabetically (e.g. 'AB', 'BC').",
+    "single_dominant_threshold": 8,
+    "combo_logic": "Take the two highest-scoring letters, sort alphabetically, concatenate."
+  },
+  "profiles": {
+    "A": {
+      "id": "A",
+      "title": "The Architect of Order",
+      "archetype": "Structured Executor",
+      "core_summary": "This person operates at their best when working within a clear framework. They are planners by instinct — they break complex challenges into manageable steps, set realistic milestones, and feel most confident when expectations are well-defined. They tend to execute reliably and take ownership of outcomes. In group settings, they naturally gravitate toward the organizer role, ensuring tasks are tracked and deliverables stay on time. Their frustration typically surfaces when others introduce vagueness, last-minute changes, or operate without a plan. They are not inflexible, but they need structure as a foundation before they can adapt. Feedback lands best when it is specific and actionable. They are motivated by the satisfaction of seeing a well-designed plan come to life exactly as intended — efficiency, precision, and follow-through are core to their sense of professional identity.",
+      "metrics": [
+        { "metric": "Structure Orientation", "score": 92, "interpretation": "Strong drive to plan, organize, and work within defined systems.", "evidence": "Q1-A, Q7-A, Q9-A, Q12-A" },
+        { "metric": "Creativity / Originality Drive", "score": 28, "interpretation": "Creativity is not a primary motivator; prefers refining over inventing.", "evidence": "Q6-A, Q2-A" },
+        { "metric": "People Orientation", "score": 40, "interpretation": "Functional in teams but not driven by social connection at work.", "evidence": "Q3-A, Q4-B" },
+        { "metric": "Analytical Depth", "score": 60, "interpretation": "Uses structured reasoning but focuses more on execution than theory.", "evidence": "Q5-A, Q10-A" },
+        { "metric": "Adaptability", "score": 38, "interpretation": "Adapts by rebuilding structure; change without re-planning is uncomfortable.", "evidence": "Q13-A, Q8-A" },
+        { "metric": "Leadership / Coordination Tendency", "score": 75, "interpretation": "Natural coordinator who leads through systems and accountability.", "evidence": "Q4-B, Q12-A" },
+        { "metric": "Independence", "score": 65, "interpretation": "Prefers to own a defined scope and work through it independently.", "evidence": "Q7-A, Q9-A" },
+        { "metric": "Collaboration Preference", "score": 45, "interpretation": "Collaborative when roles are clear; avoids ambiguous group dynamics.", "evidence": "Q3-A, Q4-B" },
+        { "metric": "Learning Style: Practical vs Conceptual", "score": 20, "interpretation": "Strongly practical — learns best through steps and structured application.", "evidence": "Q10-A, Q2-A" },
+        { "metric": "Decision Style: Intuition vs Evidence", "score": 30, "interpretation": "Relies on structured comparison rather than intuition or gut feel.", "evidence": "Q5-A" },
+        { "metric": "Communication Style", "score": 70, "interpretation": "Clear, direct, and task-focused communicator.", "evidence": "Q3-A, Q14-A" },
+        { "metric": "Need for Clarity", "score": 90, "interpretation": "High need for clear expectations and defined outcomes.", "evidence": "Q8-A, Q1-A, Q16-A" },
+        { "metric": "Tolerance for Ambiguity", "score": 22, "interpretation": "Low tolerance — ambiguity is a performance barrier, not an opportunity.", "evidence": "Q8-A, Q13-A" },
+        { "metric": "Motivation Source", "score": 80, "interpretation": "Motivated by execution, completion, and tangible results.", "evidence": "Q11-A, Q6-A" },
+        { "metric": "Growth Style / Preferred Feedback", "score": 75, "interpretation": "Grows best through specific, actionable feedback with clear steps.", "evidence": "Q14-A, Q16-A" }
+      ],
+      "dominant_traits": [
+        "Systematic planner who builds structure before acting",
+        "Reliable executor who follows through on commitments",
+        "Frustrated by vagueness, disorganization, or shifting goalposts",
+        "Natural coordinator in group settings",
+        "Measures success by whether the plan worked as designed",
+        "Prefers step-by-step learning over abstract exploration"
+      ],
+      "how_this_person_works": {
+        "ideal_environment": "Calm, organized, and predictable — with clear goals, defined timelines, and minimal last-minute changes.",
+        "preferred_tasks": "Planning projects, setting up systems, tracking deliverables, improving inefficient processes.",
+        "learning_style": "Step-by-step breakdown of new material; needs structure before experimentation.",
+        "decision_style": "Structured comparison of options with defined criteria; distrusts gut-feel decisions.",
+        "preferred_feedback": "Specific, actionable, and tied to concrete improvement steps.",
+        "team_role": "Organizer and coordinator — ensures tasks are assigned, tracked, and completed on time."
+      },
+      "strengths": [
+        { "strength": "Reliable execution", "detail": "Consistently delivers on commitments within defined timelines." },
+        { "strength": "Process design", "detail": "Able to build clear systems that others can follow and replicate." },
+        { "strength": "Accountability", "detail": "Takes ownership of outcomes and holds the team to agreed standards." },
+        { "strength": "Risk reduction", "detail": "Anticipates logistical failure points and plans around them." },
+        { "strength": "Task prioritization", "detail": "Naturally distinguishes between what is urgent, important, and deferrable." }
+      ],
+      "watch_outs": [
+        { "blind_spot": "Over-planning", "detail": "May spend more time structuring than acting, especially in fast-moving situations." },
+        { "blind_spot": "Rigidity under change", "detail": "When plans collapse, may resist pivoting until a full new plan is in place." },
+        { "blind_spot": "Undervaluing creative input", "detail": "May dismiss unstructured ideas as noise rather than raw material." },
+        { "blind_spot": "Low tolerance for colleagues who work differently", "detail": "May clash with improvisational or intuitive teammates who don't follow process." }
+      ],
+      "under_pressure": "Under stress, this person is likely to double down on planning — rebuilding checklists, reasserting timelines, and seeking clarity before moving. When change is abrupt or expectations are unclear, they may stall or become visibly frustrated. Interpersonal friction is addressed logically rather than emotionally; they prefer to define roles and expectations rather than process feelings. Their pressure response is to control what they can through structure.",
+      "best_fit_roles": [
+        "Project Manager",
+        "Operations Coordinator",
+        "Program Analyst",
+        "Process Improvement Specialist",
+        "Compliance or Quality Assurance roles",
+        "Structured research or data management roles"
+      ],
+      "development_advice": [
+        "Practice making low-stakes decisions without a full plan — build comfort with 'good enough' structure.",
+        "Deliberately include one open-ended brainstorm phase before moving to planning in each project.",
+        "Work alongside creative or intuitive colleagues and practice listening before organizing their input.",
+        "When a plan breaks down, set a 10-minute timer before rebuilding — practice sitting briefly with uncertainty.",
+        "Ask for feedback on outcomes, not just process — this stretches toward measuring impact, not just execution."
+      ],
+      "final_snapshot": "This person is most energized by clear goals, well-defined timelines, and the satisfaction of watching a plan execute exactly as designed. They are most frustrated by disorganization, vague expectations, and changes introduced without a new plan. They are most likely to thrive in structured roles where their ability to build systems, coordinate execution, and maintain accountability is directly valued."
+    },
+
+    "B": {
+      "id": "B",
+      "title": "The Original Builder",
+      "archetype": "Creative Initiator",
+      "core_summary": "This person is energized by the blank page. They are at their best when given room to experiment, invent, and express a personal vision — and noticeably constrained when forced to operate inside rigid systems or follow someone else's template. They gravitate toward creative challenges, generate ideas fluidly, and often contribute angles others haven't considered. In teams, they naturally become the idea generator, and they are drawn to work that produces something original rather than something optimized. Their frustration is triggered by rules perceived as arbitrary, feedback that kills rather than evolves ideas, and environments that prioritize compliance over innovation. They make decisions intuitively, trusting what 'feels right' more than formal analysis. Their risk is that high creative energy can come at the expense of follow-through, structure, or sensitivity to team dynamics.",
+      "metrics": [
+        { "metric": "Structure Orientation", "score": 22, "interpretation": "Resists rigid structure; works better with loose frameworks than fixed plans.", "evidence": "Q1-B, Q7-B, Q8-B" },
+        { "metric": "Creativity / Originality Drive", "score": 95, "interpretation": "Creativity is a core motivator across all contexts — work, learning, and recreation.", "evidence": "Q2-B, Q6-B, Q11-B, Q15-B" },
+        { "metric": "People Orientation", "score": 38, "interpretation": "Not primarily people-driven; connection happens through shared creative work.", "evidence": "Q3-B, Q7-B" },
+        { "metric": "Analytical Depth", "score": 42, "interpretation": "Uses intuition more than structured analysis; engages depth through creative exploration.", "evidence": "Q5-B, Q10-B" },
+        { "metric": "Adaptability", "score": 80, "interpretation": "Highly adaptable — sees change as creative opportunity rather than threat.", "evidence": "Q13-B, Q1-B" },
+        { "metric": "Leadership / Coordination Tendency", "score": 48, "interpretation": "Leads through vision and ideas rather than logistics or accountability.", "evidence": "Q12-B, Q4-A" },
+        { "metric": "Independence", "score": 82, "interpretation": "Strong preference for autonomous, self-directed work.", "evidence": "Q7-B, Q9-B, Q1-B" },
+        { "metric": "Collaboration Preference", "score": 40, "interpretation": "Collaborative when ideas are flowing; less comfortable with process-heavy group work.", "evidence": "Q4-A, Q3-B" },
+        { "metric": "Learning Style: Practical vs Conceptual", "score": 55, "interpretation": "Learns by doing and connecting to personal experience — neither purely practical nor theoretical.", "evidence": "Q10-B" },
+        { "metric": "Decision Style: Intuition vs Evidence", "score": 85, "interpretation": "Strongly intuitive — trusts personal judgment and what 'feels right' over data.", "evidence": "Q5-B, Q13-B" },
+        { "metric": "Communication Style", "score": 60, "interpretation": "Expressive and idea-rich; may prioritize vision over precision.", "evidence": "Q3-B, Q14-B" },
+        { "metric": "Need for Clarity", "score": 28, "interpretation": "Tolerates and even enjoys ambiguity; doesn't need everything defined upfront.", "evidence": "Q8-B, Q1-B" },
+        { "metric": "Tolerance for Ambiguity", "score": 85, "interpretation": "High tolerance — ambiguity is creative space, not a problem to solve.", "evidence": "Q13-B, Q8-B" },
+        { "metric": "Motivation Source", "score": 88, "interpretation": "Motivated by expression, originality, and the act of creating something new.", "evidence": "Q11-B, Q6-B, Q15-B" },
+        { "metric": "Growth Style / Preferred Feedback", "score": 70, "interpretation": "Grows best through feedback that challenges and expands creative thinking.", "evidence": "Q14-B, Q16-B" }
+      ],
+      "dominant_traits": [
+        "Idea generator who thrives on originality and experimentation",
+        "Highly autonomous — prefers self-directed work over assigned process",
+        "Strongly intuitive decision-maker",
+        "Energized by blank-slate challenges and creative freedom",
+        "Frustrated by arbitrary constraints and creativity-killing feedback",
+        "Adapts well to change — sees disruption as possibility"
+      ],
+      "how_this_person_works": {
+        "ideal_environment": "Flexible, visually stimulating, with room to experiment and minimal bureaucratic constraints.",
+        "preferred_tasks": "Ideation, concept development, creative production, designing new experiences.",
+        "learning_style": "Connects new material to personal experience or creative analogy; learns through doing.",
+        "decision_style": "Relies heavily on intuition and personal fit; may not naturally seek external data.",
+        "preferred_feedback": "Feedback that opens new creative directions — not corrective checklists.",
+        "team_role": "Idea generator and creative catalyst — best when given a problem and space to explore."
+      },
+      "strengths": [
+        { "strength": "Generative thinking", "detail": "Produces a high volume of original ideas, especially in early-stage or open-ended work." },
+        { "strength": "Adaptive agility", "detail": "Responds to unexpected change with curiosity rather than resistance." },
+        { "strength": "Creative risk-taking", "detail": "Willing to propose unconventional solutions others might dismiss." },
+        { "strength": "Autonomous delivery", "detail": "Can produce meaningful work independently without needing step-by-step direction." },
+        { "strength": "Visual and conceptual communication", "detail": "Strong at presenting ideas through narrative, design, or metaphor." }
+      ],
+      "watch_outs": [
+        { "blind_spot": "Follow-through gaps", "detail": "Generating ideas is energizing; executing the tedious middle stages is not." },
+        { "blind_spot": "Overreliance on intuition", "detail": "May skip evidence-gathering when gut feel is strong, leading to avoidable errors." },
+        { "blind_spot": "Friction with structured teammates", "detail": "May perceive planners or analysts as limiting rather than complementary." },
+        { "blind_spot": "Difficulty prioritizing", "detail": "When all ideas feel exciting, choosing and committing to one path can stall progress." }
+      ],
+      "under_pressure": "Under stress, this person is likely to seek creative escape — doubling down on ideation or switching to a new project rather than grinding through a difficult one. They may resist structure imposed during a crisis, which can create friction with teammates who need order. Interpersonal conflict is uncomfortable and may be avoided through redirection into work. The key pressure risk is disengagement from execution when creative momentum is lost.",
+      "best_fit_roles": [
+        "Creative Director or Designer",
+        "Product Innovator or UX Researcher",
+        "Entrepreneur or Founder",
+        "Content Strategist or Brand Builder",
+        "Creative Educator or Workshop Facilitator",
+        "Innovation Consultant or Design Thinker"
+      ],
+      "development_advice": [
+        "Practice picking one idea and committing to it through completion before starting the next.",
+        "Build a minimum personal process — even one lightweight checklist — to support execution.",
+        "Actively seek data or user feedback before finalizing a creative direction.",
+        "Work with a structured partner who can handle logistics while you focus on vision.",
+        "Ask for feedback that specifically challenges the feasibility of your ideas — not just their originality."
+      ],
+      "final_snapshot": "This person is most energized by creative freedom, blank-slate problems, and the satisfaction of building something original. They are most frustrated by arbitrary rules, rigid processes, and feedback that constrains rather than expands. They are most likely to thrive in roles where innovation is the expectation, autonomy is the norm, and execution support exists around them."
+    },
+
+    "C": {
+      "id": "C",
+      "title": "The Human Connector",
+      "archetype": "People-Centered Collaborator",
+      "core_summary": "This person is motivated by people — their wellbeing, their growth, and their experience of working together. They are socially perceptive, noticing dynamics and emotions that others miss, and they bring warmth and encouragement to group settings. Their energy comes from knowing their work made a difference for someone. In teams, they naturally become the encourager — the person who checks in, mediates tension, and ensures no one is left behind. They prefer collaborative environments and learn best by talking ideas through with others. Their decision-making is informed by people's input and the likely human impact of a choice. Their professional frustration centers on conflict, coldness, or being in environments where people are treated as resources rather than individuals. The primary risk is that their people-focus can make difficult decisions or critical feedback harder to deliver.",
+      "metrics": [
+        { "metric": "Structure Orientation", "score": 42, "interpretation": "Moderate — values enough structure to support people, but not structure for its own sake.", "evidence": "Q1-C, Q9-C" },
+        { "metric": "Creativity / Originality Drive", "score": 38, "interpretation": "Creativity is not a primary motivator; expressed more through relational communication than ideation.", "evidence": "Q6-C, Q2-C" },
+        { "metric": "People Orientation", "score": 95, "interpretation": "Deeply people-centered across all dimensions — learning, decisions, motivation, and environment.", "evidence": "Q3-C, Q5-C, Q7-C, Q11-C, Q15-C" },
+        { "metric": "Analytical Depth", "score": 35, "interpretation": "Analysis is used to understand people and context, not as a primary mode of engagement.", "evidence": "Q10-C, Q5-C" },
+        { "metric": "Adaptability", "score": 58, "interpretation": "Adapts with attention to how change affects others — moderate overall adaptability.", "evidence": "Q13-C" },
+        { "metric": "Leadership / Coordination Tendency", "score": 55, "interpretation": "Leads through relationships and support rather than systems or authority.", "evidence": "Q12-C, Q3-C" },
+        { "metric": "Independence", "score": 30, "interpretation": "Prefers working with or near people; independent work is less energizing.", "evidence": "Q7-C, Q9-C" },
+        { "metric": "Collaboration Preference", "score": 92, "interpretation": "Strong preference for collaborative environments and shared decision-making.", "evidence": "Q5-C, Q9-C, Q10-C" },
+        { "metric": "Learning Style: Practical vs Conceptual", "score": 40, "interpretation": "Learns best through social dialogue — talking, explaining, and listening.", "evidence": "Q10-C" },
+        { "metric": "Decision Style: Intuition vs Evidence", "score": 55, "interpretation": "Mixed — relies on trusted input from others more than personal intuition or pure data.", "evidence": "Q5-C" },
+        { "metric": "Communication Style", "score": 85, "interpretation": "Warm, inclusive communicator who reads the room and adjusts tone accordingly.", "evidence": "Q3-C, Q14-C" },
+        { "metric": "Need for Clarity", "score": 50, "interpretation": "Moderate — needs clarity about roles and relationships more than task structure.", "evidence": "Q8-C, Q1-C" },
+        { "metric": "Tolerance for Ambiguity", "score": 50, "interpretation": "Moderate — ambiguity about people dynamics is harder to tolerate than task ambiguity.", "evidence": "Q13-C, Q8-C" },
+        { "metric": "Motivation Source", "score": 90, "interpretation": "Strongly motivated by human impact and being of service to others.", "evidence": "Q11-C, Q6-C, Q15-C" },
+        { "metric": "Growth Style / Preferred Feedback", "score": 78, "interpretation": "Needs feedback delivered with care and relational trust to receive it well.", "evidence": "Q14-C, Q16-C" }
+      ],
+      "dominant_traits": [
+        "Deeply empathetic — reads the emotional state of a room accurately",
+        "Natural encourager who supports others without being asked",
+        "Motivated by knowing work made a meaningful difference for people",
+        "Collaborative by default — solo work for extended periods is draining",
+        "Conflict-averse — invests energy in keeping group harmony",
+        "Learns by discussing and processing ideas with others"
+      ],
+      "how_this_person_works": {
+        "ideal_environment": "Collaborative, warm, and people-centered with low interpersonal conflict.",
+        "preferred_tasks": "Mentoring, facilitation, team coordination, communication, and roles with direct human impact.",
+        "learning_style": "Social learning — talks through new material, teaches others to consolidate understanding.",
+        "decision_style": "Seeks input from trusted people; considers human impact before finalizing.",
+        "preferred_feedback": "Delivered with care, relational warmth, and sensitivity — not blunt critique.",
+        "team_role": "Encourager and social glue — keeps morale up, notices who needs support."
+      },
+      "strengths": [
+        { "strength": "Interpersonal awareness", "detail": "Notices dynamics, tensions, and unspoken needs before others do." },
+        { "strength": "Trust-building", "detail": "Creates psychological safety in teams through consistent care and attention." },
+        { "strength": "Facilitation", "detail": "Skilled at drawing out quieter voices and ensuring inclusive participation." },
+        { "strength": "Motivating others", "detail": "Encouragement is genuine and has concrete effects on team engagement." },
+        { "strength": "Human-centered communication", "detail": "Adapts message tone and delivery to the audience's emotional state." }
+      ],
+      "watch_outs": [
+        { "blind_spot": "Avoidance of conflict", "detail": "May keep the peace at the cost of addressing real issues that need direct confrontation." },
+        { "blind_spot": "Difficulty with critical feedback", "detail": "May soften or delay honest feedback to protect relationships." },
+        { "blind_spot": "Over-reliance on consensus", "detail": "May struggle to move forward when the group can't agree, waiting too long for alignment." },
+        { "blind_spot": "Self-neglect", "detail": "Strong focus on others' needs can result in personal goals or wellbeing being deprioritized." }
+      ],
+      "under_pressure": "Under stress, this person is likely to focus on interpersonal dynamics first — checking in with teammates, seeking to restore harmony, and ensuring no one feels left behind. If conflict is the source of pressure, they may absorb tension personally and struggle to maintain professional distance. They may avoid necessary confrontations under stress. Change is managed by prioritizing the human side: who is affected, how do they feel, how do we support them.",
+      "best_fit_roles": [
+        "Team Lead or People Manager",
+        "Counselor, Coach, or Mentor",
+        "Community or Nonprofit Program Coordinator",
+        "Human Resources or Learning & Development",
+        "Customer Success or Support",
+        "Healthcare, Education, or Social Work adjacent roles"
+      ],
+      "development_advice": [
+        "Practice delivering direct, specific feedback even when it might cause temporary discomfort.",
+        "Set clear personal goals alongside team goals — ensure your own progress is tracked.",
+        "Build comfort with decisions made without full consensus — some choices require speed over alignment.",
+        "Develop a simple framework for separating professional feedback from personal criticism.",
+        "Seek roles or projects that require some independent work to build self-directed confidence."
+      ],
+      "final_snapshot": "This person is most energized by meaningful collaboration, knowing their work improved someone's experience, and environments where people are genuinely valued. They are most frustrated by interpersonal conflict, cold or transactional team cultures, and feeling disconnected from the human impact of their work. They are most likely to thrive in people-centered roles where relationship-building, facilitation, and emotional intelligence are direct contributors to outcomes."
+    },
+
+    "D": {
+      "id": "D",
+      "title": "The Deep Thinker",
+      "archetype": "Analytical Inquirer",
+      "core_summary": "This person is driven by intellectual depth. They are energized by complex problems, conceptual questions, and the process of understanding how and why things work. They approach new material by studying its underlying logic, and they make decisions by gathering and interrogating evidence rather than relying on gut feel or consensus. In discussions, they tend to probe deeper — asking the question that reframes the conversation. Their frustration surfaces when dialogue stays superficial, when decisions lack reasoning, or when they are expected to accept conclusions without justification. They are not primarily social or creative in their motivation, though analytical depth can coexist with both. Their risk is a tendency toward over-analysis, reluctance to act without complete information, and difficulty communicating complex reasoning to non-analytical audiences.",
+      "metrics": [
+        { "metric": "Structure Orientation", "score": 55, "interpretation": "Moderate — structure is valued when it serves logical clarity, not as an end in itself.", "evidence": "Q1-D, Q9-D" },
+        { "metric": "Creativity / Originality Drive", "score": 45, "interpretation": "Intellectual creativity is present — finds novel angles through analysis rather than imagination.", "evidence": "Q3-D, Q6-D" },
+        { "metric": "People Orientation", "score": 32, "interpretation": "Not people-driven; engages socially through ideas rather than emotion.", "evidence": "Q7-D, Q3-D" },
+        { "metric": "Analytical Depth", "score": 96, "interpretation": "Exceptionally strong — analysis is the primary lens for understanding the world.", "evidence": "Q5-D, Q8-D, Q10-D, Q12-D, Q15-D" },
+        { "metric": "Adaptability", "score": 48, "interpretation": "Adapts after understanding why change happened — needs reasoning before accepting new direction.", "evidence": "Q13-D" },
+        { "metric": "Leadership / Coordination Tendency", "score": 42, "interpretation": "Leads through expertise and insight rather than coordination or authority.", "evidence": "Q12-D, Q4-C" },
+        { "metric": "Independence", "score": 75, "interpretation": "Prefers focused, independent intellectual work with minimal interruption.", "evidence": "Q7-D, Q9-D" },
+        { "metric": "Collaboration Preference", "score": 38, "interpretation": "Collaborates selectively — prefers intellectual exchange over process-based teamwork.", "evidence": "Q10-D, Q5-D" },
+        { "metric": "Learning Style: Practical vs Conceptual", "score": 88, "interpretation": "Strongly conceptual — learns by understanding underlying logic and principles.", "evidence": "Q10-D, Q2-D" },
+        { "metric": "Decision Style: Intuition vs Evidence", "score": 10, "interpretation": "Strongly evidence-based — distrusts decisions made without supporting data.", "evidence": "Q5-D, Q13-D" },
+        { "metric": "Communication Style", "score": 52, "interpretation": "Precise and substantive; may be too dense or technical for general audiences.", "evidence": "Q3-D, Q14-D" },
+        { "metric": "Need for Clarity", "score": 60, "interpretation": "Needs logical clarity and well-reasoned premises more than procedural clarity.", "evidence": "Q8-D, Q1-D" },
+        { "metric": "Tolerance for Ambiguity", "score": 60, "interpretation": "Tolerates ambiguity as a problem to solve — not distressing, but motivating.", "evidence": "Q6-D, Q13-D" },
+        { "metric": "Motivation Source", "score": 88, "interpretation": "Motivated by discovery, insight, and intellectual mastery.", "evidence": "Q11-D, Q6-D, Q15-D" },
+        { "metric": "Growth Style / Preferred Feedback", "score": 82, "interpretation": "Grows through rigorous intellectual challenge and detailed critique of reasoning.", "evidence": "Q14-D, Q16-D" }
+      ],
+      "dominant_traits": [
+        "Analytical by default — processes everything through logic and evidence",
+        "Motivated by intellectual depth, discovery, and complex problem-solving",
+        "Frustrated by shallow thinking, poor reasoning, or unjustified conclusions",
+        "Strongly evidence-based decision maker",
+        "Prefers independent, focused work environments",
+        "Communicates with precision — may need to adapt for non-analytical audiences"
+      ],
+      "how_this_person_works": {
+        "ideal_environment": "Focused, intellectually stimulating, with access to depth and minimal surface-level noise.",
+        "preferred_tasks": "Research, analysis, problem diagnosis, systems thinking, and conceptual framework development.",
+        "learning_style": "Conceptual — studies underlying logic, asks 'why', and maps principles before application.",
+        "decision_style": "Evidence-first — gathers, weighs, and interrogates data before concluding.",
+        "preferred_feedback": "Detailed critique of logic, methodology, and reasoning — not general impressions.",
+        "team_role": "Analyst and intellectual challenger — adds depth, identifies flawed assumptions."
+      },
+      "strengths": [
+        { "strength": "Rigorous analysis", "detail": "Can identify logical gaps, weak assumptions, and hidden variables others miss." },
+        { "strength": "Depth of understanding", "detail": "Learns and explains complex systems with unusual clarity and precision." },
+        { "strength": "Evidence-based judgment", "detail": "Decisions are grounded and traceable — resists groupthink and unsupported consensus." },
+        { "strength": "Intellectual consistency", "detail": "Maintains principled positions and identifies when reasoning is being compromised." },
+        { "strength": "Problem framing", "detail": "Skilled at redefining the question before solving it — finds better problems to solve." }
+      ],
+      "watch_outs": [
+        { "blind_spot": "Analysis paralysis", "detail": "May delay decisions until all evidence is gathered — sometimes speed matters more than completeness." },
+        { "blind_spot": "Communication mismatch", "detail": "Depth-first communication can alienate audiences who need simplicity or emotion first." },
+        { "blind_spot": "Undervaluing intuition and experience", "detail": "May dismiss others' instincts or practical wisdom that lacks formal evidence." },
+        { "blind_spot": "Difficulty with social or political dynamics", "detail": "May be frustrated by decisions made for interpersonal reasons rather than logical ones." }
+      ],
+      "under_pressure": "Under stress, this person is likely to seek more data — researching, verifying, and re-examining assumptions before acting. This can be valuable but can also cause delays. When decisions are made without sufficient evidence or reasoning, they may become visibly skeptical or disengaged. Interpersonal conflict is processed analytically: they want to understand what caused it, not just resolve the emotion. Change is accepted only once they understand the evidence behind it.",
+      "best_fit_roles": [
+        "Research Analyst or Scientist",
+        "Data Analyst or Quantitative Strategist",
+        "Policy Analyst or Evaluator",
+        "Consultant in complex problem domains",
+        "Academic, Theorist, or Knowledge Specialist",
+        "Systems Thinker or Strategic Planner"
+      ],
+      "development_advice": [
+        "Practice making decisions with 80% of ideal information — build tolerance for action under uncertainty.",
+        "Actively translate complex analysis into simple narratives for non-expert audiences.",
+        "Engage with intuitive or creative colleagues as data sources — their pattern recognition has value.",
+        "Set a 'good enough' threshold before gathering more data on recurring decision types.",
+        "Seek feedback on communication clarity, not just content accuracy."
+      ],
+      "final_snapshot": "This person is most energized by intellectually demanding problems, opportunities to go deep on a topic, and environments where rigorous thinking is valued and rewarded. They are most frustrated by superficial reasoning, unjustified decisions, and settings where analysis is dismissed in favor of speed or social convenience. They are most likely to thrive in roles where analytical depth is a competitive advantage and where their ability to find flawed assumptions and build evidence-based conclusions directly shapes outcomes."
+    },
+
+    "AB": {
+      "id": "AB",
+      "title": "The Structured Innovator",
+      "archetype": "Planned Creative",
+      "core_summary": "This person blends a drive for creative originality with a need for enough structure to make ideas real. They are not a pure improviser — they want to build something original, but they also want a plan for getting there. They tend to bring discipline to creative work and imagination to structured challenges, which makes them effective in roles that require both vision and execution. In teams, they can play either the coordinator or the idea generator depending on context. Their frustration is double-edged: pure chaos frustrates them as much as pure rigidity. They need enough freedom to express original ideas and enough structure to feel confident executing them. They are not strongly people-driven, and their motivation centers on the work itself — creating or building something that is both well-designed and original.",
+      "metrics": [
+        { "metric": "Structure Orientation", "score": 65, "interpretation": "Moderate-high — structure is a tool for making creativity executable, not an end in itself.", "evidence": "Q1-A, Q8-A, Q13-A" },
+        { "metric": "Creativity / Originality Drive", "score": 75, "interpretation": "Strong creative drive, channeled through a structured approach.", "evidence": "Q6-B, Q2-B, Q11-B, Q15-B" },
+        { "metric": "People Orientation", "score": 35, "interpretation": "Low — work is the primary focus; people are context rather than motivation.", "evidence": "Q7-B, Q5-A" },
+        { "metric": "Analytical Depth", "score": 48, "interpretation": "Moderate — uses analysis to evaluate creative options, not as a primary mode.", "evidence": "Q10-A, Q5-A" },
+        { "metric": "Adaptability", "score": 58, "interpretation": "Adapts within a framework — creative enough to pivot but needs a new plan first.", "evidence": "Q13-A, Q1-B" },
+        { "metric": "Leadership / Coordination Tendency", "score": 65, "interpretation": "Leads through both vision and coordination — versatile leadership style.", "evidence": "Q4-B, Q12-A or B" },
+        { "metric": "Independence", "score": 72, "interpretation": "Prefers autonomous work with creative latitude and clear deliverables.", "evidence": "Q7-B, Q1-A" },
+        { "metric": "Collaboration Preference", "score": 42, "interpretation": "Collaborates when needed but works best with defined personal scope.", "evidence": "Q9-B, Q4" },
+        { "metric": "Learning Style: Practical vs Conceptual", "score": 38, "interpretation": "Leans practical — learns through doing, with creative personal application.", "evidence": "Q10-A, Q10-B" },
+        { "metric": "Decision Style: Intuition vs Evidence", "score": 52, "interpretation": "Mixed — uses structured comparison for high-stakes decisions, intuition for creative ones.", "evidence": "Q5-A, Q5-B" },
+        { "metric": "Communication Style", "score": 65, "interpretation": "Clear and expressive — communicates both the plan and the vision.", "evidence": "Q3-A or B, Q14-A or B" },
+        { "metric": "Need for Clarity", "score": 62, "interpretation": "Needs clarity on outcomes but tolerates ambiguity in method.", "evidence": "Q8-A, Q1-A" },
+        { "metric": "Tolerance for Ambiguity", "score": 55, "interpretation": "Moderate — tolerates creative ambiguity but not operational ambiguity.", "evidence": "Q13-A, Q8-B" },
+        { "metric": "Motivation Source", "score": 78, "interpretation": "Motivated by building something original and seeing it executed well.", "evidence": "Q11-B, Q6-A or B, Q15-B" },
+        { "metric": "Growth Style / Preferred Feedback", "score": 68, "interpretation": "Benefits from feedback that is both actionable and creatively expanding.", "evidence": "Q14-A or B" }
+      ],
+      "dominant_traits": [
+        "Brings structure to creative work and creativity to structured work",
+        "Prefers autonomous work with clear deliverables and creative latitude",
+        "Motivated by building something both original and well-executed",
+        "Leads through vision and coordination — adaptable leadership style",
+        "Frustrated by pure chaos or pure rigidity in equal measure",
+        "Mixed decision style: structured for high stakes, intuitive for creative"
+      ],
+      "how_this_person_works": {
+        "ideal_environment": "Semi-structured with creative latitude — enough process to execute, enough freedom to invent.",
+        "preferred_tasks": "Project design, creative production with clear deliverables, innovation within a framework.",
+        "learning_style": "Practical and personal — learns by doing and applies creatively.",
+        "decision_style": "Structured for major decisions; intuitive for creative direction.",
+        "preferred_feedback": "Actionable steps with creative alternatives — both dimensions need to be addressed.",
+        "team_role": "Versatile — can coordinate or generate ideas depending on team need."
+      },
+      "strengths": [
+        { "strength": "Execution of creative work", "detail": "Turns original ideas into actual deliverables, not just concepts." },
+        { "strength": "Versatile contribution", "detail": "Can shift between organizer and creator roles depending on team need." },
+        { "strength": "Design thinking", "detail": "Naturally balances aesthetic or conceptual ambition with practical feasibility." },
+        { "strength": "Self-management", "detail": "Manages own creative projects with enough structure to deliver consistently." },
+        { "strength": "Innovation within constraints", "detail": "Finds original solutions even when operating within defined parameters." }
+      ],
+      "watch_outs": [
+        { "blind_spot": "Perfectionism", "detail": "Wanting both creativity and execution quality can lead to over-refinement and delayed delivery." },
+        { "blind_spot": "Low people radar", "detail": "May underestimate the interpersonal dimension of projects while focused on the work." },
+        { "blind_spot": "Internal conflict on decisions", "detail": "The planner and the improviser within can create indecision at key moments." },
+        { "blind_spot": "Impatience with purely process-driven colleagues", "detail": "May find pure executors without creative vision uninspiring to work with." }
+      ],
+      "under_pressure": "Under pressure, this person tends to fall back on whichever tendency is stronger in the moment — sometimes over-planning, sometimes over-improvising. They benefit from a structured creative problem-solving process that lets them feel both organized and generative simultaneously. Interpersonal tension is not their instinct to address — they refocus on the work. Change is manageable if they can design a new approach around it.",
+      "best_fit_roles": [
+        "Creative Project Manager",
+        "Product Designer or UX Lead",
+        "Brand Strategist",
+        "Architect or Industrial Designer",
+        "Innovation Program Manager",
+        "Content or Campaign Director"
+      ],
+      "development_advice": [
+        "Define your creative vision first, then build the plan — don't let planning crowd out the original idea.",
+        "Set explicit 'done' criteria before starting so you know when to stop refining.",
+        "Practice reading team dynamics even when the work is the priority — people factors affect outcomes.",
+        "Use retrospectives to examine whether your plans were too rigid or too loose after projects end.",
+        "Seek projects that require you to hand off execution — this stretches collaborative trust."
+      ],
+      "final_snapshot": "This person is most energized by projects where they can both design the vision and build the plan to achieve it. They are most frustrated by environments that are either chaotically unstructured or oppressively rigid. They are most likely to thrive in roles where creative ambition and execution discipline are both required — and where they have enough autonomy to bring both to bear."
+    },
+
+    "AC": {
+      "id": "AC",
+      "title": "The Organized Ally",
+      "archetype": "Supportive Coordinator",
+      "core_summary": "This person combines a drive for structure with genuine care for the people around them. They are not just organizers — they are organizers who pay attention to how the team is feeling and whether everyone has what they need to succeed. They bring reliability and warmth simultaneously, making them trusted by both leadership (who values their follow-through) and peers (who values their support). In teams, they take on coordination with a human touch — tracking tasks while also noticing when a teammate is struggling. Their decisions tend to blend structured comparison with attention to human impact. They are frustrated by disorganization and by conflict within the team. Their risk is that the combination of high responsibility and high people-sensitivity can lead to overcommitment and difficulty saying no.",
+      "metrics": [
+        { "metric": "Structure Orientation", "score": 78, "interpretation": "High — uses structure to support people, not just to control outcomes.", "evidence": "Q1-A, Q7-A, Q8-A" },
+        { "metric": "Creativity / Originality Drive", "score": 30, "interpretation": "Not a primary driver — prefers proven approaches that reliably help people.", "evidence": "Q2-A or C, Q6-C" },
+        { "metric": "People Orientation", "score": 82, "interpretation": "Strong people focus — motivated by team health and individual support.", "evidence": "Q3-C, Q5-C, Q11-C, Q15-C" },
+        { "metric": "Analytical Depth", "score": 42, "interpretation": "Moderate — analytical enough to plan well, but priority is people outcomes.", "evidence": "Q10-A, Q5-A" },
+        { "metric": "Adaptability", "score": 48, "interpretation": "Adapts by rebuilding the plan with attention to how change affects the team.", "evidence": "Q13-A or C" },
+        { "metric": "Leadership / Coordination Tendency", "score": 78, "interpretation": "Natural team coordinator with a supportive leadership style.", "evidence": "Q12-A or C, Q4-B" },
+        { "metric": "Independence", "score": 45, "interpretation": "Moderate — can work independently but draws energy from team connection.", "evidence": "Q7-A or C, Q9-C" },
+        { "metric": "Collaboration Preference", "score": 80, "interpretation": "Strongly collaborative — most effective when working alongside and for others.", "evidence": "Q5-C, Q9-C, Q3-C" },
+        { "metric": "Learning Style: Practical vs Conceptual", "score": 30, "interpretation": "Practical — learns through doing within a structured, supportive environment.", "evidence": "Q10-A or C" },
+        { "metric": "Decision Style: Intuition vs Evidence", "score": 42, "interpretation": "Combines structured options with people impact — neither purely analytical nor intuitive.", "evidence": "Q5-A and C" },
+        { "metric": "Communication Style", "score": 78, "interpretation": "Warm, clear, and task-relevant — adapts to audience with care.", "evidence": "Q3-C, Q14-C" },
+        { "metric": "Need for Clarity", "score": 78, "interpretation": "High — needs clarity on roles, expectations, and team responsibilities.", "evidence": "Q8-A, Q1-A" },
+        { "metric": "Tolerance for Ambiguity", "score": 32, "interpretation": "Low — ambiguity is stressful, especially when it affects people or deliverables.", "evidence": "Q8-A, Q13-A" },
+        { "metric": "Motivation Source", "score": 82, "interpretation": "Motivated by keeping the team on track and making a meaningful difference for people.", "evidence": "Q11-C, Q6-C, Q15-C" },
+        { "metric": "Growth Style / Preferred Feedback", "score": 72, "interpretation": "Grows through feedback that is actionable and delivered with relational care.", "evidence": "Q14-A or C" }
+      ],
+      "dominant_traits": [
+        "Reliable coordinator who also attends to team wellbeing",
+        "Motivated by both execution and human impact",
+        "Trusted by leadership for follow-through and by peers for support",
+        "Frustrated by disorganization and interpersonal conflict simultaneously",
+        "Learns and works best in structured collaborative environments",
+        "Risk of overcommitment due to high responsibility + high care"
+      ],
+      "how_this_person_works": {
+        "ideal_environment": "Organized, collaborative, and interpersonally positive — where everyone has clear roles and feels supported.",
+        "preferred_tasks": "Team coordination, planning, onboarding, people operations, structured support roles.",
+        "learning_style": "Practical and social — benefits from structured training with collaborative application.",
+        "decision_style": "Weighs structured options against human impact; consults trusted people.",
+        "preferred_feedback": "Actionable and delivered with relational care — not blunt, not vague.",
+        "team_role": "Coordinator with heart — organizes while actively supporting team members."
+      },
+      "strengths": [
+        { "strength": "Dependable coordination", "detail": "People and plans both stay on track when this person is involved." },
+        { "strength": "Team health awareness", "detail": "Notices morale and interpersonal tension early and takes action." },
+        { "strength": "Trusted communication", "detail": "Delivers both task updates and emotional support in a way others trust." },
+        { "strength": "Follow-through with care", "detail": "Combines accountability with sensitivity — delivers without bulldozing." },
+        { "strength": "Organizational memory", "detail": "Tracks commitments, relationships, and context over time." }
+      ],
+      "watch_outs": [
+        { "blind_spot": "Overcommitment", "detail": "High responsibility plus high care makes it hard to say no — capacity can be exceeded." },
+        { "blind_spot": "Difficulty delegating", "detail": "May hold on to coordination tasks to ensure both quality and people outcomes." },
+        { "blind_spot": "Conflict avoidance", "detail": "People-sensitivity may delay addressing real performance or tension issues." },
+        { "blind_spot": "Under-representing own needs", "detail": "Focuses so much on others that personal goals and recognition are deprioritized." }
+      ],
+      "under_pressure": "Under stress, this person tries to hold both the plan and the people together — a demanding position. They may absorb team tension personally and struggle to separate their identity from the team's success. If forced to choose between hitting a deadline and protecting a teammate, they will feel the tension acutely. They are unlikely to disengage but may become over-functioning and fatigued.",
+      "best_fit_roles": [
+        "Team Lead or Project Coordinator",
+        "Program Manager with people focus",
+        "HR Business Partner",
+        "Learning & Development Coordinator",
+        "Community Manager",
+        "Operations role within a people-centered organization"
+      ],
+      "development_advice": [
+        "Practice setting clear limits on your scope — not every problem needs to be yours to solve.",
+        "Develop a process for surfacing difficult feedback early, before it becomes a larger issue.",
+        "Build in regular personal reflection time to assess your own goals, not just the team's.",
+        "Delegate by outcome rather than method — trust others to find their own path to delivery.",
+        "Seek roles that explicitly value both operational excellence and people leadership — don't settle for just one."
+      ],
+      "final_snapshot": "This person is most energized by organized, caring team environments where they can both coordinate effectively and support the people around them. They are most frustrated by disorganization, interpersonal conflict, and environments where people are treated as interchangeable. They are most likely to thrive when given a coordination role within a people-centered organization that values both reliability and warmth."
+    },
+
+    "AD": {
+      "id": "AD",
+      "title": "The Systems Thinker",
+      "archetype": "Analytical Planner",
+      "core_summary": "This person brings together structured planning and analytical rigor to produce work that is both organized and deeply grounded in evidence. They are methodical without being rigid — they build plans informed by logic, interrogate assumptions before acting, and seek to understand the 'why' beneath any process or decision. They are not primarily social or creative, but they are intellectually curious within well-defined problem spaces. In teams, they gravitate toward the analyst and coordinator roles simultaneously — ensuring the work is both logically sound and well-managed. Their frustration surfaces when either the plan or the reasoning falls apart. They are high-confidence decision-makers when evidence is available and structured — and reluctant when it isn't.",
+      "metrics": [
+        { "metric": "Structure Orientation", "score": 80, "interpretation": "High — plans are built on logical foundations, not just habit or preference.", "evidence": "Q1-A, Q8-A, Q7-A" },
+        { "metric": "Creativity / Originality Drive", "score": 28, "interpretation": "Low — originality is less important than correctness and efficiency.", "evidence": "Q6-A or D, Q2-A or D" },
+        { "metric": "People Orientation", "score": 28, "interpretation": "Low — people are important context but not the primary motivator.", "evidence": "Q7-A or D, Q5-A or D" },
+        { "metric": "Analytical Depth", "score": 88, "interpretation": "Very strong — analysis informs every stage of planning and execution.", "evidence": "Q5-D, Q8-D, Q10-D, Q12-D" },
+        { "metric": "Adaptability", "score": 42, "interpretation": "Low-moderate — adapts only once the new plan has been rebuilt with evidence.", "evidence": "Q13-A or D" },
+        { "metric": "Leadership / Coordination Tendency", "score": 65, "interpretation": "Leads through analytical credibility and structured coordination.", "evidence": "Q12-A or D, Q4-B or C" },
+        { "metric": "Independence", "score": 78, "interpretation": "High — prefers focused, self-directed analytical work.", "evidence": "Q7-D, Q9-D or A" },
+        { "metric": "Collaboration Preference", "score": 38, "interpretation": "Low-moderate — collaborates on well-defined analytical tasks, not open-ended group work.", "evidence": "Q5-A or D, Q10-A or D" },
+        { "metric": "Learning Style: Practical vs Conceptual", "score": 68, "interpretation": "Mixed — combines step-by-step breakdown with conceptual understanding of logic.", "evidence": "Q10-A and D" },
+        { "metric": "Decision Style: Intuition vs Evidence", "score": 15, "interpretation": "Strongly evidence-based — intuition is viewed as a data point, not a conclusion.", "evidence": "Q5-D, Q13-D" },
+        { "metric": "Communication Style", "score": 55, "interpretation": "Precise and structured — clear but may be dense for less analytical audiences.", "evidence": "Q3-A or D, Q14-A or D" },
+        { "metric": "Need for Clarity", "score": 82, "interpretation": "High — needs both logical and procedural clarity.", "evidence": "Q8-A and D, Q1-A" },
+        { "metric": "Tolerance for Ambiguity", "score": 28, "interpretation": "Low — ambiguity is a problem to solve through more analysis and planning.", "evidence": "Q8-A, Q13-A or D" },
+        { "metric": "Motivation Source", "score": 80, "interpretation": "Motivated by solving well-defined problems with rigor and executing the solution.", "evidence": "Q11-A or D, Q6-A or D, Q15-D" },
+        { "metric": "Growth Style / Preferred Feedback", "score": 80, "interpretation": "Grows through detailed critique of both reasoning and execution steps.", "evidence": "Q14-A and D" }
+      ],
+      "dominant_traits": [
+        "Builds plans on logical foundations — every step is justified",
+        "Strongly evidence-based decision maker",
+        "Works best in focused, organized, intellectually demanding environments",
+        "Frustrated by both disorganization and poor reasoning",
+        "Leads through analytical credibility",
+        "Low tolerance for ambiguity — resolves it through more analysis"
+      ],
+      "how_this_person_works": {
+        "ideal_environment": "Focused, organized, and intellectually rigorous — with clear goals and access to quality data.",
+        "preferred_tasks": "Systems analysis, strategic planning, research-based decision-making, process optimization.",
+        "learning_style": "Step-by-step with conceptual grounding — needs to understand both how and why.",
+        "decision_style": "Structured evidence gathering followed by systematic comparison.",
+        "preferred_feedback": "Detailed, specific, and grounded in logic — critique of both reasoning and execution.",
+        "team_role": "Analyst-coordinator — ensures the work is both analytically sound and well-planned."
+      },
+      "strengths": [
+        { "strength": "Rigorous planning", "detail": "Plans are evidence-informed, logically structured, and pressure-tested." },
+        { "strength": "Analytical decision-making", "detail": "Brings systematic evidence to high-stakes decisions and resists unjustified conclusions." },
+        { "strength": "Systems design", "detail": "Understands how parts of a system interact and designs for reliability." },
+        { "strength": "Intellectual credibility", "detail": "Earns trust through the quality of reasoning, not just authority." },
+        { "strength": "Risk identification", "detail": "Anticipates logical failure points in plans before they materialize." }
+      ],
+      "watch_outs": [
+        { "blind_spot": "Analysis paralysis under time pressure", "detail": "May delay action until an ideally evidenced plan exists — which often isn't possible." },
+        { "blind_spot": "Low people sensitivity", "detail": "May underweight human factors in plans that depend on team cooperation." },
+        { "blind_spot": "Communication gap", "detail": "Rigorous logic delivered too densely can lose non-analytical stakeholders." },
+        { "blind_spot": "Difficulty with creative ambiguity", "detail": "Open-ended, unstructured creative problems may feel frustrating rather than stimulating." }
+      ],
+      "under_pressure": "Under stress, this person seeks more information and more structure simultaneously. If data is unavailable, they may stall. If the plan collapses without evidence for a new direction, they become frustrated. They benefit from a defined 'good enough' decision threshold and explicit permission to act with incomplete information. Interpersonal pressure is processed analytically — they want root causes and logical solutions, not just restored harmony.",
+      "best_fit_roles": [
+        "Strategy Analyst or Corporate Planner",
+        "Data Scientist or Business Intelligence Analyst",
+        "Operations Research Specialist",
+        "Management Consultant (analytical focus)",
+        "Risk or Compliance Analyst",
+        "Systems Architect or Process Engineer"
+      ],
+      "development_advice": [
+        "Set explicit 'good enough' evidence thresholds before starting research — prevent endless data gathering.",
+        "Practice presenting analysis in narrative form for non-analytical audiences.",
+        "Build empathy for team dynamics by deliberately asking about people's experience of the plan.",
+        "Find a creative collaborator — their input can surface solutions your analysis might overlook.",
+        "Seek roles that require both planning and stakeholder communication to develop both muscles equally."
+      ],
+      "final_snapshot": "This person is most energized by complex, well-defined problems that can be solved through systematic analysis and structured planning. They are most frustrated by vague expectations, poor reasoning, and environments that reward instinct over evidence. They are most likely to thrive in roles where analytical rigor directly informs decisions and where their ability to build evidence-based plans translates into measurable results."
+    },
+
+    "BC": {
+      "id": "BC",
+      "title": "The Empathic Innovator",
+      "archetype": "Creative Humanist",
+      "core_summary": "This person is driven by a combination of creative expression and genuine care for people. They are most energized when their ideas serve a real human need — when creativity is not just aesthetic but meaningful. They thrive in environments where they can experiment, collaborate, and make a visible difference in people's experience. In teams, they bring both original ideas and social warmth, making them effective at moving groups forward through both inspiration and connection. Their decisions tend to be intuitive and shaped by human values. They are frustrated by rigid systems that limit both expression and empathy, and by environments that treat people as metrics. The risk is that the desire to create something meaningful for people can make it difficult to act without full emotional alignment from the group.",
+      "metrics": [
+        { "metric": "Structure Orientation", "score": 28, "interpretation": "Low — structure is accepted as a vehicle but not valued intrinsically.", "evidence": "Q1-B or C, Q8-B" },
+        { "metric": "Creativity / Originality Drive", "score": 82, "interpretation": "Strong creative drive, most alive when serving a human purpose.", "evidence": "Q2-B, Q6-B, Q11-B, Q15-B" },
+        { "metric": "People Orientation", "score": 85, "interpretation": "High — people are both the audience and the motivation for creative work.", "evidence": "Q3-C, Q5-C, Q7-C, Q11-C" },
+        { "metric": "Analytical Depth", "score": 35, "interpretation": "Moderate-low — uses empathy and intuition more than formal analysis.", "evidence": "Q5-B or C, Q10-B or C" },
+        { "metric": "Adaptability", "score": 75, "interpretation": "High — adapts fluidly and checks in on how others are experiencing the change.", "evidence": "Q13-B or C" },
+        { "metric": "Leadership / Coordination Tendency", "score": 55, "interpretation": "Leads through vision and encouragement — inspires rather than manages.", "evidence": "Q12-B or C" },
+        { "metric": "Independence", "score": 52, "interpretation": "Mixed — can work independently on creative output but draws energy from people.", "evidence": "Q7-B or C, Q9-B or C" },
+        { "metric": "Collaboration Preference", "score": 78, "interpretation": "Strong — best creative work happens through or for people.", "evidence": "Q5-C, Q10-C, Q9-C" },
+        { "metric": "Learning Style: Practical vs Conceptual", "score": 48, "interpretation": "Learns by doing and by relating material to people and stories.", "evidence": "Q10-B or C" },
+        { "metric": "Decision Style: Intuition vs Evidence", "score": 75, "interpretation": "Strongly intuitive — values what feels right for people over formal data.", "evidence": "Q5-B or C, Q13-B" },
+        { "metric": "Communication Style", "score": 80, "interpretation": "Expressive and emotionally resonant — communicates with warmth and originality.", "evidence": "Q3-B or C, Q14-C" },
+        { "metric": "Need for Clarity", "score": 32, "interpretation": "Low — is comfortable beginning without full definition.", "evidence": "Q1-B or C, Q8-B" },
+        { "metric": "Tolerance for Ambiguity", "score": 75, "interpretation": "High — ambiguity is creative and relational space to explore.", "evidence": "Q13-B, Q8-B" },
+        { "metric": "Motivation Source", "score": 88, "interpretation": "Motivated by creating meaningful experiences for real people.", "evidence": "Q11-B and C, Q6-B and C, Q15-B or C" },
+        { "metric": "Growth Style / Preferred Feedback", "score": 72, "interpretation": "Grows best through warm, creatively oriented feedback that connects to purpose.", "evidence": "Q14-B or C" }
+      ],
+      "dominant_traits": [
+        "Creates with people in mind — purpose-driven creative work",
+        "Brings both inspiration and warmth to teams",
+        "Strongly intuitive — trusts what feels right for the people involved",
+        "Frustrated by rigid systems and cold, transactional environments",
+        "Adapts with empathy — checks impact on others when things change",
+        "Learns through story, dialogue, and human connection"
+      ],
+      "how_this_person_works": {
+        "ideal_environment": "Creative, collaborative, and people-centered with space for experimentation.",
+        "preferred_tasks": "Human-centered design, storytelling, creative facilitation, community work, UX.",
+        "learning_style": "Social and experiential — learns through discussion, narrative, and shared reflection.",
+        "decision_style": "Intuitively guided by values and human impact.",
+        "preferred_feedback": "Warm, creatively expansive, and connected to the purpose of the work.",
+        "team_role": "Creative catalyst and relational connector — generates ideas and maintains group energy."
+      },
+      "strengths": [
+        { "strength": "Purpose-driven creativity", "detail": "Ideas are grounded in real human needs, not just aesthetic interest." },
+        { "strength": "Emotional intelligence in creative contexts", "detail": "Reads and responds to the human dimension of creative challenges." },
+        { "strength": "Inspirational communication", "detail": "Rallies people around a vision with genuine warmth and resonant language." },
+        { "strength": "Adaptive collaboration", "detail": "Adjusts creative direction based on what the group needs, not just personal vision." },
+        { "strength": "Community-building through work", "detail": "Creates environments where people feel both creatively inspired and personally valued." }
+      ],
+      "watch_outs": [
+        { "blind_spot": "Difficulty with structure and follow-through", "detail": "Strong creative-social energy can make the tedious execution phase feel draining." },
+        { "blind_spot": "Emotional over-identification with work", "detail": "When creative work is also personal and people-driven, criticism hits harder." },
+        { "blind_spot": "Consensus dependency", "detail": "May wait for full emotional alignment from the group before committing to a creative direction." },
+        { "blind_spot": "Underweighting data and logic", "detail": "Intuition and empathy are powerful but can miss structural or evidential blind spots." }
+      ],
+      "under_pressure": "Under stress, this person seeks creative outlets and human connection simultaneously. They may feel torn between wanting to fix the work and wanting to repair the team's morale. Tension or conflict within the team affects them personally and may distract from the task. They benefit from a trusted analytical or structured partner who can manage logistics while they focus on vision and people.",
+      "best_fit_roles": [
+        "UX Designer or Design Researcher",
+        "Creative Director in mission-driven organizations",
+        "Facilitator or Experience Designer",
+        "Social Impact Strategist",
+        "Community Manager or Engagement Lead",
+        "Educator or Learning Experience Designer"
+      ],
+      "development_advice": [
+        "Build a minimal execution framework so creative ideas make it to delivery.",
+        "Practice separating feedback on the work from feedback on you as a person.",
+        "Engage with data about your audience — let evidence complement your empathy.",
+        "Set decision deadlines so creative-emotional alignment doesn't delay action indefinitely.",
+        "Find a structured partner for projects — your vision paired with their execution creates something neither could alone."
+      ],
+      "final_snapshot": "This person is most energized by creative work that makes a real difference for real people, in environments where both ideas and individuals are treated with care. They are most frustrated by rigid systems, cold environments, and creative work stripped of human purpose. They are most likely to thrive in roles where human-centered design, creative collaboration, and genuine impact are all part of the job."
+    },
+
+    "BD": {
+      "id": "BD",
+      "title": "The Creative Analyst",
+      "archetype": "Conceptual Explorer",
+      "core_summary": "This person operates at the intersection of intellectual curiosity and creative expression. They are energized by complex, open-ended problems that allow both original thinking and deep analysis. They resist simple answers and conventional approaches, preferring to interrogate assumptions and design unconventional solutions. In teams, they contribute as both idea generator and intellectual challenger — often the person who asks the question that reframes the conversation. They are not primarily structure- or people-driven, though they may develop strong views and articulate them with precision. Their decisions combine intuitive pattern recognition with rigorous follow-up analysis. The risk is that their combination of creative and analytical depth can make it difficult to commit to a single direction or communicate complexity to broader audiences.",
+      "metrics": [
+        { "metric": "Structure Orientation", "score": 30, "interpretation": "Low — structure is resisted unless it serves intellectual or creative exploration.", "evidence": "Q1-B or D, Q8-B or D" },
+        { "metric": "Creativity / Originality Drive", "score": 85, "interpretation": "High — seeks original, non-obvious approaches to complex problems.", "evidence": "Q2-B, Q6-B or D, Q11-B or D" },
+        { "metric": "People Orientation", "score": 28, "interpretation": "Low — motivated by ideas and problems, not primarily by people.", "evidence": "Q7-B or D, Q5-B or D" },
+        { "metric": "Analytical Depth", "score": 88, "interpretation": "Very high — deep analysis is the foundation of all creative output.", "evidence": "Q5-D, Q8-D, Q10-D, Q12-D" },
+        { "metric": "Adaptability", "score": 78, "interpretation": "High — change is intellectually interesting and potentially full of creative opportunity.", "evidence": "Q13-B or D" },
+        { "metric": "Leadership / Coordination Tendency", "score": 42, "interpretation": "Leads through intellectual influence — ideas and arguments rather than coordination.", "evidence": "Q12-B or D" },
+        { "metric": "Independence", "score": 85, "interpretation": "Very high — prefers autonomous exploration with minimal external constraint.", "evidence": "Q7-B or D, Q9-B or D" },
+        { "metric": "Collaboration Preference", "score": 38, "interpretation": "Selective — values intellectual sparring but not process-driven group work.", "evidence": "Q5-D, Q10-D" },
+        { "metric": "Learning Style: Practical vs Conceptual", "score": 78, "interpretation": "Strongly conceptual with a creative twist — learns through principles and personal insight.", "evidence": "Q10-B or D" },
+        { "metric": "Decision Style: Intuition vs Evidence", "score": 55, "interpretation": "Mixed — intuition generates hypotheses; analysis tests them.", "evidence": "Q5-B and D" },
+        { "metric": "Communication Style", "score": 58, "interpretation": "Precise and original — communicates with depth and occasional unexpectedness.", "evidence": "Q3-B or D, Q14-B or D" },
+        { "metric": "Need for Clarity", "score": 28, "interpretation": "Low — prefers open-ended problems and emergent clarity.", "evidence": "Q8-B or D, Q1-B or D" },
+        { "metric": "Tolerance for Ambiguity", "score": 85, "interpretation": "High — ambiguity is the starting condition for the most interesting work.", "evidence": "Q13-B, Q6-D" },
+        { "metric": "Motivation Source", "score": 88, "interpretation": "Motivated by intellectual discovery expressed through original output.", "evidence": "Q11-B or D, Q15-B or D" },
+        { "metric": "Growth Style / Preferred Feedback", "score": 75, "interpretation": "Grows through feedback that challenges both creative direction and underlying logic.", "evidence": "Q14-B and D" }
+      ],
+      "dominant_traits": [
+        "Thrives at the intersection of deep analysis and creative originality",
+        "Highly autonomous and intellectually self-directed",
+        "Strongly tolerant of ambiguity — most energized by complex, open problems",
+        "Decision-making combines intuitive hypothesis and rigorous follow-through",
+        "Contributes as both idea generator and intellectual challenger in teams",
+        "Risk of over-complexity and difficulty with communication to general audiences"
+      ],
+      "how_this_person_works": {
+        "ideal_environment": "Unstructured, intellectually rich, with creative and analytical freedom.",
+        "preferred_tasks": "Research-driven design, conceptual problem-solving, innovation, analysis of complex systems.",
+        "learning_style": "Conceptual and creative — reads deeply, connects disparate ideas, learns through intellectual synthesis.",
+        "decision_style": "Intuition sparks the direction; analysis validates it.",
+        "preferred_feedback": "Challenges to both the originality and the rigor of the work — expects intellectual engagement.",
+        "team_role": "Creative thinker and analytical challenger — adds unconventional depth."
+      },
+      "strengths": [
+        { "strength": "Conceptual synthesis", "detail": "Connects ideas across domains to produce original, well-reasoned frameworks." },
+        { "strength": "Intellectual courage", "detail": "Challenges prevailing assumptions rather than accepting them as given." },
+        { "strength": "Complex problem exploration", "detail": "Finds the right question before the right answer — a rare skill in most settings." },
+        { "strength": "Versatile creativity", "detail": "Can produce both analytical frameworks and original creative output." },
+        { "strength": "Independent depth", "detail": "Produces substantive, layered work without needing external input at every stage." }
+      ],
+      "watch_outs": [
+        { "blind_spot": "Over-complexity", "detail": "May produce solutions too nuanced for the actual problem or audience." },
+        { "blind_spot": "Commitment difficulty", "detail": "When all directions feel intellectually interesting, choosing one and closing others is hard." },
+        { "blind_spot": "Communication gap", "detail": "Deep creative-analytical thinking can be difficult to translate for broader stakeholders." },
+        { "blind_spot": "Undervaluing execution and follow-through", "detail": "The thinking and designing phases are energizing; the grinding execution is not." }
+      ],
+      "under_pressure": "Under stress, this person may retreat into deeper analysis or ideation — exploring rather than deciding. The pressure to commit to a direction without full intellectual confidence may produce visible discomfort. They work best with a clear decision deadline and a structured collaborator who can hold accountability for delivery while they retain creative-analytical ownership of direction.",
+      "best_fit_roles": [
+        "Design Researcher or Innovation Strategist",
+        "Philosopher, Theorist, or Academic",
+        "Data Scientist with a creative product focus",
+        "User Experience Researcher",
+        "Policy Designer or Futures Thinker",
+        "Creative Technologist or Systems Designer"
+      ],
+      "development_advice": [
+        "Practice translating complex ideas into simple, actionable language for diverse audiences.",
+        "Set time-boxed analysis phases so intellectual depth doesn't become indefinite delay.",
+        "Develop a commitment practice — choose a direction, write down the tradeoffs accepted, and move forward.",
+        "Seek roles or projects where execution partners are available — your thinking is the asset.",
+        "Ask for feedback specifically on whether your output is actionable, not just insightful."
+      ],
+      "final_snapshot": "This person is most energized by open-ended problems that allow them to think deeply, experiment freely, and produce work that is both rigorously reasoned and creatively original. They are most frustrated by superficial problems, rigid constraints, and environments that reward speed over substance. They are most likely to thrive in roles where intellectual depth and creative ambition are both valued — and where execution support exists to bring their ideas to life."
+    },
+
+    "CD": {
+      "id": "CD",
+      "title": "The Insightful Ally",
+      "archetype": "Empathic Analyst",
+      "core_summary": "This person combines genuine care for people with a drive for intellectual depth. They want to understand not just what is happening but why — and they bring that understanding to bear in service of the people around them. They are neither the loudest person in the room nor the most procedural — they are the thoughtful presence that asks the right question and genuinely listens to the answer. In teams, they serve as both encourager and analyst — the person who notices what others have missed and responds with both insight and care. Their decisions combine evidence with human impact. They are frustrated by superficial answers and by environments that ignore people's experience. The risk is a tendency to over-analyze emotionally charged situations, or to delay decisions while seeking both the right data and the right human response.",
+      "metrics": [
+        { "metric": "Structure Orientation", "score": 40, "interpretation": "Moderate-low — structure is used when it supports people and understanding.", "evidence": "Q1-C or D, Q9-D or C" },
+        { "metric": "Creativity / Originality Drive", "score": 40, "interpretation": "Moderate — intellectual creativity is present through reframing, not aesthetic expression.", "evidence": "Q3-D, Q6-D" },
+        { "metric": "People Orientation", "score": 82, "interpretation": "Strong — analysis always has a human dimension and purpose.", "evidence": "Q3-C, Q5-C, Q11-C, Q15-C" },
+        { "metric": "Analytical Depth", "score": 82, "interpretation": "Very strong — seeks depth in understanding both systems and people.", "evidence": "Q5-D, Q8-D, Q10-D, Q12-D" },
+        { "metric": "Adaptability", "score": 55, "interpretation": "Moderate — adapts by checking people impact and understanding what changed.", "evidence": "Q13-C or D" },
+        { "metric": "Leadership / Coordination Tendency", "score": 48, "interpretation": "Leads through insight and relational trust — not through systems or authority.", "evidence": "Q12-C or D" },
+        { "metric": "Independence", "score": 55, "interpretation": "Mixed — can work independently but draws meaning from impact on others.", "evidence": "Q7-C or D, Q9-D" },
+        { "metric": "Collaboration Preference", "score": 70, "interpretation": "High — collaboration is both intellectually and emotionally energizing.", "evidence": "Q5-C, Q10-C" },
+        { "metric": "Learning Style: Practical vs Conceptual", "score": 65, "interpretation": "Leans conceptual but grounded in real human contexts.", "evidence": "Q10-C or D" },
+        { "metric": "Decision Style: Intuition vs Evidence", "score": 35, "interpretation": "Leans evidence-based but weighted by human impact.", "evidence": "Q5-C and D" },
+        { "metric": "Communication Style", "score": 75, "interpretation": "Thoughtful, precise, and warm — rare combination that builds trust.", "evidence": "Q3-C or D, Q14-C or D" },
+        { "metric": "Need for Clarity", "score": 50, "interpretation": "Moderate — needs clarity about purpose and human stakes more than procedure.", "evidence": "Q8-C and D, Q1-C or D" },
+        { "metric": "Tolerance for Ambiguity", "score": 55, "interpretation": "Moderate — can sit with ambiguity if the human dimension is understood.", "evidence": "Q13-C or D" },
+        { "metric": "Motivation Source", "score": 88, "interpretation": "Motivated by insightful understanding that genuinely improves things for people.", "evidence": "Q11-C and D, Q6-C and D, Q15-C or D" },
+        { "metric": "Growth Style / Preferred Feedback", "score": 80, "interpretation": "Grows through substantive critique delivered with relational care.", "evidence": "Q14-C and D" }
+      ],
+      "dominant_traits": [
+        "Combines analytical depth with genuine empathy",
+        "Motivated by insight that serves a real human purpose",
+        "Thoughtful communicator — precise and warm simultaneously",
+        "Frustrated by both shallow thinking and cold, transactional environments",
+        "Collaborative by preference, reflective by instinct",
+        "Leads through trust and insight rather than authority"
+      ],
+      "how_this_person_works": {
+        "ideal_environment": "Intellectually stimulating and interpersonally safe — where depth and care are both valued.",
+        "preferred_tasks": "Research with human application, facilitation, mentoring with intellectual rigor, evaluation.",
+        "learning_style": "Conceptual with social grounding — learns by discussing, questioning, and connecting to real cases.",
+        "decision_style": "Evidence-weighted, with attention to human impact at every stage.",
+        "preferred_feedback": "Detailed, substantive, and delivered with relational care — both dimensions matter.",
+        "team_role": "Thoughtful analyst and relational anchor — brings depth and holds the team together emotionally."
+      },
+      "strengths": [
+        { "strength": "Dual-lens analysis", "detail": "Examines problems through both logical and human dimensions simultaneously." },
+        { "strength": "Trusted intellectual presence", "detail": "People seek their perspective because it is both rigorous and empathetic." },
+        { "strength": "Insightful questioning", "detail": "Identifies the deeper question behind the surface problem." },
+        { "strength": "Evidence + impact integration", "detail": "Grounds decisions in data without losing sight of who is affected." },
+        { "strength": "Psychological safety creation", "detail": "Creates environments where people feel safe to think carefully and honestly." }
+      ],
+      "watch_outs": [
+        { "blind_spot": "Over-analysis of emotionally charged situations", "detail": "May seek to fully understand a human situation before acting — slowing response when speed matters." },
+        { "blind_spot": "Dual-standard for decisions", "detail": "Wanting both full evidence and full human alignment may create decision delay." },
+        { "blind_spot": "Under-assertiveness", "detail": "Warmth and care may soften positions that need to be held with more firmness." },
+        { "blind_spot": "Difficulty with environments that separate thinking from caring", "detail": "May struggle in purely analytical or purely social environments where neither alone satisfies." }
+      ],
+      "under_pressure": "Under stress, this person seeks both more information and more human connection — they want to understand what is happening and how people are experiencing it. If forced to choose between speed and thoroughness, they will feel the tension acutely. Interpersonal conflict is processed carefully and personally. They benefit from environments that allow them to take the time they need and have trusted colleagues to think through decisions with.",
+      "best_fit_roles": [
+        "Organizational Psychologist or People Researcher",
+        "UX Researcher or Human Factors Analyst",
+        "Academic or Applied Researcher in social sciences",
+        "Learning & Development Specialist",
+        "Evaluator or Program Analyst in social impact",
+        "Executive Coach or Strategic Advisor"
+      ],
+      "development_advice": [
+        "Develop a 'fast enough' decision protocol for situations that require speed over depth.",
+        "Practice holding positions under pressure — insight without assertiveness limits influence.",
+        "Build comfort with environments where analysis is separated from emotional context.",
+        "Actively share analytical conclusions even before full emotional alignment is established.",
+        "Seek feedback that specifically tests the rigor of your reasoning, not just the warmth of your delivery."
+      ],
+      "final_snapshot": "This person is most energized by intellectually demanding work that has genuine human stakes — problems worth understanding deeply because real people are affected. They are most frustrated by shallow thinking, cold environments, and settings that separate rigorous analysis from human purpose. They are most likely to thrive in roles where analytical depth and interpersonal sensitivity are both valued, and where their ability to understand both the problem and the people drives meaningful outcomes."
+    },
+
+    "ABC": {
+      "id": "ABC",
+      "title": "The Creative Team Builder",
+      "archetype": "Adaptive Social Creator",
+      "core_summary": "This person brings structure, creativity, and people-awareness together in a rare combination. They can plan, invent, and connect — shifting between roles as the situation demands. They tend to be versatile team contributors who are equally effective at generating ideas, coordinating people, and ensuring follow-through. Their motivation is both intrinsic (creative expression) and extrinsic (impact on people). The risk of this pattern is diffusion: trying to be everything at once can lead to a lack of a defining strength or difficulty knowing when to let others lead. They need environments that reward versatility and are likely to underperform in roles that demand singular focus on only one dimension.",
+      "metrics": [
+        { "metric": "Structure Orientation", "score": 55, "interpretation": "Moderate — used as a tool to organize creative and collaborative work.", "evidence": "Q1-A, Q8-A" },
+        { "metric": "Creativity / Originality Drive", "score": 72, "interpretation": "Strong creative presence, channeled through collaboration and purpose.", "evidence": "Q2-B, Q6-B, Q11-B" },
+        { "metric": "People Orientation", "score": 78, "interpretation": "High — creative work is deeply connected to human impact and team dynamics.", "evidence": "Q3-C, Q5-C, Q11-C" },
+        { "metric": "Analytical Depth", "score": 38, "interpretation": "Moderate-low — uses enough analysis to support creative and people-driven decisions.", "evidence": "Q5-A or B, Q10-A" },
+        { "metric": "Adaptability", "score": 68, "interpretation": "Good — adapts with attention to both the creative opportunity and the team.", "evidence": "Q13-B or C" },
+        { "metric": "Leadership / Coordination Tendency", "score": 70, "interpretation": "Versatile leader — inspires, organizes, and supports depending on need.", "evidence": "Q12-A or B or C" },
+        { "metric": "Independence", "score": 48, "interpretation": "Moderate — capable of solo work but most alive in collaborative creation.", "evidence": "Q7-B or C, Q9-B or C" },
+        { "metric": "Collaboration Preference", "score": 80, "interpretation": "Strong — collaboration is both energizing and productive.", "evidence": "Q5-C, Q9-C, Q10-C" },
+        { "metric": "Learning Style: Practical vs Conceptual", "score": 42, "interpretation": "Practical with creative and social application.", "evidence": "Q10-A or B or C" },
+        { "metric": "Decision Style: Intuition vs Evidence", "score": 60, "interpretation": "Intuitive, shaped by people input and personal creative fit.", "evidence": "Q5-B or C" },
+        { "metric": "Communication Style", "score": 82, "interpretation": "Warm, clear, and expressive — adapts well to different audiences.", "evidence": "Q3-B or C, Q14-C" },
+        { "metric": "Need for Clarity", "score": 50, "interpretation": "Moderate — needs enough clarity to organize, but comfortable with creative ambiguity.", "evidence": "Q8-A, Q1-B or C" },
+        { "metric": "Tolerance for Ambiguity", "score": 62, "interpretation": "Good — handles ambiguity creatively and with social support.", "evidence": "Q13-B or C" },
+        { "metric": "Motivation Source", "score": 82, "interpretation": "Motivated by creative expression with meaningful human impact.", "evidence": "Q11-B and C, Q15-B or C" },
+        { "metric": "Growth Style / Preferred Feedback", "score": 70, "interpretation": "Grows through warm, creatively and structurally oriented feedback.", "evidence": "Q14-A or B or C" }
+      ],
+      "dominant_traits": [
+        "Highly versatile — shifts between creator, coordinator, and encourager as needed",
+        "Most energized at the intersection of creativity and human purpose",
+        "Warm and expressive communicator across contexts",
+        "Good tolerance for ambiguity when people support is available",
+        "Moderate structure need — uses organization to serve creativity",
+        "Risk of role diffusion: trying to cover all dimensions simultaneously"
+      ],
+      "how_this_person_works": {
+        "ideal_environment": "Creative, collaborative, and organized — where all three modes are valued.",
+        "preferred_tasks": "Creative project management, team facilitation, community-driven innovation.",
+        "learning_style": "Social and hands-on — learns by doing alongside others.",
+        "decision_style": "Intuitive, shaped by people input and creative fit.",
+        "preferred_feedback": "Warm, structured, and creatively expansive.",
+        "team_role": "Swiss army knife contributor — adapts to what the team needs."
+      },
+      "strengths": [
+        { "strength": "Versatile contribution", "detail": "Can fill multiple roles without losing quality." },
+        { "strength": "Creative team leadership", "detail": "Motivates and organizes people around a shared creative vision." },
+        { "strength": "Inclusive communication", "detail": "Engages diverse personality types with warmth and flexibility." },
+        { "strength": "Adaptive execution", "detail": "Shifts between planning and improvisation fluidly." },
+        { "strength": "Purpose-driven creativity", "detail": "Creates things that matter to people, not just things that are novel." }
+      ],
+      "watch_outs": [
+        { "blind_spot": "Role diffusion", "detail": "Doing everything can mean mastering nothing — may need to define a primary contribution." },
+        { "blind_spot": "Analytical underdevelopment", "detail": "Intuition and warmth may not be enough in evidence-heavy or highly technical contexts." },
+        { "blind_spot": "People-pleasing under creative pressure", "detail": "May compromise creative vision to maintain harmony." },
+        { "blind_spot": "Difficulty stepping back", "detail": "Strong cross-functional involvement can lead to over-involvement and burnout." }
+      ],
+      "under_pressure": "Under stress, this person may try to do too much — managing both the creative and relational dimensions simultaneously. They benefit from narrowing focus and identifying which role is most needed in the moment. Interpersonal conflict is deeply uncomfortable and may cause them to prioritize harmony over needed difficult conversations.",
+      "best_fit_roles": [
+        "Creative Team Lead",
+        "Program Director in a mission-driven org",
+        "Experience Designer or Journey Architect",
+        "Facilitator of collaborative innovation",
+        "Startup generalist or founding team member",
+        "Community and engagement strategist"
+      ],
+      "development_advice": [
+        "Define your primary contribution in each project — resist trying to cover all roles.",
+        "Build analytical depth as a complement to your creative-social strengths.",
+        "Practice creative decisions without group consensus — your own vision matters.",
+        "Set clear personal limits to avoid diffuse over-involvement.",
+        "Seek feedback that specifically addresses the quality of your primary contribution, not your overall helpfulness."
+      ],
+      "final_snapshot": "This person is most energized by creative projects that bring people together around something meaningful. They are most frustrated by environments that are either coldly analytical, rigidly structured, or creativity-free. They are most likely to thrive in versatile roles where their ability to think creatively, organize effectively, and connect with people all contribute to the outcome."
+    },
+
+    "ABD": {
+      "id": "ABD",
+      "title": "The Strategic Visionary",
+      "archetype": "Analytical Creative Planner",
+      "core_summary": "This person combines creative ambition, structured execution, and analytical depth — a rare trifecta that makes them effective across design, strategy, and innovation. They approach problems by first understanding them deeply, then generating original solutions, then building the plan to execute. They are not primarily people-driven, but they communicate clearly and confidently. They are most frustrated by shallow thinking, arbitrary constraints, and environments that force a choice between creativity, rigor, or organization. The risk is that the combination of all three tendencies can make them hard to fit into a single conventional role — they often need a project-based or entrepreneurial context to use their full profile.",
+      "metrics": [
+        { "metric": "Structure Orientation", "score": 68, "interpretation": "High enough to execute complex plans, but not at the expense of creative freedom.", "evidence": "Q1-A, Q7-A or B" },
+        { "metric": "Creativity / Originality Drive", "score": 78, "interpretation": "Strong — creativity is the starting point for work, grounded in analysis and structure.", "evidence": "Q2-B, Q6-B or D, Q11-B" },
+        { "metric": "People Orientation", "score": 30, "interpretation": "Low — the primary focus is on the work: the idea, the plan, the logic.", "evidence": "Q5-A or D, Q7-B or D" },
+        { "metric": "Analytical Depth", "score": 82, "interpretation": "Very strong — analysis informs both creative choices and execution planning.", "evidence": "Q5-D, Q8-D, Q10-D" },
+        { "metric": "Adaptability", "score": 60, "interpretation": "Good — adapts by redesigning both the creative direction and the analytical basis.", "evidence": "Q13-A or B or D" },
+        { "metric": "Leadership / Coordination Tendency", "score": 65, "interpretation": "Leads through vision, rigor, and planning — a powerful combination.", "evidence": "Q12-A or B or D" },
+        { "metric": "Independence", "score": 80, "interpretation": "High — thrives when given a problem and autonomy to address it fully.", "evidence": "Q7-B or D, Q9-B or D" },
+        { "metric": "Collaboration Preference", "score": 38, "interpretation": "Low-moderate — collaborates selectively for intellectual input or execution support.", "evidence": "Q5-D, Q9-B or D" },
+        { "metric": "Learning Style: Practical vs Conceptual", "score": 65, "interpretation": "Both — learns conceptually and applies through structured creative practice.", "evidence": "Q10-A and D or B" },
+        { "metric": "Decision Style: Intuition vs Evidence", "score": 40, "interpretation": "Mixed — intuition sparks creative direction; evidence validates it.", "evidence": "Q5-A and D" },
+        { "metric": "Communication Style", "score": 65, "interpretation": "Precise, structured, and idea-rich — strong in written and planned presentation.", "evidence": "Q3-A or D or B" },
+        { "metric": "Need for Clarity", "score": 58, "interpretation": "Moderate — needs logical and creative clarity but tolerates ambiguity in method.", "evidence": "Q8-A and D, Q1-A or B" },
+        { "metric": "Tolerance for Ambiguity", "score": 60, "interpretation": "Moderate-high — uses analysis and creativity to resolve ambiguity productively.", "evidence": "Q13-B or D" },
+        { "metric": "Motivation Source", "score": 88, "interpretation": "Motivated by building something analytically grounded, creatively original, and well-executed.", "evidence": "Q11-B or D, Q15-B or D" },
+        { "metric": "Growth Style / Preferred Feedback", "score": 78, "interpretation": "Grows through feedback that challenges all three dimensions: rigor, originality, and structure.", "evidence": "Q14-A and B and D" }
+      ],
+      "dominant_traits": [
+        "Generates original ideas grounded in evidence and executed through structured plans",
+        "Highly independent and self-directed",
+        "Frustrated by shallow, arbitrary, or disorganized environments",
+        "Leads through vision, rigor, and planning simultaneously",
+        "Not primarily people-driven — the work is the primary motivation",
+        "Most effective in project-based or entrepreneurial contexts"
+      ],
+      "how_this_person_works": {
+        "ideal_environment": "Open, intellectually rich, semi-structured — with creative and analytical latitude and clear deliverables.",
+        "preferred_tasks": "Innovation strategy, product design, research-driven creation, complex problem-solving.",
+        "learning_style": "Conceptual and creative — learns principles and applies through personal synthesis.",
+        "decision_style": "Creative intuition validated by structured evidence analysis.",
+        "preferred_feedback": "Challenges all three dimensions: is it original? Is it grounded? Is it executable?",
+        "team_role": "Strategic thinker and creative architect — designs the vision and the plan."
+      },
+      "strengths": [
+        { "strength": "Strategic creativity", "detail": "Generates original solutions that are also analytically defensible and practically executable." },
+        { "strength": "Self-sufficient production", "detail": "Can move from insight to design to execution plan without heavy external support." },
+        { "strength": "Multi-dimensional problem-solving", "detail": "Addresses problems at creative, logical, and operational levels simultaneously." },
+        { "strength": "Intellectual credibility with creative range", "detail": "Can engage both analytical and creative stakeholders with genuine depth." },
+        { "strength": "High-quality independent output", "detail": "Produces work that is original, rigorous, and structured — rare combination." }
+      ],
+      "watch_outs": [
+        { "blind_spot": "Low people sensitivity", "detail": "Can underestimate the human and political dimensions of projects." },
+        { "blind_spot": "Over-engineering solutions", "detail": "May produce solutions more complex than the problem requires." },
+        { "blind_spot": "Difficulty delegating", "detail": "High standards across all three dimensions make it hard to trust others to maintain quality." },
+        { "blind_spot": "Role fit ambiguity", "detail": "This profile is difficult to fit in standard roles — may need to create or design their own position." }
+      ],
+      "under_pressure": "Under stress, this person may simultaneously try to redesign the creative direction, rebuild the plan, and re-analyze the problem — all at once. This produces high internal cognitive load. They benefit from a clear priority order: Which of the three dimensions is most urgent right now? They also benefit from a people-oriented collaborator who can manage interpersonal dynamics while they focus on substance.",
+      "best_fit_roles": [
+        "Innovation Strategist or Chief Strategy Officer",
+        "Research-driven Product Designer",
+        "Entrepreneur or Technical Founder",
+        "Design Researcher",
+        "Management Consultant in complex domains",
+        "Policy Designer or Futures Researcher"
+      ],
+      "development_advice": [
+        "Identify which of your three modes — creative, analytical, structural — is the lead in each project context.",
+        "Actively develop people sensitivity as a fourth dimension — it unlocks influence.",
+        "Practice simplifying — produce the minimum viable solution before adding complexity.",
+        "Build a trusted execution partner so you can stay at the strategy level.",
+        "Seek environments where all three dimensions are explicitly valued — and be explicit about what you bring."
+      ],
+      "final_snapshot": "This person is most energized by complex, open-ended problems that demand creative, analytical, and structured thinking simultaneously. They are most frustrated by environments that reward only one of these three dimensions, or that substitute social convention for intellectual rigor. They are most likely to thrive in high-autonomy roles where building something original, evidence-based, and well-executed is the core expectation."
+    },
+
+    "ACD": {
+      "id": "ACD",
+      "title": "The Thoughtful Organizer",
+      "archetype": "Empathic Systems Planner",
+      "core_summary": "This person combines structured planning, deep care for people, and analytical thinking. They build organized systems with the human experience in mind, and they bring both rigor and empathy to decisions. They are not primarily creative in the artistic sense, but they are intellectually curious about how systems can be made to work better for people. In teams, they are highly trusted — they follow through, they think carefully, and they genuinely care. Their frustration surfaces when systems are poorly designed, people are ignored, or reasoning is absent. The risk is over-responsibility: taking on too much because they can both plan and care, and too little room for creative disruption of their own assumptions.",
+      "metrics": [
+        { "metric": "Structure Orientation", "score": 78, "interpretation": "High — structure is the mechanism through which they support people and produce quality.", "evidence": "Q1-A, Q8-A, Q7-A" },
+        { "metric": "Creativity / Originality Drive", "score": 28, "interpretation": "Low — prefers proven approaches refined through analysis.", "evidence": "Q2-A or D, Q6-A or C" },
+        { "metric": "People Orientation", "score": 80, "interpretation": "High — every system or decision is evaluated partly by its impact on people.", "evidence": "Q3-C, Q5-C, Q11-C" },
+        { "metric": "Analytical Depth", "score": 78, "interpretation": "Strong — analysis informs both planning and people-centered decisions.", "evidence": "Q5-D, Q8-D, Q10-D, Q12-D" },
+        { "metric": "Adaptability", "score": 45, "interpretation": "Moderate — adapts by rebuilding the plan with attention to people impact.", "evidence": "Q13-A or C or D" },
+        { "metric": "Leadership / Coordination Tendency", "score": 72, "interpretation": "Strong leader who combines coordination, care, and analytical credibility.", "evidence": "Q12-A or D, Q4-B or C" },
+        { "metric": "Independence", "score": 55, "interpretation": "Moderate — capable but draws meaning from impact on others.", "evidence": "Q7-A or C or D" },
+        { "metric": "Collaboration Preference", "score": 72, "interpretation": "High — collaboration is valued for both people and quality outcomes.", "evidence": "Q5-C, Q9-C or D" },
+        { "metric": "Learning Style: Practical vs Conceptual", "score": 55, "interpretation": "Mixed — combines step-by-step learning with conceptual understanding of systems.", "evidence": "Q10-A and D or C" },
+        { "metric": "Decision Style: Intuition vs Evidence", "score": 28, "interpretation": "Evidence-based with strong attention to human impact — rarely intuitive.", "evidence": "Q5-A and D and C" },
+        { "metric": "Communication Style", "score": 75, "interpretation": "Clear, warm, and substantive — adapts to both analytical and people-oriented audiences.", "evidence": "Q3-A or C or D" },
+        { "metric": "Need for Clarity", "score": 78, "interpretation": "High — needs clarity on both process and people expectations.", "evidence": "Q8-A and D, Q1-A" },
+        { "metric": "Tolerance for Ambiguity", "score": 30, "interpretation": "Low — ambiguity in either process or people context is stressful.", "evidence": "Q8-A, Q13-A or D" },
+        { "metric": "Motivation Source", "score": 85, "interpretation": "Motivated by well-run systems that produce measurable positive outcomes for people.", "evidence": "Q11-A and C and D, Q15-C or D" },
+        { "metric": "Growth Style / Preferred Feedback", "score": 78, "interpretation": "Grows through specific, substantive feedback delivered with relational care.", "evidence": "Q14-A and C and D" }
+      ],
+      "dominant_traits": [
+        "Plans with people in mind — structure is always in service of human outcomes",
+        "Combines reliability, care, and analytical rigor",
+        "Highly trusted contributor across leadership and peer levels",
+        "Frustrated by poorly designed systems, ignored people, and absent reasoning",
+        "Low tolerance for ambiguity in either process or human context",
+        "Risk of over-responsibility and insufficient creative challenge to own assumptions"
+      ],
+      "how_this_person_works": {
+        "ideal_environment": "Organized, people-centered, and intellectually rigorous — where all three dimensions are valued.",
+        "preferred_tasks": "System design with human-centered outcomes, organizational planning, policy development, evaluation.",
+        "learning_style": "Step-by-step with conceptual grounding and social application.",
+        "decision_style": "Evidence-based with explicit weighting of human impact.",
+        "preferred_feedback": "Specific, substantive, and delivered with care.",
+        "team_role": "Trusted senior contributor — plans well, thinks carefully, supports generously."
+      },
+      "strengths": [
+        { "strength": "Human-centered systems thinking", "detail": "Designs processes that are both logically sound and supportive of people." },
+        { "strength": "Trustworthy leadership", "detail": "People follow them because they are both rigorous and caring." },
+        { "strength": "Evidence-informed decisions with empathy", "detail": "Neither cold analysis nor uncritical care — a disciplined blend." },
+        { "strength": "Organizational clarity", "detail": "Creates structures that reduce confusion and support team performance." },
+        { "strength": "Long-term reliability", "detail": "Delivers consistently over time without burning bridges." }
+      ],
+      "watch_outs": [
+        { "blind_spot": "Over-responsibility", "detail": "The combination of structure, care, and analysis can make them the person everyone relies on — unsustainably." },
+        { "blind_spot": "Low creative disruption", "detail": "May optimize existing systems rather than questioning whether they are the right systems." },
+        { "blind_spot": "Difficulty with ambiguity or change", "detail": "Change without a clear plan and a clear reason is genuinely uncomfortable." },
+        { "blind_spot": "Under-assertiveness in the face of poor reasoning", "detail": "Care for people may soften pushback that needs to be firmer." }
+      ],
+      "under_pressure": "Under stress, this person tries to rebuild the plan, understand the evidence, and check in with the team simultaneously. This is a high cognitive and emotional load. They may over-function and under-delegate under pressure. They benefit from explicit permission to let some dimensions rest while focusing on the most critical one.",
+      "best_fit_roles": [
+        "Senior Program Manager or Director",
+        "Organizational Effectiveness Lead",
+        "Policy Analyst with stakeholder responsibility",
+        "Healthcare or Education Administrator",
+        "Learning & Development Manager",
+        "Evaluation or Impact Analyst in social sector"
+      ],
+      "development_advice": [
+        "Practice setting explicit limits on your scope — not everything that could be improved needs your attention.",
+        "Deliberately invite creative disruption to your own plans before finalizing them.",
+        "Build a protocol for delivering difficult feedback directly, without softening to the point of ineffectiveness.",
+        "Develop comfort with faster, less evidence-complete decisions in lower-stakes contexts.",
+        "Seek projects where your primary contribution is defined — resist expanding to fill all available roles."
+      ],
+      "final_snapshot": "This person is most energized by well-organized work that produces clear positive outcomes for people, grounded in evidence and thoughtful planning. They are most frustrated by systems that ignore people, decisions made without reasoning, and ambiguity that affects both process and relationships. They are most likely to thrive in senior roles where their combination of analytical depth, structural discipline, and genuine care directly shapes organizational outcomes."
+    },
+
+    "BCD": {
+      "id": "BCD",
+      "title": "The Humane Explorer",
+      "archetype": "Creative Social Analyst",
+      "core_summary": "This person combines creative energy, deep people-awareness, and analytical curiosity into a distinctive profile. They are drawn to complex human problems and approach them with both intellectual rigor and personal warmth. They are comfortable with ambiguity and motivated by discovering insights that make a meaningful difference for real people. They are not primarily structure-driven, and their work tends to be more emergent than planned. In teams, they combine the roles of idea generator, analyst, and encourager — often the person who sees both the human story and the underlying pattern. The risk is that without structure, their work can remain at the exploratory stage without reaching decisive conclusions or clear execution.",
+      "metrics": [
+        { "metric": "Structure Orientation", "score": 25, "interpretation": "Low — structure is used minimally, as a vehicle rather than a foundation.", "evidence": "Q1-B or C or D, Q8-B or D" },
+        { "metric": "Creativity / Originality Drive", "score": 78, "interpretation": "Strong — generates original insights through the combination of people awareness and analysis.", "evidence": "Q2-B or D, Q6-B or D, Q11-B or D" },
+        { "metric": "People Orientation", "score": 80, "interpretation": "High — people are both the subject of analysis and the purpose of creative work.", "evidence": "Q3-C, Q5-C, Q11-C" },
+        { "metric": "Analytical Depth", "score": 80, "interpretation": "Strong — the analytical lens is always applied to creative and human questions.", "evidence": "Q5-D, Q8-D, Q10-D" },
+        { "metric": "Adaptability", "score": 78, "interpretation": "High — sees change as creative, analytical, and human opportunity.", "evidence": "Q13-B or C or D" },
+        { "metric": "Leadership / Coordination Tendency", "score": 45, "interpretation": "Leads through insight and relational warmth — not through systems.", "evidence": "Q12-B or C or D" },
+        { "metric": "Independence", "score": 58, "interpretation": "Moderate — can work independently but draws meaning from people.", "evidence": "Q7-B or C or D" },
+        { "metric": "Collaboration Preference", "score": 75, "interpretation": "High — collaboration enriches both the analysis and the creative output.", "evidence": "Q5-C, Q10-C" },
+        { "metric": "Learning Style: Practical vs Conceptual", "score": 68, "interpretation": "Leans conceptual and social — learns through dialogue, exploration, and narrative.", "evidence": "Q10-B or C or D" },
+        { "metric": "Decision Style: Intuition vs Evidence", "score": 48, "interpretation": "Mixed — intuition and evidence interact; human context shapes the balance.", "evidence": "Q5-B and C and D" },
+        { "metric": "Communication Style", "score": 78, "interpretation": "Warm, expressive, and intellectually rich — rare and effective combination.", "evidence": "Q3-B or C or D" },
+        { "metric": "Need for Clarity", "score": 28, "interpretation": "Low — comfortable beginning with emergent direction.", "evidence": "Q8-B, Q1-B or C" },
+        { "metric": "Tolerance for Ambiguity", "score": 80, "interpretation": "High — ambiguity is creative and analytical territory.", "evidence": "Q13-B, Q6-D" },
+        { "metric": "Motivation Source", "score": 88, "interpretation": "Motivated by discovering meaningful insights that improve people's experience.", "evidence": "Q11-B and C and D, Q15-B or C or D" },
+        { "metric": "Growth Style / Preferred Feedback", "score": 75, "interpretation": "Grows through warm, intellectually rigorous, and creatively expanding feedback.", "evidence": "Q14-B and C and D" }
+      ],
+      "dominant_traits": [
+        "Combines creative, empathic, and analytical thinking in a distinctive way",
+        "Motivated by complex human problems with no easy answers",
+        "Highly tolerant of ambiguity — sees it as productive territory",
+        "Warm and intellectually rigorous in communication simultaneously",
+        "Not structure-driven — work is emergent and exploratory",
+        "Risk of staying in exploration mode without reaching decisive conclusions"
+      ],
+      "how_this_person_works": {
+        "ideal_environment": "Open, curious, and people-centered — where exploration and depth are valued over speed.",
+        "preferred_tasks": "Human-centered research, design thinking, social analysis, creative facilitation.",
+        "learning_style": "Conceptual and social — learns through rich dialogue, pattern recognition, and stories.",
+        "decision_style": "Intuition and evidence interact, shaped by human context.",
+        "preferred_feedback": "Warm, intellectually challenging, and creatively expansive.",
+        "team_role": "Multi-dimensional contributor — generates ideas, analyzes deeply, and supports people."
+      },
+      "strengths": [
+        { "strength": "Humanistic depth", "detail": "Combines rigorous analysis with genuine care — rare in most professional contexts." },
+        { "strength": "Creative insight generation", "detail": "Produces original insights from the intersection of data and human experience." },
+        { "strength": "Adaptive collaboration", "detail": "Adjusts creative and analytical approach based on what the team needs." },
+        { "strength": "Inclusive intellectual dialogue", "detail": "Creates conversations where both thinking and feeling are welcome." },
+        { "strength": "Emergent problem-solving", "detail": "Comfortable letting the answer emerge from exploration rather than forcing premature conclusions." }
+      ],
+      "watch_outs": [
+        { "blind_spot": "Execution gap", "detail": "The exploratory, multi-dimensional approach can produce rich analysis but few concrete deliverables." },
+        { "blind_spot": "Structural under-investment", "detail": "Without structure, complex thinking may not translate into action or organizational clarity." },
+        { "blind_spot": "Decision delay", "detail": "Wanting creative, analytical, and human alignment simultaneously can stall commitment." },
+        { "blind_spot": "Difficult to categorize professionally", "detail": "This profile spans multiple disciplines — may need to advocate explicitly for the value of the combination." }
+      ],
+      "under_pressure": "Under stress, this person may try to explore more deeply — seeking additional data, checking in with more people, or generating more creative options. They benefit from an external structure — a deadline, a partner, or a process — that forces closure. Conflict is processed personally and analytically, and resolution takes time.",
+      "best_fit_roles": [
+        "Design Researcher or Ethnographer",
+        "Social Innovation Strategist",
+        "Qualitative Researcher or Evaluation Specialist",
+        "Human-Centered Facilitator",
+        "Health or Education Sector Program Designer",
+        "Organizational Development Consultant"
+      ],
+      "development_advice": [
+        "Build a minimum delivery structure — even one output requirement per phase prevents open-ended drift.",
+        "Practice committing to a conclusion and defending it, even under conditions of incomplete information.",
+        "Develop explicit frameworks for translating insight into recommendation.",
+        "Find a structured partner who values your depth but can hold you to deliverables.",
+        "Seek feedback that specifically tests whether your output is actionable, not just thoughtful."
+      ],
+      "final_snapshot": "This person is most energized by rich human problems that reward deep exploration, creative insight, and genuine empathy. They are most frustrated by superficial answers, rigid constraints, and environments that treat people as data points or creativity as a risk. They are most likely to thrive in roles where the combination of analysis, creativity, and human awareness is recognized as an asset — and where structure exists to translate exploration into impact."
+    },
+
+    "ABCD": {
+      "id": "ABCD",
+      "title": "The Renaissance Practitioner",
+      "archetype": "Integrated All-Rounder",
+      "core_summary": "This pattern — strong across all four dimensions — is relatively rare and suggests a person who has developed genuine fluency in multiple behavioral modes: structured thinking, creative expression, people awareness, and analytical depth. They are versatile by nature and can adapt their approach to the demands of the situation. The gift is range; the risk is dilution. Without a clear lead strength, this person may struggle to define their professional identity, over-commit across too many roles, or fail to build deep mastery in any single area. They perform best in leadership, generalist strategy, or entrepreneurial contexts where the full range is explicitly valued. At a moderate confidence level, this pattern may also indicate that the person is still exploring who they are — a normal and healthy state early in a career.",
+      "metrics": [
+        { "metric": "Structure Orientation", "score": 60, "interpretation": "Moderate — uses structure when needed, adapts when not.", "evidence": "Mixed A and non-A answers" },
+        { "metric": "Creativity / Originality Drive", "score": 65, "interpretation": "Present but not dominant — creativity is one mode among many.", "evidence": "Mixed B answers" },
+        { "metric": "People Orientation", "score": 65, "interpretation": "Genuine but not exclusive — people matter alongside other motivators.", "evidence": "Mixed C answers" },
+        { "metric": "Analytical Depth", "score": 65, "interpretation": "Strong when needed but not the default lens for every situation.", "evidence": "Mixed D answers" },
+        { "metric": "Adaptability", "score": 80, "interpretation": "High — behavioral flexibility is a defining feature of this profile.", "evidence": "Distributed across A, B, C, D" },
+        { "metric": "Leadership / Coordination Tendency", "score": 65, "interpretation": "Leads flexibly — can adjust style to context.", "evidence": "Mixed Q12, Q4" },
+        { "metric": "Independence", "score": 58, "interpretation": "Moderate — comfortable in both solo and collaborative contexts.", "evidence": "Mixed Q7, Q9" },
+        { "metric": "Collaboration Preference", "score": 65, "interpretation": "Moderate-high — comfortable across team contexts and configurations.", "evidence": "Mixed Q5, Q9, Q10" },
+        { "metric": "Learning Style: Practical vs Conceptual", "score": 50, "interpretation": "Balanced — learns through multiple modes depending on context.", "evidence": "Mixed Q10" },
+        { "metric": "Decision Style: Intuition vs Evidence", "score": 50, "interpretation": "Balanced — chooses decision approach based on situation.", "evidence": "Mixed Q5" },
+        { "metric": "Communication Style", "score": 72, "interpretation": "Versatile — adjusts communication style to audience and context effectively.", "evidence": "Mixed Q3, Q14" },
+        { "metric": "Need for Clarity", "score": 50, "interpretation": "Moderate — adapts to both high-clarity and high-ambiguity environments.", "evidence": "Mixed Q1, Q8" },
+        { "metric": "Tolerance for Ambiguity", "score": 60, "interpretation": "Moderate-high — handles ambiguity across multiple contexts.", "evidence": "Mixed Q13" },
+        { "metric": "Motivation Source", "score": 65, "interpretation": "Multi-modal — motivated by results, people, ideas, and understanding depending on context.", "evidence": "Mixed Q11, Q15" },
+        { "metric": "Growth Style / Preferred Feedback", "score": 65, "interpretation": "Benefits from feedback that acknowledges range and helps prioritize depth in a chosen direction.", "evidence": "Mixed Q14, Q16" }
+      ],
+      "dominant_traits": [
+        "Genuine behavioral range across structure, creativity, people, and analysis",
+        "Highly adaptable — shifts mode to match situational demand",
+        "Versatile communicator and collaborator",
+        "Risk: no single defining professional identity without deliberate choice",
+        "Best in leadership, generalist strategy, or entrepreneurial contexts",
+        "May be in an active exploration phase — moderate confidence on stable pattern"
+      ],
+      "how_this_person_works": {
+        "ideal_environment": "Varied, multi-dimensional work that draws on multiple strengths.",
+        "preferred_tasks": "Leadership, strategy, cross-functional coordination, entrepreneurial ventures.",
+        "learning_style": "Multi-modal — adapts approach to the material and context.",
+        "decision_style": "Situationally variable — uses whichever mode fits the decision type.",
+        "preferred_feedback": "Acknowledges range and helps define which dimension to deepen.",
+        "team_role": "Adaptive contributor — fills the gap the team needs most."
+      },
+      "strengths": [
+        { "strength": "Behavioral versatility", "detail": "Can operate across multiple modes without losing quality." },
+        { "strength": "Contextual intelligence", "detail": "Reads what a situation requires and adjusts approach accordingly." },
+        { "strength": "Cross-functional effectiveness", "detail": "Can work across creative, analytical, organizational, and people domains." },
+        { "strength": "Resilience under varied conditions", "detail": "Not locked into one mode — performs across different environments." },
+        { "strength": "Leadership adaptability", "detail": "Can lead through vision, coordination, empathy, or analysis as needed." }
+      ],
+      "watch_outs": [
+        { "blind_spot": "Diffuse professional identity", "detail": "Being good at many things can make it hard to answer 'what are you best at?'" },
+        { "blind_spot": "Depth risk", "detail": "Range without depth may leave this person as the generalist in rooms full of specialists." },
+        { "blind_spot": "Over-commitment", "detail": "Multi-dimensional capability can attract too many roles — capacity overload is a real risk." },
+        { "blind_spot": "Exploration without resolution", "detail": "If still in an exploratory phase, may delay committing to a direction that would enable mastery." }
+      ],
+      "under_pressure": "Under stress, this person's versatility may become unfocused — trying all modes simultaneously rather than choosing the right one. They benefit from a clear question: 'What is most needed right now?' The risk is paralysis by optionality — too many valid approaches, none executed fully. Deliberate prioritization is the key pressure management tool.",
+      "best_fit_roles": [
+        "General Manager or Executive Leader",
+        "Startup Founder or Multi-function Lead",
+        "Strategy Consultant with broad portfolio",
+        "Educator or Facilitator across disciplines",
+        "Cross-functional Program Director",
+        "Innovation or Transformation Lead"
+      ],
+      "development_advice": [
+        "Choose one dimension to develop to an expert level — range is valuable but depth is differentiating.",
+        "Define your primary professional identity explicitly, even if your actual capability is broader.",
+        "Practice saying no to roles that draw on your full range — protecting depth-building time is essential.",
+        "Seek mentors who have successfully integrated multiple dimensions into a coherent professional identity.",
+        "Use your versatility as a leadership asset — the best integrators are the ones who have made deliberate choices, not just flexible ones."
+      ],
+      "final_snapshot": "This person is most energized by complex, multi-dimensional challenges that draw on their full range of thinking, creating, analyzing, and connecting. They are most frustrated by narrow roles that force them into a single mode. They are most likely to thrive when they deliberately choose one or two dimensions to lead from — using the others as complementary assets rather than competing identities."
+    }
+  }
+}

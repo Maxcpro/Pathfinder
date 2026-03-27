@@ -84,6 +84,34 @@
             color: #1e3256;
             font-family: 'Manrope', sans-serif;
         }
+        .answer-option[data-selected="true"] {
+            background: rgba(163, 193, 255, 0.2);
+            border-color: #005cc0;
+            border-width: 2px;
+        }
+        .answer-option[data-selected="true"] .answer-badge {
+            background: #005cc0;
+            color: #f9f8ff;
+        }
+        .answer-option[data-selected="true"] .answer-text {
+            color: #1e3256;
+            font-weight: 700;
+        }
+        .answer-option[data-selected="false"] .answer-badge {
+            background: #d7e2ff;
+            color: #1e3256;
+        }
+        .answer-option[data-selected="false"] .answer-text {
+            color: #4c5f85;
+            font-weight: 500;
+        }
+        .answer-option[data-selected="false"]:hover .answer-badge {
+            background: #a3c1ff;
+            color: #005cc0;
+        }
+        .answer-option[data-selected="false"]:hover .answer-text {
+            color: #1e3256;
+        }
     </style>
 </head>
 <body class="min-h-screen">
@@ -111,9 +139,9 @@
 <h1 class="text-4xl md:text-5xl font-extrabold font-headline text-on-surface tracking-tight leading-tight">Module 1: Unlocking Your Personality</h1>
 </div>
 <div class="flex items-center gap-3">
-<span class="text-on-surface-variant font-medium text-sm">25% complete</span>
+<span class="text-on-surface-variant font-medium text-sm" id="progress-label">6% complete</span>
 <div class="w-48 h-2 bg-surface-container-highest rounded-full overflow-hidden">
-<div class="w-1/4 h-full bg-tertiary rounded-full"></div>
+<div class="h-full bg-tertiary rounded-full transition-all duration-300" id="progress-bar" style="width: 6%;"></div>
 </div>
 </div>
 </div>
@@ -132,42 +160,17 @@
 </div>
 <div class="lg:col-span-8 bg-surface-container-lowest rounded-xl p-8 md:p-12 shadow-sm">
 <div class="mb-10">
-<span class="text-on-surface-variant text-xs font-semibold mb-4 block">Question 4 of 16</span>
-<h3 class="text-2xl font-bold font-headline text-on-surface mb-8">In a group project, do you prefer to:</h3>
-<div class="grid grid-cols-1 gap-4">
-<button class="group flex items-center p-5 rounded-xl border border-outline-variant/20 hover:border-primary/40 hover:bg-surface-container-low transition-all text-left w-full" type="button">
-<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center mr-4 group-hover:bg-primary-container group-hover:text-primary transition-colors">
-<span class="font-bold font-headline">A</span>
-</div>
-<span class="text-on-surface-variant group-hover:text-on-surface font-medium">Design the final presentation</span>
-</button>
-<button class="group flex items-center p-5 rounded-xl border-2 border-primary bg-primary-container/20 text-left w-full" type="button">
-<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center mr-4 text-on-primary">
-<span class="material-symbols-outlined text-xl" data-icon="check">check</span>
-</div>
-<span class="text-on-surface font-bold">Coordinate the team tasks</span>
-</button>
-<button class="group flex items-center p-5 rounded-xl border border-outline-variant/20 hover:border-primary/40 hover:bg-surface-container-low transition-all text-left w-full" type="button">
-<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center mr-4 group-hover:bg-primary-container group-hover:text-primary transition-colors">
-<span class="font-bold font-headline">C</span>
-</div>
-<span class="text-on-surface-variant group-hover:text-on-surface font-medium">Research the data</span>
-</button>
-<button class="group flex items-center p-5 rounded-xl border border-outline-variant/20 hover:border-primary/40 hover:bg-surface-container-low transition-all text-left w-full" type="button">
-<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center mr-4 group-hover:bg-primary-container group-hover:text-primary transition-colors">
-<span class="font-bold font-headline">D</span>
-</div>
-<span class="text-on-surface-variant group-hover:text-on-surface font-medium">Present the results</span>
-</button>
-</div>
+<span class="text-on-surface-variant text-xs font-semibold mb-4 block" id="question-counter">Question 1 of 16</span>
+<h3 class="text-2xl font-bold font-headline text-on-surface mb-8" id="question-text">Loading question...</h3>
+<div class="grid grid-cols-1 gap-4" id="answer-list"></div>
 </div>
 <div class="flex items-center justify-between pt-8 border-t border-surface-container-high">
-<button class="flex items-center gap-2 text-on-surface-variant hover:text-primary font-bold text-sm transition-colors px-6 py-3 rounded-full hover:bg-surface-container-low" type="button">
+<button class="flex items-center gap-2 text-on-surface-variant hover:text-primary font-bold text-sm transition-colors px-6 py-3 rounded-full hover:bg-surface-container-low disabled:opacity-40 disabled:hover:bg-transparent disabled:hover:text-on-surface-variant" id="prev-button" type="button">
 <span class="material-symbols-outlined text-xl" data-icon="arrow_back">arrow_back</span>
                         Previous
                     </button>
-<button class="flex items-center gap-2 bg-primary hover:bg-primary-dim text-on-primary px-8 py-3 rounded-full font-bold text-sm shadow-md transition-all active:scale-95" type="button">
-                        Next
+<button class="flex items-center gap-2 bg-primary hover:bg-primary-dim text-on-primary px-8 py-3 rounded-full font-bold text-sm shadow-md transition-all active:scale-95 disabled:opacity-50 disabled:hover:bg-primary disabled:cursor-not-allowed" id="next-button" type="button">
+<span id="next-label">Next</span>
                         <span class="material-symbols-outlined text-xl" data-icon="arrow_forward">arrow_forward</span>
 </button>
 </div>
@@ -208,4 +211,293 @@
 </div>
 </div>
 </footer>
+<script>
+        const questions = [
+            {
+                prompt: "When you start something new, what helps you feel most confident?",
+                answers: [
+                    "A clear plan with milestones",
+                    "Room to experiment and improvise",
+                    "A chance to ask people for input",
+                    "Time to understand the bigger picture"
+                ]
+            },
+            {
+                prompt: "Which school task usually gives you the most energy?",
+                answers: [
+                    "Organizing deadlines and deliverables",
+                    "Turning ideas into a creative project",
+                    "Helping classmates understand the material",
+                    "Investigating how something works"
+                ]
+            },
+            {
+                prompt: "In class discussions, you naturally tend to:",
+                answers: [
+                    "Summarize and keep the group on track",
+                    "Offer a fresh angle nobody mentioned",
+                    "Notice who has not spoken yet",
+                    "Ask a question that goes deeper"
+                ]
+            },
+            {
+                prompt: "In a group project, do you prefer to:",
+                answers: [
+                    "Design the final presentation",
+                    "Coordinate the team tasks",
+                    "Research the data",
+                    "Present the results"
+                ]
+            },
+            {
+                prompt: "When you face a difficult decision, you trust:",
+                answers: [
+                    "A structured comparison of options",
+                    "Your intuition about what fits",
+                    "Advice from people you trust",
+                    "Evidence gathered from research"
+                ]
+            },
+            {
+                prompt: "What kind of challenge feels most rewarding?",
+                answers: [
+                    "Improving a system that is inefficient",
+                    "Creating something original from scratch",
+                    "Supporting people through a problem",
+                    "Solving a puzzle with no obvious answer"
+                ]
+            },
+            {
+                prompt: "If you had a free afternoon, you would rather:",
+                answers: [
+                    "Plan your upcoming week",
+                    "Work on a personal side project",
+                    "Spend time with a group of friends",
+                    "Read or watch something that teaches you something new"
+                ]
+            },
+            {
+                prompt: "What usually frustrates you the most?",
+                answers: [
+                    "Disorganization and unclear expectations",
+                    "Rules that limit creativity",
+                    "Conflict between people",
+                    "Superficial answers without reasoning"
+                ]
+            },
+            {
+                prompt: "Which environment helps you do your best work?",
+                answers: [
+                    "Calm, organized, and predictable",
+                    "Flexible and visually inspiring",
+                    "Collaborative and people-centered",
+                    "Focused and intellectually challenging"
+                ]
+            },
+            {
+                prompt: "When learning something complex, your first instinct is to:",
+                answers: [
+                    "Break it into manageable steps",
+                    "Relate it to something creative or personal",
+                    "Talk it through with someone",
+                    "Study the logic behind it"
+                ]
+            },
+            {
+                prompt: "What makes an accomplishment feel meaningful to you?",
+                answers: [
+                    "Seeing a plan work exactly as intended",
+                    "Expressing your personal vision",
+                    "Knowing it made a difference for others",
+                    "Discovering something new or insightful"
+                ]
+            },
+            {
+                prompt: "Which role do you often take in a team without trying?",
+                answers: [
+                    "Organizer",
+                    "Idea generator",
+                    "Encourager",
+                    "Analyst"
+                ]
+            },
+            {
+                prompt: "If a project suddenly changes direction, you usually:",
+                answers: [
+                    "Rebuild the plan quickly",
+                    "Adapt and look for opportunity in the shift",
+                    "Check how the change affects everyone",
+                    "Ask what evidence led to the change"
+                ]
+            },
+            {
+                prompt: "What kind of feedback helps you grow the most?",
+                answers: [
+                    "Specific steps for improvement",
+                    "Ideas that push your originality",
+                    "Honest guidance delivered with care",
+                    "Detailed critique of your reasoning"
+                ]
+            },
+            {
+                prompt: "Which future sounds the most appealing right now?",
+                answers: [
+                    "Leading well-structured projects",
+                    "Designing or building innovative experiences",
+                    "Working in a role centered on people and impact",
+                    "Exploring big questions through research and analysis"
+                ]
+            },
+            {
+                prompt: "At the end of this module, what would feel most useful?",
+                answers: [
+                    "A roadmap with concrete next steps",
+                    "A profile that reflects your creative strengths",
+                    "Clarity about the kinds of roles where you can help people",
+                    "Insight into the problems you are naturally drawn to solve"
+                ]
+            }
+        ];
+
+        const state = {
+            currentIndex: 0,
+            answers: Array(questions.length).fill(null)
+        };
+        const storageKey = "pathfinder_module_1_profile";
+        const latestStorageKey = "pathfinder_module_1_profile_latest";
+
+        const progressLabel = document.getElementById('progress-label');
+        const progressBar = document.getElementById('progress-bar');
+        const questionCounter = document.getElementById('question-counter');
+        const questionText = document.getElementById('question-text');
+        const answerList = document.getElementById('answer-list');
+        const prevButton = document.getElementById('prev-button');
+        const nextButton = document.getElementById('next-button');
+        const nextLabel = document.getElementById('next-label');
+
+        function progressPercent() {
+            const answered = state.answers.filter((answer) => answer !== null).length;
+            const percent = Math.max(Math.round((answered / questions.length) * 100), 6);
+            return Math.min(percent, 100);
+        }
+
+        function renderAnswers() {
+            const currentQuestion = questions[state.currentIndex];
+            const selectedAnswer = state.answers[state.currentIndex];
+
+            answerList.innerHTML = "";
+
+            currentQuestion.answers.forEach((answer, index) => {
+                const option = document.createElement("button");
+                const isSelected = selectedAnswer === index;
+                const letter = String.fromCharCode(65 + index);
+
+                option.type = "button";
+                option.className = "answer-option group flex items-center p-5 rounded-xl border border-outline-variant/20 hover:border-primary/40 hover:bg-surface-container-low transition-all text-left w-full";
+                option.dataset.selected = String(isSelected);
+                option.setAttribute("aria-pressed", String(isSelected));
+
+                option.innerHTML = `
+                    <div class="answer-badge w-10 h-10 rounded-full flex items-center justify-center mr-4 transition-colors">
+                        ${isSelected
+                            ? '<span class="material-symbols-outlined text-xl">check</span>'
+                            : `<span class="font-bold font-headline">${letter}</span>`}
+                    </div>
+                    <span class="answer-text transition-colors">${answer}</span>
+                `;
+
+                option.addEventListener("click", () => {
+                    state.answers[state.currentIndex] = index;
+                    render();
+                });
+
+                answerList.appendChild(option);
+            });
+        }
+
+        function renderCompletion() {
+            const answered = state.answers.filter((answer) => answer !== null).length;
+
+            questionCounter.textContent = "Module complete";
+            questionText.textContent = "You finished Module 1. Your responses have been saved for your Pathfinder profile.";
+            answerList.innerHTML = `
+                <div class="rounded-xl bg-surface-container-low p-6">
+                    <p class="text-on-surface font-bold mb-2">${answered} of ${questions.length} questions answered</p>
+                    <p class="text-on-surface-variant">You can go back to review any answer, or continue when you're ready for the next module.</p>
+                </div>
+            `;
+        }
+
+        function saveResults() {
+            const answerMap = Object.fromEntries(
+                state.answers.map((answerIndex, index) => [
+                    `Q${index + 1}`,
+                    String.fromCharCode(65 + answerIndex)
+                ])
+            );
+            const payload = {
+                answers: answerMap,
+                completedAt: new Date().toISOString(),
+                runId: `module1-${Date.now()}`
+            };
+
+            localStorage.setItem(storageKey, JSON.stringify(payload));
+            sessionStorage.setItem(latestStorageKey, JSON.stringify(payload));
+        }
+
+        function render() {
+            const currentQuestion = questions[state.currentIndex];
+            const selectedAnswer = state.answers[state.currentIndex];
+            const percent = progressPercent();
+            const isLastQuestion = state.currentIndex === questions.length - 1;
+            const isComplete = state.answers.every((answer) => answer !== null);
+
+            progressLabel.textContent = `${percent}% complete`;
+            progressBar.style.width = `${percent}%`;
+            prevButton.disabled = state.currentIndex === 0;
+
+            if (isComplete && isLastQuestion && selectedAnswer !== null) {
+                renderCompletion();
+                nextLabel.textContent = "Completed";
+                nextButton.disabled = false;
+            } else {
+                questionCounter.textContent = `Question ${state.currentIndex + 1} of ${questions.length}`;
+                questionText.textContent = currentQuestion.prompt;
+                renderAnswers();
+                nextLabel.textContent = isLastQuestion ? "Finish" : "Next";
+                nextButton.disabled = selectedAnswer === null;
+            }
+        }
+
+        prevButton.addEventListener("click", () => {
+            if (state.currentIndex > 0) {
+                state.currentIndex -= 1;
+                render();
+            }
+        });
+
+        nextButton.addEventListener("click", () => {
+            if (state.answers[state.currentIndex] === null) {
+                return;
+            }
+
+            const isLastQuestion = state.currentIndex === questions.length - 1;
+            const isComplete = state.answers.every((answer) => answer !== null);
+
+            if (isLastQuestion && isComplete) {
+                saveResults();
+                window.location.href = "./profile-result.html";
+                return;
+            }
+
+            if (state.currentIndex < questions.length - 1) {
+                state.currentIndex += 1;
+                render();
+            } else {
+                render();
+            }
+        });
+
+        render();
+    </script>
 </body></html>

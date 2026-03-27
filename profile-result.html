@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Profile 2.0 | The Creative Analyst</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "primary": "#006ADC",
+        "primary-dim": "#0050a9",
+        "primary-container": "#a3c1ff",
+        "secondary": "#006b5f",
+        "secondary-container": "#79f7e3",
+        "surface": "#f9f9ff",
+        "on-surface": "#1e3256",
+        "on-surface-variant": "#4c5f85",
+        "surface-container": "#e8edff",
+        "surface-container-low": "#f1f3ff",
+        "surface-container-high": "#e0e8ff",
+        "outline": "#687ba3",
+        "error": "#ac3434"
+      },
+      fontFamily: {
+        "headline": ["Plus Jakarta Sans", "sans-serif"],
+        "body": ["Manrope", "sans-serif"]
+      },
+      borderRadius: {
+        "2xl": "24px",
+        "3xl": "32px",
+        "4xl": "40px"
+      }
+    }
+  }
+}
+    </script>
+<style>
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    vertical-align: middle;
+  }
+  .glass-card {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+  }
+  .hero-gradient {
+    background: radial-gradient(circle at top right, #007bff 0%, #0050a9 100%);
+  }
+  .metric-progress {
+    transition: width 1.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  .radar-glow {
+    filter: drop-shadow(0 0 15px rgba(0, 106, 220, 0.2));
+  }
+  .fade-up {
+    animation: fadeUp 0.8s ease-out forwards;
+    opacity: 0;
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .stagger-1 { animation-delay: 0.1s; }
+  .stagger-2 { animation-delay: 0.2s; }
+  .stagger-3 { animation-delay: 0.3s; }
+  .stagger-4 { animation-delay: 0.4s; }
+  .role-hover-card {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  .role-hover-card:hover {
+    transform: translateY(-8px) scale(1.02);
+  }
+</style>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased">
+<nav class="fixed top-0 w-full z-50 bg-white/40 backdrop-blur-xl border-b border-white/20">
+  <div class="flex justify-between items-center w-full px-8 py-5 max-w-7xl mx-auto">
+    <a class="flex items-center gap-2" href="./index.html">
+      <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+        <span class="material-symbols-outlined text-white text-xl">explore</span>
+      </div>
+      <span class="text-xl font-black text-on-surface tracking-tighter font-headline">Pathfinder</span>
+    </a>
+    <div class="hidden md:flex items-center gap-10">
+      <a class="text-on-surface/60 hover:text-primary transition-colors font-bold text-xs uppercase tracking-widest" href="./journey.html">Journey</a>
+      <a class="text-on-surface/60 hover:text-primary transition-colors font-bold text-xs uppercase tracking-widest" href="#">Campus</a>
+      <a class="text-on-surface/60 hover:text-primary transition-colors font-bold text-xs uppercase tracking-widest" href="#">Mentor</a>
+      <a class="text-primary font-bold text-xs uppercase tracking-widest relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-full after:h-0.5 after:bg-primary" href="./profile-result.html">Profile</a>
+    </div>
+    <div class="flex items-center gap-5">
+      <button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-all" type="button">search</button>
+      <div class="h-8 w-px bg-on-surface/10 mx-2"></div>
+      <img alt="User" class="w-9 h-9 rounded-full ring-2 ring-primary/20 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlIQe7QUwB8Pi3T4_4wIPFsuVVZ3a-vSaQ3wf79OqaHeeYZfezdgwEy3EGOnz-lGr_tR2c0qyFS-mKve2Nfx5CcKKUCPnmyQkktNtUbWIzD50GIlEWI51RW25UjQpiR5WXSVhtuS2FI7nLGlQpUz1LsiyK4uA02fNQLFwsZobuiLX7qltg35pctPr5dz84sQ42JWYG8ucaDoNeX0rHmh-PF6c3j7Am6rMt7u0-7eLJpm3r-Hg8Vv3hxyjejKE5ghywBuzkIHbwkGB-"/>
+    </div>
+  </div>
+</nav>
+
+<main class="pt-32 pb-24 px-6 max-w-7xl mx-auto space-y-24">
+  <section class="hidden glass-card rounded-3xl p-10" id="empty-state">
+    <h1 class="text-4xl font-headline font-extrabold mb-4">No completed profile yet</h1>
+    <p class="text-lg text-on-surface-variant mb-8 max-w-xl">Finish Module 1 so Pathfinder can generate your personalized result using the full profile system.</p>
+    <a class="inline-flex items-center gap-2 px-8 py-4 bg-primary text-white rounded-2xl font-black text-sm uppercase tracking-widest" href="./module-1-personality.html">Go to Module 1</a>
+  </section>
+
+  <section class="space-y-24" id="profile-content">
+    <header class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center fade-up">
+      <div class="lg:col-span-7 space-y-8">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary font-bold text-xs tracking-widest uppercase" id="profile-code">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+          </span>
+          Cognitive Profile: BD
+        </div>
+        <h1 class="text-6xl md:text-7xl font-headline font-extrabold tracking-tight text-on-surface leading-[1.1]" id="profile-title">
+          The Creative <br/><span class="text-primary">Analyst</span>
+        </h1>
+        <p class="text-xl md:text-2xl text-on-surface-variant leading-relaxed font-light max-w-2xl" id="core-summary">
+          This person operates at the intersection of intellectual curiosity and creative expression. They resist simple answers and conventional approaches, preferring to interrogate assumptions and design unconventional solutions.
+        </p>
+        <div class="flex flex-wrap gap-4 pt-4" id="hero-badges">
+          <span class="px-5 py-2 rounded-xl bg-white border border-surface-container-high shadow-sm text-sm font-bold flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary">psychology</span> Conceptual Explorer
+          </span>
+          <span class="px-5 py-2 rounded-xl bg-white border border-surface-container-high shadow-sm text-sm font-bold flex items-center gap-2">
+            <span class="material-symbols-outlined text-secondary">flare</span> Original Innovator
+          </span>
+        </div>
+      </div>
+
+      <div class="lg:col-span-5 relative">
+        <div class="aspect-square glass-card rounded-4xl flex items-center justify-center p-8 overflow-hidden">
+          <svg class="w-full h-full radar-glow overflow-visible" id="radar-svg" viewBox="0 0 400 400">
+            <circle class="stroke-on-surface/5 fill-none" cx="200" cy="200" r="150" stroke-width="1"></circle>
+            <circle class="stroke-on-surface/5 fill-none" cx="200" cy="200" r="100" stroke-width="1"></circle>
+            <circle class="stroke-on-surface/5 fill-none" cx="200" cy="200" r="50" stroke-width="1"></circle>
+            <line class="stroke-on-surface/10" x1="200" x2="200" y1="50" y2="350"></line>
+            <line class="stroke-on-surface/10" x1="50" x2="350" y1="200" y2="200"></line>
+            <text class="fill-on-surface/40 font-bold text-[10px] tracking-widest" text-anchor="middle" x="200" y="30">CREATIVITY (B)</text>
+            <text class="fill-on-surface/40 font-bold text-[10px] tracking-widest" text-anchor="start" x="360" y="205">STRUCTURE (A)</text>
+            <text class="fill-on-surface/40 font-bold text-[10px] tracking-widest" text-anchor="middle" x="200" y="385">PEOPLE (C)</text>
+            <text class="fill-on-surface/40 font-bold text-[10px] tracking-widest" text-anchor="end" x="40" y="205">ANALYSIS (D)</text>
+            <path class="fill-primary/20 stroke-primary stroke-2" d="M200,72.5 L245,200 L200,242 L68,200 Z" id="radar-shape" style="filter: drop-shadow(0 0 10px rgba(0,106,220,0.3));"></path>
+            <circle class="fill-primary" cx="200" cy="72.5" id="point-b" r="4"></circle>
+            <circle class="fill-primary" cx="245" cy="200" id="point-a" r="4"></circle>
+            <circle class="fill-primary" cx="200" cy="242" id="point-c" r="4"></circle>
+            <circle class="fill-primary" cx="68" cy="200" id="point-d" r="4"></circle>
+          </svg>
+        </div>
+        <div class="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-primary/20 rounded-full blur-[100px]"></div>
+      </div>
+    </header>
+
+    <section class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div class="lg:col-span-1 glass-card rounded-3xl p-8 space-y-10 fade-up stagger-1">
+        <div>
+          <h3 class="text-xl font-headline font-extrabold flex items-center gap-2 mb-2">
+            <span class="material-symbols-outlined text-primary">bolt</span>
+            Execution Profile
+          </h3>
+          <p class="text-xs text-on-surface-variant font-medium">Your behavioral drivers across key execution pillars.</p>
+        </div>
+        <div class="space-y-8" id="execution-metrics"></div>
+      </div>
+
+      <div class="lg:col-span-2 glass-card rounded-3xl p-10 fade-up stagger-2 border-primary/10">
+        <h3 class="text-2xl font-headline font-extrabold mb-8 flex items-center gap-3">
+          <span class="material-symbols-outlined text-primary text-3xl">terminal</span>
+          The Operating Manual
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+          <div class="space-y-6">
+            <div class="flex gap-4">
+              <div class="w-12 h-12 rounded-2xl bg-primary/10 flex-shrink-0 flex items-center justify-center">
+                <span class="material-symbols-outlined text-primary">potted_plant</span>
+              </div>
+              <div>
+                <h4 class="font-bold text-on-surface mb-1">Ideal Environment</h4>
+                <p class="text-sm text-on-surface-variant leading-relaxed" id="ideal-environment"></p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <div class="w-12 h-12 rounded-2xl bg-primary/10 flex-shrink-0 flex items-center justify-center">
+                <span class="material-symbols-outlined text-primary">assignment</span>
+              </div>
+              <div>
+                <h4 class="font-bold text-on-surface mb-1">Preferred Tasks</h4>
+                <p class="text-sm text-on-surface-variant leading-relaxed" id="preferred-tasks"></p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <div class="w-12 h-12 rounded-2xl bg-primary/10 flex-shrink-0 flex items-center justify-center">
+                <span class="material-symbols-outlined text-primary">school</span>
+              </div>
+              <div>
+                <h4 class="font-bold text-on-surface mb-1">Learning Style</h4>
+                <p class="text-sm text-on-surface-variant leading-relaxed" id="learning-style"></p>
+              </div>
+            </div>
+          </div>
+          <div class="space-y-6">
+            <div class="flex gap-4">
+              <div class="w-12 h-12 rounded-2xl bg-on-surface/5 flex-shrink-0 flex items-center justify-center">
+                <span class="material-symbols-outlined text-on-surface">lightbulb</span>
+              </div>
+              <div>
+                <h4 class="font-bold text-on-surface mb-1">Decision Style</h4>
+                <p class="text-sm text-on-surface-variant leading-relaxed" id="decision-style"></p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <div class="w-12 h-12 rounded-2xl bg-error/10 flex-shrink-0 flex items-center justify-center">
+                <span class="material-symbols-outlined text-error">forum</span>
+              </div>
+              <div>
+                <h4 class="font-bold text-on-surface mb-1">Preferred Feedback</h4>
+                <p class="text-sm text-on-surface-variant leading-relaxed" id="preferred-feedback"></p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <div class="w-12 h-12 rounded-2xl bg-secondary/10 flex-shrink-0 flex items-center justify-center">
+                <span class="material-symbols-outlined text-secondary">groups</span>
+              </div>
+              <div>
+                <h4 class="font-bold text-on-surface mb-1">Team Role</h4>
+                <p class="text-sm text-on-surface-variant leading-relaxed" id="team-role"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mt-10 p-6 rounded-2xl bg-primary/5 border border-primary/10">
+          <p class="text-sm font-medium italic text-primary leading-relaxed" id="manual-callout"></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid grid-cols-1 lg:grid-cols-2 gap-8 fade-up stagger-3">
+      <div class="space-y-6">
+        <h3 class="text-2xl font-headline font-extrabold px-2">Detailed Strengths</h3>
+        <div class="space-y-4" id="strengths-list"></div>
+      </div>
+      <div class="space-y-6">
+        <h3 class="text-2xl font-headline font-extrabold px-2">Watch-outs</h3>
+        <div class="space-y-4" id="watchouts-list"></div>
+      </div>
+    </section>
+
+    <section class="space-y-12 fade-up stagger-4">
+      <div class="text-center max-w-2xl mx-auto space-y-4">
+        <h2 class="text-4xl font-headline font-extrabold text-on-surface">Career Architectures</h2>
+        <p class="text-on-surface-variant" id="career-subtitle">Where your synthesis of deep analysis and creative ambition creates the most value.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="role-cards"></div>
+    </section>
+
+    <section class="hero-gradient rounded-[3rem] p-12 md:p-20 relative overflow-hidden shadow-2xl">
+      <div class="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="space-y-8 text-white">
+          <h2 class="text-5xl font-headline font-extrabold leading-tight">Map Your Intelligence.</h2>
+          <p class="text-xl text-white/80 leading-relaxed font-light" id="cta-copy"></p>
+          <div class="flex flex-wrap gap-4 pt-4">
+            <button class="px-8 py-4 bg-white text-primary rounded-2xl font-black text-sm uppercase tracking-widest hover:scale-105 transition-transform" type="button">
+              Explore Recommended Degrees
+            </button>
+            <button class="px-8 py-4 bg-white/10 backdrop-blur-md border border-white/20 text-white rounded-2xl font-black text-sm uppercase tracking-widest hover:bg-white/20 transition-all flex items-center gap-2" type="button">
+              <span class="material-symbols-outlined">download</span>
+              Full PDF Report
+            </button>
+          </div>
+        </div>
+        <div class="hidden lg:block relative group">
+          <div class="absolute -inset-4 bg-white/10 rounded-3xl blur-2xl group-hover:bg-white/20 transition-all"></div>
+          <div class="relative rounded-2xl overflow-hidden border border-white/20 shadow-2xl">
+            <img alt="Students collaborating" class="w-full aspect-video object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7OiBMTPP1QOXpkMVrhqK8VVX6gH_LQPISv6WbBISuRYHJsvuK4d-ASL_pk0Nh8oBVkVt2GfG04G8N0O-H3IVPulqwnyJr0msRJ-b9rLkwGjxXAHbWBblui59nxQJ-sMbduOm0z3MyjZSlcDC9vh5wGpNXJvUdq9BwyL8v4GPJx_p8aGBlBsG9LycR2QiqSYeRfak591h9dxkLrqQYZpY7yKyPl1Re7oUeMlSVSN-Sbp4N7Fk96SNm5z6rsP21Q9SrLX5ShyLMqkVR"/>
+          </div>
+        </div>
+      </div>
+      <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-white/10 rounded-full blur-[100px]"></div>
+    </section>
+  </section>
+</main>
+
+<footer class="bg-white border-t border-surface-container-high py-20 px-6">
+  <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-12">
+    <div class="space-y-4">
+      <div class="flex items-center gap-2">
+        <div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center">
+          <span class="material-symbols-outlined text-white">explore</span>
+        </div>
+        <span class="text-2xl font-black text-on-surface tracking-tighter font-headline">Pathfinder</span>
+      </div>
+      <p class="text-sm text-on-surface-variant max-w-xs">Excellence in Orientation through data-driven cognitive alignment.</p>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-12">
+      <div class="space-y-4">
+        <h4 class="font-bold text-xs uppercase tracking-widest text-on-surface">Platform</h4>
+        <ul class="space-y-2 text-sm text-on-surface-variant font-medium">
+          <li><a class="hover:text-primary transition-colors" href="./journey.html">Journey</a></li>
+          <li><a class="hover:text-primary transition-colors" href="./profile-result.html">Profiles</a></li>
+          <li><a class="hover:text-primary transition-colors" href="#">Mentor AI</a></li>
+        </ul>
+      </div>
+      <div class="space-y-4">
+        <h4 class="font-bold text-xs uppercase tracking-widest text-on-surface">Institution</h4>
+        <ul class="space-y-2 text-sm text-on-surface-variant font-medium">
+          <li><a class="hover:text-primary transition-colors" href="#">Admissions</a></li>
+          <li><a class="hover:text-primary transition-colors" href="#">Campus Life</a></li>
+          <li><a class="hover:text-primary transition-colors" href="#">Partnerships</a></li>
+        </ul>
+      </div>
+      <div class="space-y-4">
+        <h4 class="font-bold text-xs uppercase tracking-widest text-on-surface">Legal</h4>
+        <ul class="space-y-2 text-sm text-on-surface-variant font-medium">
+          <li><a class="hover:text-primary transition-colors" href="#">Privacy</a></li>
+          <li><a class="hover:text-primary transition-colors" href="#">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto mt-20 pt-8 border-t border-surface-container text-center md:text-left text-xs text-on-surface-variant/60 font-medium">
+    © 2024 Pathfinder University. Built for the future of student intelligence.
+  </div>
+</footer>
+
+<script>
+const STORAGE_KEY = "pathfinder_module_1_profile";
+const LATEST_STORAGE_KEY = "pathfinder_module_1_profile_latest";
+
+const METRIC_LOOKUP = {
+  structure: "Structure Orientation",
+  creativity: "Creativity / Originality Drive",
+  people: "People Orientation",
+  analysis: "Analytical Depth",
+  adaptability: "Adaptability",
+  leadership: "Leadership / Coordination Tendency",
+  independence: "Independence",
+  collaboration: "Collaboration Preference",
+  learning: "Learning Style: Practical vs Conceptual",
+  decision: "Decision Style: Intuition vs Evidence",
+  communication: "Communication Style",
+  clarity: "Need for Clarity",
+  ambiguity: "Tolerance for Ambiguity",
+  motivation: "Motivation Source",
+  growth: "Growth Style / Preferred Feedback"
+};
+
+const HERO_ICON_MAP = {
+  "Structured Executor": "task_alt",
+  "Creative Initiator": "flare",
+  "People-Centered Collaborator": "groups",
+  "Analytical Inquirer": "psychology",
+  "Planned Creative": "design_services",
+  "Supportive Coordinator": "volunteer_activism",
+  "Analytical Planner": "analytics",
+  "Creative Humanist": "favorite",
+  "Conceptual Explorer": "psychology",
+  "Integrated All-Rounder": "hub"
+};
+
+const ROLE_ICON_MAP = [
+  { match: /research|scientist|analyst|policy|strategy|consultant|futures/i, icon: "insights", color: "bg-on-surface text-white shadow-on-surface/20", text: "text-on-surface" },
+  { match: /design|ux|creative|brand|content|experience|architect/i, icon: "biotech", color: "bg-primary text-white shadow-primary/20", text: "text-primary" },
+  { match: /community|people|coach|mentor|customer|hr|health|education|support/i, icon: "groups", color: "bg-secondary text-white shadow-secondary/20", text: "text-secondary" },
+  { match: /project|operations|program|manager|coordinator|delivery/i, icon: "event_note", color: "bg-primary-dim text-white shadow-primary/20", text: "text-primary" }
+];
+
+function readSubmission() {
+  const preferred = sessionStorage.getItem(LATEST_STORAGE_KEY);
+  const fallback = localStorage.getItem(STORAGE_KEY);
+  const raw = preferred || fallback;
+  return raw ? JSON.parse(raw) : null;
+}
+
+function countAnswers(answers) {
+  const counts = { A: 0, B: 0, C: 0, D: 0 };
+  Object.values(answers || {}).forEach((value) => {
+    if (counts[value] !== undefined) counts[value] += 1;
+  });
+  return counts;
+}
+
+function sortCounts(counts) {
+  return Object.entries(counts).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
+}
+
+function pickProfileKey(data, counts) {
+  const entries = sortCounts(counts);
+  const topCount = entries[0][1];
+  const secondCount = entries[1][1];
+  const threshold = data.scoring_guide.single_dominant_threshold || 8;
+
+  if (topCount >= threshold && topCount - secondCount >= 2) {
+    return entries[0][0];
+  }
+
+  let relevant = entries.filter(([, value]) => topCount - value <= 2).map(([key]) => key);
+  if (relevant.length >= 3) {
+    const filtered = relevant.filter((key) => counts[key] >= 4);
+    if (filtered.length >= 3) relevant = filtered;
+  }
+
+  const candidate = relevant.sort().join("");
+  if (data.profiles[candidate]) return candidate;
+
+  const topTwo = entries.slice(0, 2).map(([key]) => key).sort().join("");
+  if (data.profiles[topTwo]) return topTwo;
+
+  return entries[0][0];
+}
+
+function metricMap(profile) {
+  return Object.fromEntries(profile.metrics.map((item) => [item.metric, item]));
+}
+
+function cleanText(value) {
+  return String(value || "").replace(/\s+/g, " ").trim();
+}
+
+function sentenceCase(value) {
+  const text = cleanText(value);
+  return text ? text.charAt(0).toUpperCase() + text.slice(1) : "";
+}
+
+function splitTitle(title) {
+  const parts = cleanText(title).split(" ");
+  if (parts.length <= 1) return title;
+  return `${parts.slice(0, -1).join(" ")} <br/><span class="text-primary">${parts.at(-1)}</span>`;
+}
+
+function shortenTrait(trait) {
+  const text = cleanText(trait).replace(/[.;].*$/, "");
+  return text.length > 34 ? `${text.slice(0, 31).trim()}...` : text;
+}
+
+function firstSentence(value) {
+  const text = cleanText(value);
+  const match = text.match(/.*?[.!?](?:\s|$)/);
+  return match ? match[0].trim() : text;
+}
+
+function getMetricScore(metrics, name, fallback) {
+  return metrics[name] ? metrics[name].score : fallback;
+}
+
+function blend(base, live, weight = 0.65) {
+  return Math.max(18, Math.min(96, Math.round(base * weight + live * (1 - weight))));
+}
+
+function deriveRadarScores(metrics, counts) {
+  const live = {
+    A: counts.A / 16 * 100,
+    B: counts.B / 16 * 100,
+    C: counts.C / 16 * 100,
+    D: counts.D / 16 * 100
+  };
+  return {
+    A: blend(getMetricScore(metrics, METRIC_LOOKUP.structure, 50), live.A),
+    B: blend(getMetricScore(metrics, METRIC_LOOKUP.creativity, 50), live.B),
+    C: blend(getMetricScore(metrics, METRIC_LOOKUP.people, 50), live.C),
+    D: blend(getMetricScore(metrics, METRIC_LOOKUP.analysis, 50), live.D)
+  };
+}
+
+function deriveExecutionMetrics(metrics, counts) {
+  const live = {
+    adaptability: ((counts.B + counts.D) / 16) * 100,
+    independence: ((counts.B + counts.D + counts.A * 0.5) / 16) * 100,
+    analysis: (counts.D / 16) * 100,
+    leadership: ((counts.A + counts.C) / 16) * 100
+  };
+
+  return [
+    {
+      label: "Adaptability",
+      score: blend(getMetricScore(metrics, METRIC_LOOKUP.adaptability, 60), live.adaptability),
+      text: metrics[METRIC_LOOKUP.adaptability]?.interpretation || "Responds to change by reframing it into a workable next move.",
+      emphasis: "bg-primary"
+    },
+    {
+      label: "Independence",
+      score: blend(getMetricScore(metrics, METRIC_LOOKUP.independence, 60), live.independence),
+      text: metrics[METRIC_LOOKUP.independence]?.interpretation || "Prefers autonomy, self-direction, and room to think independently.",
+      emphasis: "bg-primary"
+    },
+    {
+      label: "Analytical Depth",
+      score: blend(getMetricScore(metrics, METRIC_LOOKUP.analysis, 60), live.analysis),
+      text: metrics[METRIC_LOOKUP.analysis]?.interpretation || "Uses depth, evidence, and pattern recognition to reach conclusions.",
+      emphasis: "bg-primary"
+    },
+    {
+      label: "Leadership Tendency",
+      score: blend(getMetricScore(metrics, METRIC_LOOKUP.leadership, 50), live.leadership),
+      text: metrics[METRIC_LOOKUP.leadership]?.interpretation || "Leads through influence, coordination, or clarity depending on context.",
+      emphasis: "bg-primary/40"
+    }
+  ];
+}
+
+function renderRadar(scores) {
+  const points = {
+    B: [200, 200 - (150 * scores.B / 100)],
+    A: [200 + (150 * scores.A / 100), 200],
+    C: [200, 200 + (150 * scores.C / 100)],
+    D: [200 - (150 * scores.D / 100), 200]
+  };
+  document.getElementById("radar-shape").setAttribute("d", `M${points.B[0]},${points.B[1]} L${points.A[0]},${points.A[1]} L${points.C[0]},${points.C[1]} L${points.D[0]},${points.D[1]} Z`);
+  document.getElementById("point-b").setAttribute("cx", points.B[0]);
+  document.getElementById("point-b").setAttribute("cy", points.B[1]);
+  document.getElementById("point-a").setAttribute("cx", points.A[0]);
+  document.getElementById("point-a").setAttribute("cy", points.A[1]);
+  document.getElementById("point-c").setAttribute("cx", points.C[0]);
+  document.getElementById("point-c").setAttribute("cy", points.C[1]);
+  document.getElementById("point-d").setAttribute("cx", points.D[0]);
+  document.getElementById("point-d").setAttribute("cy", points.D[1]);
+}
+
+function renderExecutionMetrics(items) {
+  const container = document.getElementById("execution-metrics");
+  container.innerHTML = items.map((item) => `
+    <div class="space-y-3">
+      <div class="flex justify-between items-end">
+        <span class="text-sm font-bold text-on-surface">${item.label}</span>
+        <span class="text-lg font-black text-primary">${item.score}%</span>
+      </div>
+      <div class="h-3 w-full bg-surface-container-high rounded-full overflow-hidden">
+        <div class="h-full ${item.emphasis} rounded-full metric-progress" style="width:${item.score}%"></div>
+      </div>
+      <p class="text-[11px] text-on-surface-variant leading-relaxed">${sentenceCase(item.text)}</p>
+    </div>
+  `).join("");
+}
+
+function renderHero(profile) {
+  document.title = `Profile 2.0 | ${profile.title}`;
+  document.getElementById("profile-code").innerHTML = `
+    <span class="relative flex h-2 w-2">
+      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+      <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+    </span>
+    Cognitive Profile: ${profile.id}
+  `;
+  document.getElementById("profile-title").innerHTML = splitTitle(profile.title);
+  document.getElementById("core-summary").textContent = cleanText(profile.core_summary);
+  const secondBadge = profile.dominant_traits?.[0] ? shortenTrait(profile.dominant_traits[0]) : "Adaptive Strength";
+  const archetypeIcon = HERO_ICON_MAP[profile.archetype] || "psychology";
+  document.getElementById("hero-badges").innerHTML = `
+    <span class="px-5 py-2 rounded-xl bg-white border border-surface-container-high shadow-sm text-sm font-bold flex items-center gap-2">
+      <span class="material-symbols-outlined text-primary">${archetypeIcon}</span> ${cleanText(profile.archetype)}
+    </span>
+    <span class="px-5 py-2 rounded-xl bg-white border border-surface-container-high shadow-sm text-sm font-bold flex items-center gap-2">
+      <span class="material-symbols-outlined text-secondary">flare</span> ${secondBadge}
+    </span>
+  `;
+}
+
+function renderOperatingManual(profile) {
+  document.getElementById("ideal-environment").textContent = cleanText(profile.how_this_person_works.ideal_environment);
+  document.getElementById("preferred-tasks").textContent = cleanText(profile.how_this_person_works.preferred_tasks);
+  document.getElementById("learning-style").textContent = cleanText(profile.how_this_person_works.learning_style);
+  document.getElementById("decision-style").textContent = cleanText(profile.how_this_person_works.decision_style);
+  document.getElementById("preferred-feedback").textContent = cleanText(profile.how_this_person_works.preferred_feedback);
+  document.getElementById("team-role").textContent = cleanText(profile.how_this_person_works.team_role);
+  document.getElementById("manual-callout").textContent = `"${firstSentence(profile.final_snapshot || profile.core_summary)}"`;
+}
+
+function renderStrengths(profile) {
+  const container = document.getElementById("strengths-list");
+  container.innerHTML = profile.strengths.slice(0, 5).map((item) => `
+    <div class="p-5 rounded-2xl bg-white border border-surface-container-high hover:border-secondary transition-colors group">
+      <div class="flex gap-4 items-start">
+        <span class="material-symbols-outlined text-secondary mt-0.5">verified_user</span>
+        <div>
+          <h4 class="font-bold text-on-surface group-hover:text-secondary transition-colors">${cleanText(item.strength)}</h4>
+          <p class="text-sm text-on-surface-variant mt-1">${cleanText(item.detail)}</p>
+        </div>
+      </div>
+    </div>
+  `).join("");
+}
+
+function renderWatchouts(profile) {
+  const container = document.getElementById("watchouts-list");
+  container.innerHTML = profile.watch_outs.slice(0, 4).map((item) => `
+    <div class="p-5 rounded-2xl bg-error/5 border border-error/10 hover:border-error transition-colors group">
+      <div class="flex gap-4 items-start">
+        <span class="material-symbols-outlined text-error mt-0.5">warning</span>
+        <div>
+          <h4 class="font-bold text-on-surface group-hover:text-error transition-colors">${cleanText(item.blind_spot)}</h4>
+          <p class="text-sm text-on-surface-variant mt-1">${cleanText(item.detail)}</p>
+        </div>
+      </div>
+    </div>
+  `).join("");
+}
+
+function matchStyleForRole(role) {
+  const found = ROLE_ICON_MAP.find((item) => item.match.test(role));
+  return found || { icon: "work", color: "bg-primary text-white shadow-primary/20", text: "text-primary" };
+}
+
+function roleDescription(role, profile) {
+  const lower = role.toLowerCase();
+  if (/research|scientist|analyst|policy|strategy|consultant/i.test(lower)) {
+    return `A strong path for profiles that thrive on depth, pattern recognition, and intellectually demanding decisions.`;
+  }
+  if (/design|ux|creative|brand|content|experience|architect/i.test(lower)) {
+    return `A fit for people who like turning original ideas into clear, high-impact experiences or systems.`;
+  }
+  if (/community|people|coach|mentor|customer|hr|health|education|support/i.test(lower)) {
+    return `A people-facing path where trust, guidance, and meaningful human impact shape the work.`;
+  }
+  if (/project|operations|program|manager|coordinator|delivery/i.test(lower)) {
+    return `A structured path where follow-through, organization, and reliable execution create momentum.`;
+  }
+  return `A natural extension of a ${cleanText(profile.archetype).toLowerCase()} profile in real-world work.`;
+}
+
+function renderRoles(profile, counts) {
+  const container = document.getElementById("role-cards");
+  const entries = sortCounts(counts);
+  const topWeight = entries[0][1];
+  const roles = profile.best_fit_roles.slice(0, 3);
+  container.innerHTML = roles.map((role, index) => {
+    const style = matchStyleForRole(role);
+    const match = Math.max(78, Math.min(99, 90 + topWeight - (index * 3)));
+    return `
+      <div class="role-hover-card bg-white p-8 rounded-3xl border border-surface-container-high shadow-sm flex flex-col h-full">
+        <div class="w-14 h-14 ${style.color} rounded-2xl flex items-center justify-center mb-6 shadow-lg">
+          <span class="material-symbols-outlined text-3xl">${style.icon}</span>
+        </div>
+        <h3 class="text-xl font-bold mb-3 font-headline">${cleanText(role)}</h3>
+        <p class="text-sm text-on-surface-variant leading-relaxed mb-6 flex-grow">${roleDescription(role, profile)}</p>
+        <div class="pt-6 border-t border-surface-container flex justify-between items-center">
+          <span class="text-[10px] font-black uppercase tracking-widest ${style.text}">Match: ${match}%</span>
+          <button class="material-symbols-outlined ${style.text} hover:translate-x-1 transition-transform" type="button">arrow_forward</button>
+        </div>
+      </div>
+    `;
+  }).join("");
+}
+
+function renderCTA(profile, counts) {
+  const entries = sortCounts(counts);
+  const top = entries[0][0];
+  const topLabel = {
+    A: "clarity and structured execution",
+    B: "creative freedom and original thinking",
+    C: "meaningful impact and human connection",
+    D: "deep thought and analytical rigor"
+  }[top];
+  document.getElementById("career-subtitle").textContent = `Where your ${cleanText(profile.archetype).toLowerCase()} profile creates the most value.`;
+  document.getElementById("cta-copy").innerHTML = `You are most energized by problems that demand <span class="font-bold text-white">${topLabel}</span>. Unlock the academic paths where your unique cognitive range is a competitive advantage.`;
+}
+
+function renderProfile(data, submission) {
+  const counts = countAnswers(submission.answers);
+  const key = pickProfileKey(data, counts);
+  const profile = data.profiles[key];
+  const metrics = metricMap(profile);
+
+  renderHero(profile);
+  renderRadar(deriveRadarScores(metrics, counts));
+  renderExecutionMetrics(deriveExecutionMetrics(metrics, counts));
+  renderOperatingManual(profile);
+  renderStrengths(profile);
+  renderWatchouts(profile);
+  renderRoles(profile, counts);
+  renderCTA(profile, counts);
+}
+
+async function init() {
+  const submission = readSubmission();
+  const emptyState = document.getElementById("empty-state");
+  const profileContent = document.getElementById("profile-content");
+
+  if (!submission || !submission.answers) {
+    emptyState.classList.remove("hidden");
+    profileContent.classList.add("hidden");
+    return;
+  }
+
+  try {
+    const response = await fetch("./profiles.json", { cache: "no-store" });
+    const data = await response.json();
+    renderProfile(data, submission);
+  } catch (error) {
+    emptyState.classList.remove("hidden");
+    profileContent.classList.add("hidden");
+  }
+}
+
+init();
+</script>
+</body>
+</html>

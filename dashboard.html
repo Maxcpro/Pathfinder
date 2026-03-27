@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pathfinder | Student Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Manrope:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-fixed": "#ffa26c",
+              "secondary-dim": "#005e53",
+              "inverse-on-surface": "#939db5",
+              "tertiary-container": "#ffa26c",
+              "on-tertiary": "#fff7f5",
+              "outline-variant": "#9fb2dd",
+              "error-dim": "#70030f",
+              "surface-variant": "#d7e2ff",
+              "tertiary-dim": "#893c00",
+              "surface-container-low": "#f1f3ff",
+              "on-primary-fixed-variant": "#00438f",
+              "on-primary-fixed": "#002657",
+              "primary": "#005cc0",
+              "inverse-surface": "#040e20",
+              "surface-container": "#e8edff",
+              "outline": "#687ba3",
+              "primary-container": "#a3c1ff",
+              "background": "#f9f9ff",
+              "surface-container-high": "#e0e8ff",
+              "on-secondary-fixed": "#004840",
+              "primary-dim": "#0050a9",
+              "secondary": "#006b5f",
+              "error": "#ac3434",
+              "on-error-container": "#65000b",
+              "on-primary-container": "#003a7f",
+              "on-error": "#fff7f6",
+              "on-secondary": "#e2fff8",
+              "on-secondary-fixed-variant": "#00675c",
+              "surface-tint": "#005cc0",
+              "primary-fixed-dim": "#8db3ff",
+              "surface-container-highest": "#d7e2ff",
+              "on-tertiary-fixed": "#3a1600",
+              "tertiary": "#9c4600",
+              "secondary-fixed": "#79f7e3",
+              "tertiary-fixed-dim": "#fc8f4b",
+              "surface-dim": "#cbdaff",
+              "inverse-primary": "#498eff",
+              "error-container": "#f56965",
+              "on-tertiary-container": "#5d2700",
+              "on-secondary-container": "#005d52",
+              "secondary-fixed-dim": "#69e9d5",
+              "on-background": "#1e3256",
+              "on-primary": "#f9f8ff",
+              "on-tertiary-fixed-variant": "#6b2d00",
+              "surface": "#f9f9ff",
+              "on-surface-variant": "#4c5f85",
+              "primary-fixed": "#a3c1ff",
+              "on-surface": "#1e3256",
+              "secondary-container": "#79f7e3",
+              "surface-container-lowest": "#ffffff",
+              "surface-bright": "#f9f9ff"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; }
+        .font-headline { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl shadow-sm flex justify-between items-center px-8 py-4 w-full max-w-full">
+<div class="flex items-center gap-8">
+<a class="text-2xl font-black tracking-tight text-blue-700 font-headline" href="./index.html">Pathfinder</a>
+<div class="hidden md:flex items-center gap-6 font-['Plus_Jakarta_Sans'] font-medium text-sm">
+<a class="text-blue-700 font-bold border-b-2 border-blue-700 pb-1" href="./dashboard.html">Dashboard</a>
+<a class="text-slate-600 hover:text-blue-600 transition-colors duration-200" href="./profile-result.html">Resources</a>
+<a class="text-slate-600 hover:text-blue-600 transition-colors duration-200" href="#community-hub">Community</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-slate-600 hover:bg-slate-50 rounded-full transition-transform active:scale-90" type="button">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-slate-600 hover:bg-slate-50 rounded-full transition-transform active:scale-90" type="button">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container bg-primary/10 flex items-center justify-center">
+<img alt="User profile avatar" class="w-full h-full object-cover" id="user-avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgBwWYUM5eaXDMfgwDvinZflAVIq_Oz1zG8UC2g-_f-dst-V22hApv5p9GUp-zg_tyDCrOdIcJdW54fk0oURZCpumopkWCoSxMPeB3PsKYkyfTEkJ_oLQxQp9gZ0X0bcNsi501hZQilkpT6EMoG_waoyAbr5q2Dty4Azg6xBdi4J3Oqy4MGXHOCz0-1Uj66_DPXAQjVDUbPVTdAcDyk4VJH19WlXq8RDb3469S4vfKYdZ3BfzGYK7FmxSjcQxe94AMKAoy-jkNnVTR"/>
+</div>
+</div>
+</nav>
+
+<aside class="h-screen w-64 fixed left-0 top-0 z-40 bg-slate-50 flex flex-col py-8 pt-24 hidden lg:flex">
+<div class="px-6 mb-8">
+<h2 class="text-lg font-bold text-slate-900 font-headline">The Navigator</h2>
+<p class="text-xs text-slate-500 font-semibold">Academic Year 2024</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 bg-blue-600 text-white rounded-full mx-4 py-3 px-6 shadow-lg shadow-blue-200 translate-x-1 duration-300 font-['Plus_Jakarta_Sans'] font-semibold" href="./dashboard.html">
+<span class="material-symbols-outlined">dashboard</span>
+<span>Overview</span>
+</a>
+<a class="flex items-center gap-3 text-slate-500 hover:text-blue-600 mx-4 py-3 px-6 hover:bg-blue-50 transition-all font-['Plus_Jakarta_Sans'] font-semibold" href="./journey.html">
+<span class="material-symbols-outlined">explore</span>
+<span>Orientation Path</span>
+</a>
+<a class="flex items-center gap-3 text-slate-500 hover:text-blue-600 mx-4 py-3 px-6 hover:bg-blue-50 transition-all font-['Plus_Jakarta_Sans'] font-semibold" href="./profile-result.html">
+<span class="material-symbols-outlined">psychology</span>
+<span>Cognitive Profile</span>
+</a>
+<a class="flex items-center gap-3 text-slate-500 hover:text-blue-600 mx-4 py-3 px-6 hover:bg-blue-50 transition-all font-['Plus_Jakarta_Sans'] font-semibold" href="#task-list">
+<span class="material-symbols-outlined">event_available</span>
+<span>Milestones</span>
+</a>
+<a class="flex items-center gap-3 text-slate-500 hover:text-blue-600 mx-4 py-3 px-6 hover:bg-blue-50 transition-all font-['Plus_Jakarta_Sans'] font-semibold" href="#mentor-card">
+<span class="material-symbols-outlined">group</span>
+<span>Mentors</span>
+</a>
+</nav>
+<div class="px-4 mt-auto space-y-1">
+<a class="block w-full mb-6 bg-primary text-on-primary py-3 rounded-full font-bold shadow-md hover:opacity-90 transition-opacity text-center" href="./strengths-assessment.html" id="daily-task-link">
+                Start Daily Task
+            </a>
+<a class="flex items-center gap-3 text-slate-500 hover:text-blue-600 mx-4 py-2 px-2 transition-all font-semibold text-sm" href="./login.html">
+<span class="material-symbols-outlined">help</span>
+<span>Help Center</span>
+</a>
+<button class="flex items-center gap-3 text-slate-500 hover:text-error mx-4 py-2 px-2 transition-all font-semibold text-sm" id="sign-out" type="button">
+<span class="material-symbols-outlined">logout</span>
+<span>Sign Out</span>
+</button>
+</div>
+</aside>
+
+<main class="lg:ml-64 pt-24 px-8 pb-12">
+<div class="max-w-7xl mx-auto space-y-10">
+<section class="flex flex-col md:flex-row justify-between items-end gap-6">
+<div class="space-y-2">
+<h1 class="text-5xl font-extrabold font-headline tracking-tight text-on-surface" id="welcome-title">Welcome Back, Alex</h1>
+<p class="text-xl text-on-surface-variant font-medium" id="welcome-copy">You're making great strides in your transition to campus life.</p>
+</div>
+<div class="glass-effect rounded-xl p-4 flex items-center gap-4 bg-surface-container-highest shadow-sm">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">trending_up</span>
+</div>
+<div>
+<p class="text-xs font-bold uppercase tracking-wider text-primary">Status</p>
+<p class="font-bold text-on-surface" id="status-text">Ahead of Schedule</p>
+</div>
+</div>
+</section>
+
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-surface-container-low rounded-3xl p-8 flex flex-col justify-between group hover:bg-surface-container-high transition-colors">
+<div class="flex justify-between items-start">
+<span class="text-sm font-bold text-primary font-headline uppercase tracking-widest">Progress</span>
+<span class="material-symbols-outlined text-primary">analytics</span>
+</div>
+<div class="mt-8 flex items-baseline gap-2">
+<span class="text-6xl font-black font-headline" id="progress-percent">65%</span>
+<span class="text-on-surface-variant font-semibold">complete</span>
+</div>
+<div class="mt-6 w-full h-3 bg-white rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" id="progress-bar" style="width:65%"></div>
+</div>
+</div>
+
+<div class="bg-surface-container-highest rounded-3xl p-8 flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<span class="text-sm font-bold text-secondary font-headline uppercase tracking-widest">Milestones</span>
+<span class="material-symbols-outlined text-secondary">task_alt</span>
+</div>
+<div class="mt-8">
+<span class="text-4xl font-bold font-headline block" id="milestone-count">3 of 5</span>
+<span class="text-on-surface-variant font-medium" id="milestone-copy">orientation steps finished</span>
+</div>
+<div class="mt-6 flex -space-x-2" id="milestone-dots"></div>
+</div>
+
+<div class="bg-tertiary-container rounded-3xl p-8 flex flex-col justify-between text-on-tertiary-container" id="mentor-card">
+<div class="flex justify-between items-start">
+<span class="text-sm font-bold font-headline uppercase tracking-widest">Mentor Matching</span>
+<span class="material-symbols-outlined">verified_user</span>
+</div>
+<div class="mt-8">
+<span class="text-6xl font-black font-headline block" id="mentor-percent">98%</span>
+<span class="font-bold opacity-80" id="mentor-copy">Match found with a Design Strategist</span>
+</div>
+<div class="mt-6">
+<a class="bg-on-tertiary-container text-white px-6 py-2 rounded-full font-bold text-sm hover:opacity-90 transition-opacity inline-block" href="./profile-result.html" id="mentor-button">Connect Now</a>
+</div>
+</div>
+</section>
+
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<div class="lg:col-span-5 bg-surface-container-lowest rounded-[2.5rem] p-10 flex flex-col gap-6 relative overflow-hidden shadow-sm">
+<div class="absolute -right-12 -top-12 w-48 h-48 bg-primary/5 rounded-full blur-3xl"></div>
+<div class="relative z-10">
+<h3 class="text-2xl font-bold font-headline mb-2">Cognitive Profile</h3>
+<p class="text-on-surface-variant font-medium">Your dominant trait: <span class="text-primary font-bold" id="profile-title-inline">Creative Analyst</span></p>
+</div>
+<div class="flex-1 flex items-center justify-center py-4">
+<div class="relative w-48 h-48 flex items-center justify-center">
+<svg class="w-full h-full transform -rotate-18" viewBox="0 0 100 100">
+<polygon class="text-outline-variant" fill="none" points="50,10 90,40 75,90 25,90 10,40" stroke="currentColor" stroke-width="1"></polygon>
+<polygon class="text-outline-variant" fill="none" points="50,20 80,45 65,80 35,80 20,45" stroke="currentColor" stroke-width="0.5"></polygon>
+<polygon class="text-primary" fill="rgba(0, 92, 192, 0.2)" id="radar-shape" points="50,15 85,38 70,85 30,78 15,45" stroke="currentColor" stroke-width="2"></polygon>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl text-primary">psychology</span>
+</div>
+</div>
+</div>
+<div class="p-4 bg-surface-container rounded-2xl">
+<p class="text-sm leading-relaxed text-on-surface" id="profile-insight">You excel at synthesizing complex data sets into innovative visual solutions. Your primary strength is <strong class="text-primary">Originality/Analysis</strong>.</p>
+</div>
+</div>
+
+<div class="lg:col-span-7 space-y-6">
+<div class="bg-primary text-on-primary rounded-[2.5rem] p-10 flex flex-col md:flex-row justify-between items-center gap-8 shadow-xl relative overflow-hidden">
+<div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -mr-20 -mt-20 blur-2xl"></div>
+<div class="space-y-4 relative z-10">
+<div class="inline-block px-4 py-1 bg-white/20 rounded-full text-xs font-bold uppercase tracking-widest">Top Matched Path</div>
+<h3 class="text-4xl font-extrabold font-headline" id="top-path-title">Design Researcher</h3>
+<p class="opacity-90 max-w-sm" id="top-path-copy">Bridge the gap between human behavior and technological innovation.</p>
+</div>
+<div class="relative z-10 w-full md:w-auto">
+<a class="w-full md:w-auto bg-white text-primary px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:scale-105 transition-transform inline-block text-center" href="./profile-result.html" id="resume-path-link">Resume Path</a>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="secondary-paths"></div>
+</div>
+</section>
+
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<div class="lg:col-span-2 space-y-6">
+<div class="flex justify-between items-center">
+<h3 class="text-2xl font-bold font-headline">Upcoming Tasks</h3>
+<button class="text-primary font-bold text-sm" type="button">View Calendar</button>
+</div>
+<div class="space-y-3" id="task-list"></div>
+</div>
+
+<div class="space-y-6" id="community-hub">
+<h3 class="text-2xl font-bold font-headline">Community Hub</h3>
+<div class="bg-surface-container-low rounded-[2.5rem] overflow-hidden">
+<div class="h-40 w-full relative">
+<img alt="Latest Orientation News" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8ck33Hjd_GoAPJ0agLyPiEbWJ81OrS6GM8sjUowMidjT86B4W5FhpofkZCC8_yOPlOlBscgDNu9TU4qgXppDg9hbNaNjkO7UWdc-RfFCKxYvcEpLJ_wNQcwKzYR7Ad5hQg9SeqV7sl7PsSFX7WHFmbtH5U0Gifwfw0bxZC0iEE_LLkIJEHCR2ZmuIpF7jAiPrBa9li9SGtD-Lylo3tDNMpuAUj8cQWxlYTMPdCDuI42m4k_NkBw3Wos84zF9JlwFjACAApAtuEXc1"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low to-transparent"></div>
+</div>
+<div class="p-8 space-y-4">
+<div class="inline-block px-3 py-1 bg-secondary/10 text-secondary text-xs font-bold rounded-full" id="community-tag">New Update</div>
+<h4 class="text-xl font-bold font-headline leading-tight" id="community-title">Freshman Meetup: Creative Arts Center</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed" id="community-copy">Join fellow Pathfinder students this Friday for a casual networking event and portfolio swap.</p>
+<button class="text-primary font-bold flex items-center gap-2 group" type="button">
+                                Learn More
+                                <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+
+<button class="fixed bottom-10 right-10 w-16 h-16 bg-primary text-on-primary rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all z-50" type="button">
+<span class="material-symbols-outlined text-3xl">add</span>
+</button>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+const SUPABASE_URL = "https://ckccrigozrtrscirbvsn.supabase.co";
+const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNrY2NyaWdvenJ0cnNjaXJidnNuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ1ODAwOTMsImV4cCI6MjA5MDE1NjA5M30.lVUXcORfH3aoYB9d7VtnIwsby-Ru7nARpklj4ZEegkk";
+const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+const STORAGE_KEY = "pathfinder_module_1_profile";
+const LATEST_STORAGE_KEY = "pathfinder_module_1_profile_latest";
+
+function cleanText(value) {
+  return String(value || "").replace(/\s+/g, " ").trim();
+}
+
+function titleCase(value) {
+  return cleanText(value).split(/[_\s-]+/).filter(Boolean).map((part) => part.charAt(0).toUpperCase() + part.slice(1)).join(" ");
+}
+
+function firstName(user) {
+  const fullName = cleanText(user?.user_metadata?.full_name);
+  if (fullName) return fullName.split(" ")[0];
+  const email = cleanText(user?.email);
+  if (email.includes("@")) return email.split("@")[0].replace(/[._-]+/g, " ").split(" ").map((s) => s.charAt(0).toUpperCase() + s.slice(1)).join(" ");
+  return "Explorer";
+}
+
+function roleDescription(role) {
+  const lower = role.toLowerCase();
+  if (/design|ux|creative|brand|content|experience|architect/i.test(lower)) return "Bridge creativity, behavior, and product thinking.";
+  if (/research|analyst|strategy|policy|scientist|consultant/i.test(lower)) return "Turn complexity into insight, direction, and better decisions.";
+  if (/community|coach|mentor|people|customer|support|hr/i.test(lower)) return "Center people, trust, and meaningful growth in the work.";
+  if (/project|operations|program|manager|coordinator|delivery/i.test(lower)) return "Create momentum through clarity, sequencing, and execution.";
+  return "A path aligned with your current Pathfinder profile.";
+}
+
+function roleFocus(role) {
+  const lower = role.toLowerCase();
+  if (/design|ux/i.test(lower)) return "Focus: UX & Psychology";
+  if (/creative|brand|content|media/i.test(lower)) return "Focus: Storytelling & Concept";
+  if (/research|analyst|strategy|policy/i.test(lower)) return "Focus: Insight & Systems";
+  if (/community|people|mentor|coach|support/i.test(lower)) return "Focus: Human Development";
+  if (/project|operations|program|manager/i.test(lower)) return "Focus: Delivery & Coordination";
+  return "Focus: Profile-aligned growth";
+}
+
+function taskIcon(task) {
+  if (/mentor/i.test(task.title)) return "video_call";
+  if (/module|profile/i.test(task.title)) return "fact_check";
+  if (/review|curriculum|path/i.test(task.title)) return "menu_book";
+  return "checklist";
+}
+
+function countAnswers(answers) {
+  const counts = { A: 0, B: 0, C: 0, D: 0 };
+  Object.values(answers || {}).forEach((value) => {
+    if (counts[value] !== undefined) counts[value] += 1;
+  });
+  return counts;
+}
+
+function sortCounts(counts) {
+  return Object.entries(counts).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
+}
+
+function readSubmission(userId) {
+  const scopedLatest = localStorage.getItem(`pathfinder_module_1_profile_latest_${userId}`);
+  const scoped = localStorage.getItem(`pathfinder_module_1_profile_${userId}`);
+  const globalLatest = sessionStorage.getItem(LATEST_STORAGE_KEY) || localStorage.getItem(LATEST_STORAGE_KEY);
+  const globalStored = localStorage.getItem(STORAGE_KEY);
+  const raw = scopedLatest || scoped || globalLatest || globalStored;
+  if (!raw) return null;
+  const parsed = JSON.parse(raw);
+  if ((globalLatest || globalStored) && userId) {
+    localStorage.setItem(`pathfinder_module_1_profile_latest_${userId}`, raw);
+    localStorage.setItem(`pathfinder_module_1_profile_${userId}`, raw);
+  }
+  return parsed;
+}
+
+function pickProfileKey(data, counts) {
+  const entries = sortCounts(counts);
+  const topCount = entries[0][1];
+  const secondCount = entries[1][1];
+  const threshold = data.scoring_guide.single_dominant_threshold || 8;
+  if (topCount >= threshold && topCount - secondCount >= 2) return entries[0][0];
+  let relevant = entries.filter(([, value]) => topCount - value <= 2).map(([key]) => key);
+  if (relevant.length >= 3) {
+    const filtered = relevant.filter((key) => counts[key] >= 4);
+    if (filtered.length >= 3) relevant = filtered;
+  }
+  const candidate = relevant.sort().join("");
+  if (data.profiles[candidate]) return candidate;
+  const topTwo = entries.slice(0, 2).map(([key]) => key).sort().join("");
+  if (data.profiles[topTwo]) return topTwo;
+  return entries[0][0];
+}
+
+function metricMap(profile) {
+  return Object.fromEntries(profile.metrics.map((item) => [item.metric, item]));
+}
+
+function score(metrics, key, fallback) {
+  return metrics[key] ? metrics[key].score : fallback;
+}
+
+function radarValues(profile, counts) {
+  const metrics = metricMap(profile);
+  const live = {
+    A: counts.A / 16 * 100,
+    B: counts.B / 16 * 100,
+    C: counts.C / 16 * 100,
+    D: counts.D / 16 * 100
+  };
+  const blend = (base, realtime) => Math.round(base * 0.65 + realtime * 0.35);
+  return {
+    A: blend(score(metrics, "Structure Orientation", 40), live.A),
+    B: blend(score(metrics, "Creativity / Originality Drive", 55), live.B),
+    C: blend(score(metrics, "People Orientation", 45), live.C),
+    D: blend(score(metrics, "Analytical Depth", 55), live.D)
+  };
+}
+
+function renderRadar(values) {
+  const point = {
+    B: `50,${Math.max(15, 50 - values.B * 0.4)}`,
+    A: `${Math.min(88, 50 + values.A * 0.36)},42`,
+    C: `50,${Math.min(88, 50 + values.C * 0.38)}`,
+    D: `${Math.max(12, 50 - values.D * 0.36)},42`
+  };
+  document.getElementById("radar-shape").setAttribute("points", `${point.B} ${point.A} ${point.C} ${point.D}`);
+}
+
+function renderMilestones(doneCount) {
+  document.getElementById("milestone-count").textContent = `${doneCount} of 5`;
+  document.getElementById("milestone-copy").textContent = "orientation steps finished";
+  const dots = Array.from({ length: 5 }, (_, index) => index < doneCount);
+  document.getElementById("milestone-dots").innerHTML = dots.map((done) => `
+    <div class="w-8 h-8 rounded-full ${done ? "bg-secondary text-white flex items-center justify-center" : "bg-surface-variant"} border-2 border-surface">${done ? '<span class="material-symbols-outlined text-xs">check</span>' : ""}</div>
+  `).join("");
+}
+
+function renderTasks(tasks) {
+  document.getElementById("task-list").innerHTML = tasks.map((task) => `
+    <div class="group flex items-center gap-6 p-6 bg-surface-container-lowest rounded-3xl hover:bg-white transition-all shadow-sm">
+      <div class="w-12 h-12 rounded-2xl bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+        <span class="material-symbols-outlined">${taskIcon(task)}</span>
+      </div>
+      <div class="flex-1">
+        <h4 class="font-bold text-on-surface">${task.title}</h4>
+        <p class="text-xs text-on-surface-variant font-medium">${task.meta}</p>
+      </div>
+      <a class="w-10 h-10 flex items-center justify-center rounded-full text-outline hover:text-primary" href="${task.href}">
+        <span class="material-symbols-outlined">more_vert</span>
+      </a>
+    </div>
+  `).join("");
+}
+
+function renderRecommendations(roles) {
+  const fallbackRoles = ["Human-Computer Interaction", "Digital Media Design", "Innovation Strategy"];
+  const safeRoles = (roles && roles.length ? roles : fallbackRoles).slice(1, 3);
+  const resolved = safeRoles.length === 2 ? safeRoles : fallbackRoles.slice(0, 2);
+  const cards = resolved.map((role) => `
+    <div class="bg-surface-container-high p-6 rounded-3xl flex flex-col justify-between gap-4">
+      <div class="space-y-1">
+        <h4 class="font-bold font-headline text-lg">${titleCase(role)}</h4>
+        <p class="text-sm text-on-surface-variant">${roleFocus(role)}</p>
+      </div>
+      <a class="text-primary font-bold flex items-center gap-2 text-sm" href="./profile-result.html">
+        Explore <span class="material-symbols-outlined text-sm">arrow_forward</span>
+      </a>
+    </div>
+  `).join("");
+  document.getElementById("secondary-paths").innerHTML = cards;
+}
+
+function renderNoProfile(name) {
+  document.getElementById("welcome-title").textContent = `Welcome Back, ${name}`;
+  document.getElementById("welcome-copy").textContent = "Your account is ready. Complete your first assessment to unlock a personalized academic dashboard.";
+  document.getElementById("status-text").textContent = "Getting Started";
+  document.getElementById("progress-percent").textContent = "20%";
+  document.getElementById("progress-bar").style.width = "20%";
+  renderMilestones(1);
+  document.getElementById("mentor-percent").textContent = "72%";
+  document.getElementById("mentor-copy").textContent = "Complete your profile to unlock a mentor recommendation";
+  document.getElementById("mentor-button").textContent = "Build Profile";
+  document.getElementById("mentor-button").href = "./strengths-assessment.html";
+  document.getElementById("profile-title-inline").textContent = "Profile Pending";
+  document.getElementById("profile-insight").innerHTML = 'Finish Module 1 to generate your cognitive profile and unlock role recommendations tailored to your strengths.';
+  document.getElementById("top-path-title").textContent = "Unlock Your Best Path";
+  document.getElementById("top-path-copy").textContent = "Your dashboard will surface the strongest academic and career directions once your assessment is complete.";
+  document.getElementById("resume-path-link").textContent = "Start Profile";
+  document.getElementById("resume-path-link").href = "./strengths-assessment.html";
+  document.getElementById("daily-task-link").href = "./strengths-assessment.html";
+  document.getElementById("community-title").textContent = "Orientation Welcome Session";
+  document.getElementById("community-copy").textContent = "Complete your first Pathfinder milestone, then join the student welcome session to meet other new members.";
+  renderRecommendations(["Human-Computer Interaction", "Digital Media Design", "Community Experience"]);
+  renderTasks([
+    { title: "Start Module 1: Personality & Strengths", meta: "First milestone", href: "./strengths-assessment.html" },
+    { title: "Choose your orientation path", meta: "Journey setup", href: "./journey.html" },
+    { title: "Review your profile once generated", meta: "Unlock recommendations", href: "./profile-result.html" }
+  ]);
+}
+
+function renderProfileDashboard(name, profile, counts) {
+  const metrics = metricMap(profile);
+  const roles = profile.best_fit_roles;
+  const topRole = titleCase(roles[0] || "Design Researcher");
+  const mentorPercent = Math.min(99, Math.max(88, Math.round((score(metrics, "Adaptability", 70) + score(metrics, "Communication Style", 65)) / 2 + 10)));
+  const radar = radarValues(profile, counts);
+  const sorted = sortCounts(radar);
+  const dominantPair = `${sorted[0][0]}/${sorted[1][0]}`;
+  document.getElementById("welcome-title").textContent = `Welcome Back, ${name}`;
+  document.getElementById("welcome-copy").textContent = "You're making great strides in your transition to campus life.";
+  document.getElementById("status-text").textContent = score(metrics, "Adaptability", 60) >= 70 ? "Ahead of Schedule" : "On Track";
+  document.getElementById("progress-percent").textContent = "65%";
+  document.getElementById("progress-bar").style.width = "65%";
+  renderMilestones(3);
+  document.getElementById("mentor-percent").textContent = `${mentorPercent}%`;
+  document.getElementById("mentor-copy").textContent = `Match found with a ${topRole}`;
+  document.getElementById("mentor-button").textContent = "Connect Now";
+  document.getElementById("mentor-button").href = "./profile-result.html";
+  document.getElementById("profile-title-inline").textContent = profile.title.replace(/^The\s+/, "");
+  document.getElementById("profile-insight").innerHTML = `${cleanText(profile.core_summary).split(".")[0]}. Your primary strength is <strong class="text-primary">${dominantPair}</strong>.`;
+  document.getElementById("top-path-title").textContent = topRole;
+  document.getElementById("top-path-copy").textContent = roleDescription(roles[0] || "");
+  document.getElementById("resume-path-link").textContent = "Resume Path";
+  document.getElementById("resume-path-link").href = "./profile-result.html";
+  document.getElementById("daily-task-link").href = "./profile-result.html";
+  document.getElementById("community-title").textContent = `${profile.archetype} Meetup`;
+  document.getElementById("community-copy").textContent = `Join Pathfinder students with similar ${cleanText(profile.archetype).toLowerCase()} energy for a guided networking event this week.`;
+  renderRecommendations(roles.length ? roles : ["Human-Computer Interaction", "Digital Media Design", "Innovation Strategy"]);
+  renderRadar(radar);
+  renderTasks([
+    { title: `Review ${topRole} pathways`, meta: "Top matched path", href: "./profile-result.html" },
+    { title: "Book Mentor Intro Session", meta: "Suggested next step", href: "./profile-result.html" },
+    { title: `Explore ${titleCase(roles[1] || "Research Strategy")}`, meta: "Secondary recommendation", href: "./profile-result.html" }
+  ]);
+}
+
+async function init() {
+  const { data } = await supabaseClient.auth.getSession();
+  const session = data.session;
+  if (!session) {
+    window.location.href = "./login.html";
+    return;
+  }
+
+  const user = session.user;
+  const name = firstName(user);
+  document.getElementById("user-avatar").alt = `${name} avatar`;
+
+  const submission = readSubmission(user.id);
+  if (!submission || !submission.answers) {
+    renderNoProfile(name);
+    return;
+  }
+
+  try {
+    const response = await fetch("./profiles.json", { cache: "no-store" });
+    const dataFile = await response.json();
+    const counts = countAnswers(submission.answers);
+    const key = pickProfileKey(dataFile, counts);
+    renderProfileDashboard(name, dataFile.profiles[key], counts);
+  } catch (error) {
+    renderNoProfile(name);
+  }
+}
+
+document.getElementById("sign-out").addEventListener("click", async () => {
+  await supabaseClient.auth.signOut();
+  window.location.href = "./login.html";
+});
+
+init();
+</script>
+</body></html>

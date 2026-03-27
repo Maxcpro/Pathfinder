@@ -1,0 +1,831 @@
+{
+  "version": "1.0.0",
+  "name": "behavioral-profile-system",
+  "description": "Questionnaire-driven behavioral profile catalog for website integration.",
+  "questionnaire": {
+    "total_questions": 16,
+    "dimensions": {
+      "A": "Structure / Execution",
+      "B": "Creativity / Adaptability",
+      "C": "People / Support",
+      "D": "Analysis / Depth"
+    },
+    "questions": [
+      {
+        "id": "Q1",
+        "text": "When you start something new, what helps you feel most confident?",
+        "options": {
+          "A": "A clear plan with milestones",
+          "B": "Room to experiment and improvise",
+          "C": "A chance to ask people for input",
+          "D": "Time to understand the bigger picture"
+        },
+        "weight_tags": [
+          "confidence",
+          "starting_style",
+          "clarity"
+        ]
+      },
+      {
+        "id": "Q2",
+        "text": "Which school task usually gives you the most energy?",
+        "options": {
+          "A": "Organizing deadlines and deliverables",
+          "B": "Turning ideas into a creative project",
+          "C": "Helping classmates understand the material",
+          "D": "Investigating how something works"
+        },
+        "weight_tags": [
+          "energy_source",
+          "motivation"
+        ]
+      },
+      {
+        "id": "Q3",
+        "text": "In class discussions, you naturally tend to:",
+        "options": {
+          "A": "Summarize and keep the group on track",
+          "B": "Offer a fresh angle nobody mentioned",
+          "C": "Notice who has not spoken yet",
+          "D": "Ask a question that goes deeper"
+        },
+        "weight_tags": [
+          "communication",
+          "group_behavior"
+        ]
+      },
+      {
+        "id": "Q4",
+        "text": "In a group project, do you prefer to:",
+        "options": {
+          "A": "Design the final presentation",
+          "B": "Coordinate the team tasks",
+          "C": "Research the data",
+          "D": "Present the results"
+        },
+        "weight_tags": [
+          "team_role"
+        ]
+      },
+      {
+        "id": "Q5",
+        "text": "When you face a difficult decision, you trust:",
+        "options": {
+          "A": "A structured comparison of options",
+          "B": "Your intuition about what fits",
+          "C": "Advice from people you trust",
+          "D": "Evidence gathered from research"
+        },
+        "weight_tags": [
+          "decision_style"
+        ],
+        "priority_weight": "high"
+      },
+      {
+        "id": "Q6",
+        "text": "What kind of challenge feels most rewarding?",
+        "options": {
+          "A": "Improving a system that is inefficient",
+          "B": "Creating something original from scratch",
+          "C": "Supporting people through a problem",
+          "D": "Solving a puzzle with no obvious answer"
+        },
+        "weight_tags": [
+          "challenge_preference",
+          "motivation"
+        ]
+      },
+      {
+        "id": "Q7",
+        "text": "If you had a free afternoon, you would rather:",
+        "options": {
+          "A": "Plan your upcoming week",
+          "B": "Work on a personal side project",
+          "C": "Spend time with a group of friends",
+          "D": "Read or watch something that teaches you something new"
+        },
+        "weight_tags": [
+          "intrinsic_motivation",
+          "default_preference"
+        ]
+      },
+      {
+        "id": "Q8",
+        "text": "What usually frustrates you the most?",
+        "options": {
+          "A": "Disorganization and unclear expectations",
+          "B": "Rules that limit creativity",
+          "C": "Conflict between people",
+          "D": "Superficial answers without reasoning"
+        },
+        "weight_tags": [
+          "friction_points"
+        ]
+      },
+      {
+        "id": "Q9",
+        "text": "Which environment helps you do your best work?",
+        "options": {
+          "A": "Calm, organized, and predictable",
+          "B": "Flexible and visually inspiring",
+          "C": "Collaborative and people-centered",
+          "D": "Focused and intellectually challenging"
+        },
+        "weight_tags": [
+          "work_environment"
+        ],
+        "priority_weight": "high"
+      },
+      {
+        "id": "Q10",
+        "text": "When learning something complex, your first instinct is to:",
+        "options": {
+          "A": "Break it into manageable steps",
+          "B": "Relate it to something creative or personal",
+          "C": "Talk it through with someone",
+          "D": "Study the logic behind it"
+        },
+        "weight_tags": [
+          "learning_style"
+        ],
+        "priority_weight": "high"
+      },
+      {
+        "id": "Q11",
+        "text": "What makes an accomplishment feel meaningful to you?",
+        "options": {
+          "A": "Seeing a plan work exactly as intended",
+          "B": "Expressing your personal vision",
+          "C": "Knowing it made a difference for others",
+          "D": "Discovering something new or insightful"
+        },
+        "weight_tags": [
+          "motivation_source"
+        ]
+      },
+      {
+        "id": "Q12",
+        "text": "Which role do you often take in a team without trying?",
+        "options": {
+          "A": "Organizer",
+          "B": "Idea generator",
+          "C": "Encourager",
+          "D": "Analyst"
+        },
+        "weight_tags": [
+          "team_role"
+        ],
+        "priority_weight": "high"
+      },
+      {
+        "id": "Q13",
+        "text": "If a project suddenly changes direction, you usually:",
+        "options": {
+          "A": "Rebuild the plan quickly",
+          "B": "Adapt and look for opportunity in the shift",
+          "C": "Check how the change affects everyone",
+          "D": "Ask what evidence led to the change"
+        },
+        "weight_tags": [
+          "change_response",
+          "decision_style"
+        ],
+        "priority_weight": "high"
+      },
+      {
+        "id": "Q14",
+        "text": "What kind of feedback helps you grow the most?",
+        "options": {
+          "A": "Specific steps for improvement",
+          "B": "Ideas that push your originality",
+          "C": "Honest guidance delivered with care",
+          "D": "Detailed critique of your reasoning"
+        },
+        "weight_tags": [
+          "growth_style",
+          "feedback_preference"
+        ],
+        "priority_weight": "high"
+      },
+      {
+        "id": "Q15",
+        "text": "Which future sounds the most appealing right now?",
+        "options": {
+          "A": "Leading well-structured projects",
+          "B": "Designing or building innovative experiences",
+          "C": "Working in a role centered on people and impact",
+          "D": "Exploring big questions through research and analysis"
+        },
+        "weight_tags": [
+          "future_orientation",
+          "motivation"
+        ],
+        "priority_weight": "high"
+      },
+      {
+        "id": "Q16",
+        "text": "At the end of this module, what would feel most useful?",
+        "options": {
+          "A": "A roadmap with concrete next steps",
+          "B": "A profile that reflects your creative strengths",
+          "C": "Clarity about the kinds of roles where you can help people",
+          "D": "Insight into the problems you are naturally drawn to solve"
+        },
+        "weight_tags": [
+          "outcome_preference",
+          "motivation"
+        ],
+        "priority_weight": "high"
+      }
+    ]
+  },
+  "metrics": [
+    "Structure",
+    "Creativity",
+    "People Orientation",
+    "Analytical Depth",
+    "Adaptability",
+    "Leadership",
+    "Independence",
+    "Collaboration",
+    "Need for Clarity",
+    "Tolerance for Ambiguity"
+  ],
+  "scoring": {
+    "base_signals": {
+      "A": "Structure / Execution",
+      "B": "Creativity / Adaptability",
+      "C": "People / Support",
+      "D": "Analysis / Depth"
+    },
+    "method": {
+      "primary_rule": "Count answer patterns holistically, not mechanically. Use question meaning and highlighted priority questions to infer dominant and secondary styles.",
+      "priority_questions": [
+        "Q5",
+        "Q9",
+        "Q10",
+        "Q12",
+        "Q13",
+        "Q14",
+        "Q15",
+        "Q16"
+      ],
+      "dominant_profile_gap": 12,
+      "assignment_logic": "If the top signal exceeds the second signal by 12 or more points, assign the single-core profile. Otherwise, assign a hybrid profile using the top two signals."
+    },
+    "profile_pair_map": {
+      "A": "architect_operator",
+      "B": "creative_builder",
+      "C": "supportive_guide",
+      "D": "deep_investigator",
+      "AB": "systems_innovator",
+      "AC": "people_centered_operator",
+      "AD": "insight_strategist",
+      "BC": "vision_catalyst",
+      "BD": "creative_analyst",
+      "CD": "thoughtful_facilitator"
+    }
+  },
+  "profiles": [
+    {
+      "id": "architect_operator",
+      "label": "Architect Operator",
+      "code": "A",
+      "title": "The Architect Operator",
+      "short_description": "A structured, dependable profile that prefers clarity, planning, and execution.",
+      "core_drives": [
+        "clarity",
+        "order",
+        "follow-through",
+        "predictability"
+      ],
+      "behaviour": {
+        "works_best_when": "goals are clear, timelines are defined, and responsibilities are explicit",
+        "decision_style": "prefers structured comparison and practical next steps",
+        "learning_style": "likes breaking complexity into manageable parts",
+        "team_style": "naturally organizes, coordinates, and keeps work moving"
+      },
+      "strengths": [
+        "builds order from ambiguity",
+        "creates realistic plans",
+        "follows through reliably",
+        "keeps teams aligned on priorities",
+        "turns ideas into execution"
+      ],
+      "watchouts": [
+        "can become frustrated by chaos or vague direction",
+        "may overvalue control when flexibility is needed",
+        "can move too quickly into structure before exploration is complete"
+      ],
+      "best_fit": [
+        "project coordination",
+        "operations",
+        "delivery management",
+        "implementation roles",
+        "structured team environments"
+      ],
+      "metrics_bias": {
+        "structure": 90,
+        "creativity": 45,
+        "people": 55,
+        "analysis": 60,
+        "adaptability": 50,
+        "leadership": 74,
+        "independence": 60,
+        "collaboration": 62,
+        "need_for_clarity": 93,
+        "tolerance_for_ambiguity": 38
+      }
+    },
+    {
+      "id": "creative_builder",
+      "label": "Creative Builder",
+      "code": "B",
+      "title": "The Creative Builder",
+      "short_description": "An imaginative, self-directed profile that is energized by originality, experimentation, and building new things.",
+      "core_drives": [
+        "freedom",
+        "originality",
+        "exploration",
+        "expression"
+      ],
+      "behaviour": {
+        "works_best_when": "there is room to test ideas, shape concepts, and create something distinct",
+        "decision_style": "leans toward intuition, possibility, and personal fit",
+        "learning_style": "connects new ideas to creative or personal meaning",
+        "team_style": "brings fresh angles, possibility thinking, and momentum for new concepts"
+      },
+      "strengths": [
+        "generates original ideas",
+        "adapts quickly when direction changes",
+        "sees possibilities others miss",
+        "builds energy around innovation",
+        "works well in open-ended environments"
+      ],
+      "watchouts": [
+        "can resist rigid structure",
+        "may lose energy in repetitive systems",
+        "can underweight detail or consistency if not supported"
+      ],
+      "best_fit": [
+        "design",
+        "product ideation",
+        "creative strategy",
+        "innovation projects",
+        "startup-style environments"
+      ],
+      "metrics_bias": {
+        "structure": 45,
+        "creativity": 92,
+        "people": 55,
+        "analysis": 50,
+        "adaptability": 88,
+        "leadership": 62,
+        "independence": 78,
+        "collaboration": 58,
+        "need_for_clarity": 46,
+        "tolerance_for_ambiguity": 89
+      }
+    },
+    {
+      "id": "supportive_guide",
+      "label": "Supportive Guide",
+      "code": "C",
+      "title": "The Supportive Guide",
+      "short_description": "A people-centered profile that values trust, encouragement, and meaningful impact on others.",
+      "core_drives": [
+        "connection",
+        "support",
+        "care",
+        "positive impact"
+      ],
+      "behaviour": {
+        "works_best_when": "relationships are healthy, collaboration is valued, and work has human meaning",
+        "decision_style": "takes into account trust, people impact, and group wellbeing",
+        "learning_style": "likes dialogue, exchange, and real human context",
+        "team_style": "encourages participation, notices group dynamics, and helps others contribute"
+      },
+      "strengths": [
+        "builds trust quickly",
+        "supports team cohesion",
+        "notices interpersonal dynamics",
+        "creates psychologically safe collaboration",
+        "keeps people engaged and included"
+      ],
+      "watchouts": [
+        "can overextend to maintain harmony",
+        "may delay hard calls if people tension is high",
+        "can absorb too much emotional responsibility"
+      ],
+      "best_fit": [
+        "customer success",
+        "community roles",
+        "coaching",
+        "people operations",
+        "collaborative service-oriented teams"
+      ],
+      "metrics_bias": {
+        "structure": 55,
+        "creativity": 52,
+        "people": 93,
+        "analysis": 48,
+        "adaptability": 65,
+        "leadership": 58,
+        "independence": 42,
+        "collaboration": 92,
+        "need_for_clarity": 60,
+        "tolerance_for_ambiguity": 59
+      }
+    },
+    {
+      "id": "deep_investigator",
+      "label": "Deep Investigator",
+      "code": "D",
+      "title": "The Deep Investigator",
+      "short_description": "A thoughtful, analytical profile that is energized by logic, depth, evidence, and intellectually challenging problems.",
+      "core_drives": [
+        "understanding",
+        "accuracy",
+        "depth",
+        "insight"
+      ],
+      "behaviour": {
+        "works_best_when": "there is space for concentration, complexity, and rigorous thinking",
+        "decision_style": "relies on evidence, reasoning, and underlying logic",
+        "learning_style": "prefers understanding systems, principles, and deeper patterns",
+        "team_style": "brings analysis, critical questions, and conceptual clarity"
+      },
+      "strengths": [
+        "thinks deeply before concluding",
+        "asks strong diagnostic questions",
+        "sees hidden assumptions and weak reasoning",
+        "handles complexity well",
+        "produces high-quality insight"
+      ],
+      "watchouts": [
+        "can become impatient with shallow thinking",
+        "may overanalyze before acting",
+        "can appear distant in highly social settings"
+      ],
+      "best_fit": [
+        "research",
+        "strategy",
+        "analysis",
+        "technical problem-solving",
+        "high-complexity specialist work"
+      ],
+      "metrics_bias": {
+        "structure": 60,
+        "creativity": 58,
+        "people": 42,
+        "analysis": 95,
+        "adaptability": 62,
+        "leadership": 54,
+        "independence": 82,
+        "collaboration": 46,
+        "need_for_clarity": 79,
+        "tolerance_for_ambiguity": 73
+      }
+    },
+    {
+      "id": "systems_innovator",
+      "label": "Systems Innovator",
+      "code": "AB",
+      "title": "The Systems Innovator",
+      "short_description": "A profile that combines creativity with structure, able to turn fresh ideas into usable systems.",
+      "core_drives": [
+        "innovation",
+        "practical creation",
+        "improvement",
+        "design with execution"
+      ],
+      "behaviour": {
+        "works_best_when": "there is freedom to invent, but also a path to make ideas real",
+        "decision_style": "balances intuition with practical planning",
+        "learning_style": "likes applied creativity and structured experimentation",
+        "team_style": "moves between idea generation and implementation"
+      },
+      "strengths": [
+        "connects imagination to execution",
+        "creates usable systems from rough ideas",
+        "brings both momentum and order",
+        "comfortable with iteration",
+        "strong in early-stage building"
+      ],
+      "watchouts": [
+        "may feel constrained in rigid environments",
+        "can get frustrated by slow-moving teams",
+        "may oscillate between exploration and over-structuring"
+      ],
+      "best_fit": [
+        "product building",
+        "service design",
+        "innovation operations",
+        "founder-type projects",
+        "structured creative teams"
+      ],
+      "metrics_bias": {
+        "structure": 82,
+        "creativity": 86,
+        "people": 52,
+        "analysis": 58,
+        "adaptability": 78,
+        "leadership": 72,
+        "independence": 74,
+        "collaboration": 57,
+        "need_for_clarity": 69,
+        "tolerance_for_ambiguity": 72
+      }
+    },
+    {
+      "id": "people_centered_operator",
+      "label": "People-Centered Operator",
+      "code": "AC",
+      "title": "The People-Centered Operator",
+      "short_description": "A dependable, organized profile that wants work to be both well-run and supportive of people.",
+      "core_drives": [
+        "stability",
+        "service",
+        "coordination",
+        "human reliability"
+      ],
+      "behaviour": {
+        "works_best_when": "expectations are clear and collaboration is respectful",
+        "decision_style": "balances practical structure with people impact",
+        "learning_style": "prefers guided clarity and applied understanding",
+        "team_style": "coordinates work while keeping others supported"
+      },
+      "strengths": [
+        "creates organized collaboration",
+        "keeps teams functioning smoothly",
+        "balances task needs with human needs",
+        "reliable under shared responsibility",
+        "improves team consistency"
+      ],
+      "watchouts": [
+        "can over-carry responsibility for both process and people",
+        "may avoid necessary friction to preserve harmony",
+        "can become stressed when both chaos and conflict appear together"
+      ],
+      "best_fit": [
+        "team coordination",
+        "program support",
+        "client delivery",
+        "operations with human contact",
+        "cross-functional teamwork"
+      ],
+      "metrics_bias": {
+        "structure": 84,
+        "creativity": 48,
+        "people": 86,
+        "analysis": 50,
+        "adaptability": 60,
+        "leadership": 70,
+        "independence": 54,
+        "collaboration": 88,
+        "need_for_clarity": 82,
+        "tolerance_for_ambiguity": 48
+      }
+    },
+    {
+      "id": "insight_strategist",
+      "label": "Insight Strategist",
+      "code": "AD",
+      "title": "The Insight Strategist",
+      "short_description": "A strategic, composed profile that combines structure with analysis and wants things to make sense before moving.",
+      "core_drives": [
+        "clarity",
+        "logic",
+        "control",
+        "high-quality decisions"
+      ],
+      "behaviour": {
+        "works_best_when": "the environment is focused, organized, and intellectually serious",
+        "decision_style": "prefers evidence, comparison, and strong reasoning",
+        "learning_style": "likes logic, frameworks, and conceptual structure",
+        "team_style": "brings planning, prioritization, and analytical judgment"
+      },
+      "strengths": [
+        "makes well-reasoned decisions",
+        "creates structure around complex problems",
+        "sees both execution needs and analytical depth",
+        "strong at prioritization",
+        "reduces confusion through clear frameworks"
+      ],
+      "watchouts": [
+        "can become rigid when evidence is incomplete",
+        "may undervalue intuition or emotional context",
+        "can appear overly critical in low-rigor environments"
+      ],
+      "best_fit": [
+        "strategy",
+        "consulting",
+        "project leadership",
+        "planning roles",
+        "high-accountability analytical environments"
+      ],
+      "metrics_bias": {
+        "structure": 88,
+        "creativity": 46,
+        "people": 44,
+        "analysis": 90,
+        "adaptability": 58,
+        "leadership": 76,
+        "independence": 72,
+        "collaboration": 48,
+        "need_for_clarity": 90,
+        "tolerance_for_ambiguity": 52
+      }
+    },
+    {
+      "id": "vision_catalyst",
+      "label": "Vision Catalyst",
+      "code": "BC",
+      "title": "The Vision Catalyst",
+      "short_description": "A creative, energizing profile that combines originality with human connection and shared momentum.",
+      "core_drives": [
+        "inspiration",
+        "expression",
+        "engagement",
+        "positive energy"
+      ],
+      "behaviour": {
+        "works_best_when": "the environment is collaborative, open-minded, and receptive to new ideas",
+        "decision_style": "mixes intuition with relational awareness",
+        "learning_style": "engages best when ideas feel alive, relevant, and discussable",
+        "team_style": "brings encouragement, imagination, and momentum"
+      },
+      "strengths": [
+        "inspires others around possibilities",
+        "connects ideas to people",
+        "creates positive creative momentum",
+        "helps others engage with vision",
+        "works well in expressive collaborative spaces"
+      ],
+      "watchouts": [
+        "can dislike hard constraints",
+        "may underemphasize rigor or detail",
+        "can struggle when energy is low and structure is heavy"
+      ],
+      "best_fit": [
+        "brand",
+        "creative collaboration",
+        "community-led projects",
+        "content and concept work",
+        "innovation with strong human interaction"
+      ],
+      "metrics_bias": {
+        "structure": 42,
+        "creativity": 88,
+        "people": 84,
+        "analysis": 46,
+        "adaptability": 82,
+        "leadership": 67,
+        "independence": 61,
+        "collaboration": 86,
+        "need_for_clarity": 40,
+        "tolerance_for_ambiguity": 84
+      }
+    },
+    {
+      "id": "creative_analyst",
+      "label": "Creative Analyst",
+      "code": "BD",
+      "title": "The Creative Analyst",
+      "short_description": "A profile that blends originality with depth, often drawn to building thoughtful, distinctive, and intellectually rich work.",
+      "core_drives": [
+        "novelty",
+        "insight",
+        "conceptual depth",
+        "intelligent originality"
+      ],
+      "behaviour": {
+        "works_best_when": "there is freedom to explore ideas deeply and shape something distinctive",
+        "decision_style": "balances intuition with conceptual reasoning",
+        "learning_style": "likes exploring logic, patterns, and unusual perspectives",
+        "team_style": "contributes original thinking with strong depth"
+      },
+      "strengths": [
+        "produces original but thoughtful ideas",
+        "connects creativity with insight",
+        "works well in ambiguity with meaning",
+        "asks unconventional but valuable questions",
+        "comfortable with complex idea development"
+      ],
+      "watchouts": [
+        "can get stuck refining ideas",
+        "may resist oversimplification",
+        "can feel underused in repetitive delivery roles"
+      ],
+      "best_fit": [
+        "product strategy",
+        "UX thinking",
+        "research-led design",
+        "innovation analysis",
+        "concept-heavy creative work"
+      ],
+      "metrics_bias": {
+        "structure": 48,
+        "creativity": 86,
+        "people": 45,
+        "analysis": 88,
+        "adaptability": 76,
+        "leadership": 60,
+        "independence": 79,
+        "collaboration": 47,
+        "need_for_clarity": 57,
+        "tolerance_for_ambiguity": 81
+      }
+    },
+    {
+      "id": "thoughtful_facilitator",
+      "label": "Thoughtful Facilitator",
+      "code": "CD",
+      "title": "The Thoughtful Facilitator",
+      "short_description": "A reflective, people-aware profile that combines empathy with depth and tends to support others through thoughtful understanding.",
+      "core_drives": [
+        "understanding people",
+        "meaning",
+        "careful thought",
+        "useful contribution"
+      ],
+      "behaviour": {
+        "works_best_when": "the work involves both human context and thoughtful problem-solving",
+        "decision_style": "considers both evidence and relational impact",
+        "learning_style": "likes dialogue plus depth",
+        "team_style": "offers grounded support, careful questions, and insight into people dynamics"
+      },
+      "strengths": [
+        "reads both people and problems well",
+        "brings care without losing thoughtfulness",
+        "supports others with substance",
+        "helps teams think more clearly and humanely",
+        "balances empathy with perspective"
+      ],
+      "watchouts": [
+        "can carry too much reflective weight",
+        "may hesitate when forced into fast, impersonal decisions",
+        "can become frustrated by both shallow thinking and cold team dynamics"
+      ],
+      "best_fit": [
+        "advisory roles",
+        "education",
+        "research with human focus",
+        "coaching",
+        "facilitation and insight roles"
+      ],
+      "metrics_bias": {
+        "structure": 50,
+        "creativity": 54,
+        "people": 84,
+        "analysis": 86,
+        "adaptability": 66,
+        "leadership": 59,
+        "independence": 55,
+        "collaboration": 82,
+        "need_for_clarity": 61,
+        "tolerance_for_ambiguity": 68
+      }
+    }
+  ],
+  "ui": {
+    "result_sections": [
+      "profile_title",
+      "short_description",
+      "core_drives",
+      "how_you_work_best",
+      "strengths",
+      "watchouts",
+      "best_fit_roles",
+      "metrics_bars"
+    ],
+    "secondary_badges_count": 2
+  },
+  "integration_examples": {
+    "answer_input_format": {
+      "Q1": "A",
+      "Q2": "D",
+      "Q3": "C",
+      "Q4": "A",
+      "Q5": "D",
+      "Q6": "B",
+      "Q7": "B",
+      "Q8": "D",
+      "Q9": "D",
+      "Q10": "D",
+      "Q11": "D",
+      "Q12": "D",
+      "Q13": "B",
+      "Q14": "D",
+      "Q15": "D",
+      "Q16": "D"
+    },
+    "signal_score_example": {
+      "A": 22,
+      "B": 28,
+      "C": 12,
+      "D": 38
+    },
+    "assigned_profile_example": "creative_analyst"
+  }
+}

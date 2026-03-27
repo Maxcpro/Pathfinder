@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Login | Pathfinder Academic Navigator</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Manrope:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-surface": "#1e3256",
+              "secondary-dim": "#005e53",
+              "on-secondary": "#e2fff8",
+              "tertiary-dim": "#893c00",
+              "on-primary-fixed-variant": "#00438f",
+              "surface-dim": "#cbdaff",
+              "error": "#ac3434",
+              "on-secondary-fixed-variant": "#00675c",
+              "primary-container": "#a3c1ff",
+              "on-primary-fixed": "#002657",
+              "on-primary-container": "#003a7f",
+              "surface": "#f9f9ff",
+              "on-background": "#1e3256",
+              "tertiary-container": "#ffa26c",
+              "primary-fixed": "#a3c1ff",
+              "on-tertiary-fixed": "#3a1600",
+              "surface-container-high": "#e0e8ff",
+              "outline-variant": "#9fb2dd",
+              "on-primary": "#f9f8ff",
+              "surface-container-highest": "#d7e2ff",
+              "surface-bright": "#f9f9ff",
+              "surface-tint": "#005cc0",
+              "on-error-container": "#65000b",
+              "inverse-primary": "#498eff",
+              "secondary-fixed": "#79f7e3",
+              "primary-dim": "#0050a9",
+              "inverse-on-surface": "#939db5",
+              "secondary": "#006b5f",
+              "error-container": "#f56965",
+              "primary-fixed-dim": "#8db3ff",
+              "tertiary-fixed-dim": "#fc8f4b",
+              "tertiary": "#9c4600",
+              "on-error": "#fff7f6",
+              "error-dim": "#70030f",
+              "on-tertiary-container": "#5d2700",
+              "primary": "#005cc0",
+              "on-secondary-fixed": "#004840",
+              "on-surface-variant": "#4c5f85",
+              "tertiary-fixed": "#ffa26c",
+              "surface-container-low": "#f1f3ff",
+              "outline": "#687ba3",
+              "on-tertiary-fixed-variant": "#6b2d00",
+              "surface-container-lowest": "#ffffff",
+              "surface-container": "#e8edff",
+              "on-tertiary": "#fff7f5",
+              "secondary-fixed-dim": "#69e9d5",
+              "on-secondary-container": "#005d52",
+              "background": "#f9f9ff",
+              "surface-variant": "#d7e2ff",
+              "secondary-container": "#79f7e3",
+              "inverse-surface": "#040e20"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Manrope', sans-serif; }
+        h1, h2, h3 { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary-container selection:text-on-primary-container min-h-screen flex flex-col">
+<header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl no-border tonal-shift bg-slate-50/50 shadow-[0_16px_32px_-12px_rgba(30,50,86,0.04)]">
+<div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto font-['Plus_Jakarta_Sans'] antialiased">
+<a class="text-2xl font-bold tracking-tight text-blue-800 dark:text-blue-300" href="./index.html">Pathfinder</a>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:bg-blue-50 dark:hover:bg-blue-900/30 transition-colors px-3 py-1.5 rounded-lg active:scale-95 duration-200" href="#">Explore</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:bg-blue-50 dark:hover:bg-blue-900/30 transition-colors px-3 py-1.5 rounded-lg active:scale-95 duration-200" href="#">Campus</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:bg-blue-50 dark:hover:bg-blue-900/30 transition-colors px-3 py-1.5 rounded-lg active:scale-95 duration-200" href="#">Admissions</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="text-blue-700 dark:text-blue-400 font-semibold hover:bg-blue-50 dark:hover:bg-blue-900/30 transition-colors px-4 py-2 rounded-full active:scale-95 duration-200" type="button">Help</button>
+</div>
+</div>
+</header>
+<main class="flex-grow pt-32 pb-20 px-6 relative overflow-hidden flex items-center justify-center">
+<div class="absolute top-0 left-0 w-full h-full -z-10">
+<div class="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-primary/5 rounded-full blur-3xl"></div>
+<div class="absolute bottom-[-5%] left-[-5%] w-[400px] h-[400px] bg-tertiary/5 rounded-full blur-3xl"></div>
+</div>
+<div class="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="hidden lg:flex flex-col space-y-8">
+<div class="space-y-4">
+<span class="inline-block px-4 py-1.5 rounded-full bg-secondary-container text-on-secondary-container font-label text-xs font-bold tracking-widest uppercase">Orientation 2024</span>
+<h1 class="text-6xl font-extrabold tracking-tight text-on-surface leading-[1.1]">
+                        Chart your own <span class="text-primary italic">academic course</span>.
+                    </h1>
+<p class="text-xl text-on-surface-variant max-w-lg leading-relaxed">
+                        Access personalized orientation resources, campus maps, and your community dashboard in one elegant workspace.
+                    </p>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="p-6 rounded-xl bg-surface-container-low border border-outline-variant/20 shadow-sm">
+<span class="material-symbols-outlined text-primary mb-3 block" style="font-size: 32px;">map</span>
+<h3 class="font-bold text-lg mb-1">Live Campus Maps</h3>
+<p class="text-sm text-on-surface-variant">Navigate with real-time GPS precision.</p>
+</div>
+<div class="p-6 rounded-xl bg-surface-container-low border border-outline-variant/20 shadow-sm">
+<span class="material-symbols-outlined text-tertiary mb-3 block" style="font-size: 32px;">event_note</span>
+<h3 class="font-bold text-lg mb-1">Tailored Events</h3>
+<p class="text-sm text-on-surface-variant">Never miss an orientation workshop.</p>
+</div>
+</div>
+</div>
+<div class="w-full max-w-md mx-auto">
+<div class="surface-container-lowest glass-panel rounded-xl p-8 lg:p-10 shadow-[0_32px_64px_-16px_rgba(30,50,86,0.08)] border border-white/50">
+<div class="text-center mb-10">
+<h2 class="text-3xl font-bold text-on-surface mb-2">Welcome Back, Explorer</h2>
+<p class="text-on-surface-variant">Sign in to continue your journey.</p>
+</div>
+<form class="space-y-6" id="login-form">
+<div class="space-y-2">
+<label class="block text-sm font-semibold text-on-surface ml-1" for="email">Email Address</label>
+<input class="w-full px-5 py-4 rounded-xl border-none bg-surface-container-low text-on-surface placeholder:text-outline focus:ring-2 focus:ring-primary-fixed-dim transition-all text-sm" id="email" placeholder="e.g. alex.smith@pathfinder.edu" required="" type="email"/>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between items-center ml-1">
+<label class="text-sm font-semibold text-on-surface" for="password">Password</label>
+<a class="text-xs font-semibold text-primary hover:text-primary-dim transition-colors" href="./login.html">Forgot Password?</a>
+</div>
+<input class="w-full px-5 py-4 rounded-xl border-none bg-surface-container-low text-on-surface placeholder:text-outline focus:ring-2 focus:ring-primary-fixed-dim transition-all text-sm" id="password" placeholder="••••••••" required="" type="password"/>
+</div>
+<p class="hidden text-sm font-medium rounded-xl px-4 py-3" id="auth-message"></p>
+<button class="w-full py-4 bg-gradient-to-r from-primary to-primary-dim text-on-primary font-bold rounded-full shadow-lg shadow-primary/20 hover:scale-[1.02] active:scale-95 transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed" id="login-submit" type="submit">
+                            Log In
+                        </button>
+</form>
+<div class="relative my-8">
+<div class="absolute inset-0 flex items-center">
+<span class="w-full border-t border-outline-variant/30"></span>
+</div>
+<div class="relative flex justify-center text-xs uppercase tracking-widest">
+<span class="bg-surface-container-lowest px-4 text-on-surface-variant font-semibold">Or continue with</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<button class="flex items-center justify-center gap-3 py-3.5 rounded-full border border-outline-variant/30 hover:bg-surface-container-low transition-colors active:scale-95 duration-200 group" type="button">
+<img alt="Google" class="w-5 h-5 opacity-80 group-hover:opacity-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYaxvcibF4UeNpuPg-F8WCLOF-QZN8CvWVaFM-nHUMtwa9rApmy4AqeN12JeQkTvTNFcR2poj7ZPK9DZ3SwhoJLXDUO5_CRQZRj8D_EgViYGznHknZEAhv21cC3EM1yyH9j0hNtkw0F4SZiCXYP27SAZL3Tqbt84xMhNjkeR-cTLoLMBSfDxfmbft4c4jEnnRraP40rcVN5JOdhnh7kRQZH6hj7O_iU-RQtfvE2l--H1kVl0GWA5JDp8CLGLtt-3lnpU3bscSY9NLf"/>
+<span class="text-sm font-bold text-on-surface">Google</span>
+</button>
+<button class="flex items-center justify-center gap-3 py-3.5 rounded-full border border-outline-variant/30 hover:bg-surface-container-low transition-colors active:scale-95 duration-200 group" type="button">
+<span class="material-symbols-outlined text-xl opacity-80 group-hover:opacity-100">ios</span>
+<span class="text-sm font-bold text-on-surface">Apple</span>
+</button>
+</div>
+<p class="mt-10 text-center text-sm text-on-surface-variant">
+                        Don't have an account? 
+<a class="text-primary font-bold hover:underline underline-offset-4 ml-1" href="./create-account.html">Start Your Journey</a>
+</p>
+</div>
+</div>
+</div>
+</main>
+<footer class="w-full py-12 px-8 bg-slate-50 dark:bg-slate-950 font-['Manrope'] text-sm tracking-wide no-line bg-slate-100/50 flat no-shadows">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="font-['Plus_Jakarta_Sans'] font-bold text-slate-900 dark:text-slate-100">Pathfinder Navigator</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 hover:text-blue-700 dark:hover:text-blue-300 transition-all opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 hover:text-blue-700 dark:hover:text-blue-300 transition-all opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 hover:text-blue-700 dark:hover:text-blue-300 transition-all opacity-80 hover:opacity-100" href="#">Accessibility</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 hover:text-blue-700 dark:hover:text-blue-300 transition-all opacity-80 hover:opacity-100" href="#">Contact Support</a>
+</div>
+<div class="text-slate-400 dark:text-slate-600 text-xs">
+                © 2024 Pathfinder Academic Navigator
+            </div>
+</div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+const SUPABASE_URL = "https://ckccrigozrtrscirbvsn.supabase.co";
+const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNrY2NyaWdvenJ0cnNjaXJidnNuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ1ODAwOTMsImV4cCI6MjA5MDE1NjA5M30.lVUXcORfH3aoYB9d7VtnIwsby-Ru7nARpklj4ZEegkk";
+const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+const form = document.getElementById("login-form");
+const submitButton = document.getElementById("login-submit");
+const message = document.getElementById("auth-message");
+
+function showMessage(text, type) {
+  message.textContent = text;
+  message.className = `text-sm font-medium rounded-xl px-4 py-3 ${type === "error" ? "bg-red-50 text-red-700" : "bg-emerald-50 text-emerald-700"}`;
+}
+
+async function redirectIfAuthenticated() {
+  const { data } = await supabaseClient.auth.getSession();
+  if (data.session) {
+    window.location.href = "./dashboard.html";
+  }
+}
+
+form.addEventListener("submit", async (event) => {
+  event.preventDefault();
+  submitButton.disabled = true;
+  showMessage("Signing you in...", "success");
+
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value;
+
+  const { error } = await supabaseClient.auth.signInWithPassword({ email, password });
+
+  if (error) {
+    showMessage(error.message, "error");
+    submitButton.disabled = false;
+    return;
+  }
+
+  showMessage("Welcome back. Redirecting...", "success");
+  window.location.href = "./dashboard.html";
+});
+
+redirectIfAuthenticated();
+</script>
+</body></html>

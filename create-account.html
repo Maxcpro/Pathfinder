@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Manrope:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-bright": "#f9f9ff",
+              "on-tertiary-fixed": "#3a1600",
+              "primary-dim": "#0050a9",
+              "secondary-fixed": "#79f7e3",
+              "on-surface-variant": "#4c5f85",
+              "secondary-fixed-dim": "#69e9d5",
+              "error-dim": "#70030f",
+              "on-primary-fixed-variant": "#00438f",
+              "on-error": "#fff7f6",
+              "on-tertiary-fixed-variant": "#6b2d00",
+              "primary-fixed": "#a3c1ff",
+              "outline-variant": "#9fb2dd",
+              "secondary": "#006b5f",
+              "surface-variant": "#d7e2ff",
+              "error": "#ac3434",
+              "on-surface": "#1e3256",
+              "inverse-primary": "#498eff",
+              "primary-container": "#a3c1ff",
+              "on-primary-fixed": "#002657",
+              "on-secondary-fixed": "#004840",
+              "surface-dim": "#cbdaff",
+              "secondary-dim": "#005e53",
+              "on-secondary-container": "#005d52",
+              "on-secondary-fixed-variant": "#00675c",
+              "surface-tint": "#005cc0",
+              "tertiary": "#9c4600",
+              "primary": "#005cc0",
+              "surface": "#f9f9ff",
+              "tertiary-fixed": "#ffa26c",
+              "primary-fixed-dim": "#8db3ff",
+              "on-secondary": "#e2fff8",
+              "on-primary": "#f9f8ff",
+              "on-background": "#1e3256",
+              "on-error-container": "#65000b",
+              "outline": "#687ba3",
+              "surface-container-low": "#f1f3ff",
+              "tertiary-container": "#ffa26c",
+              "on-primary-container": "#003a7f",
+              "on-tertiary": "#fff7f5",
+              "surface-container": "#e8edff",
+              "tertiary-dim": "#893c00",
+              "background": "#f9f9ff",
+              "on-tertiary-container": "#5d2700",
+              "inverse-on-surface": "#939db5",
+              "error-container": "#f56965",
+              "inverse-surface": "#040e20",
+              "surface-container-lowest": "#ffffff",
+              "tertiary-fixed-dim": "#fc8f4b",
+              "surface-container-high": "#e0e8ff",
+              "surface-container-highest": "#d7e2ff",
+              "secondary-container": "#79f7e3"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-effect {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface min-h-screen flex flex-col">
+<main class="flex-grow flex items-center justify-center px-4 py-12 bg-gradient-to-br from-surface to-surface-container-low">
+<div class="w-full max-w-md">
+<div class="text-center mb-10">
+<div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary-container mb-4">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="explore">explore</span>
+</div>
+<h1 class="font-headline font-extrabold text-4xl tracking-tight text-on-surface mb-2">Join the Journey</h1>
+<p class="text-on-surface-variant font-medium">Your academic adventure starts here.</p>
+</div>
+<div class="bg-surface-container-lowest rounded-xl shadow-[0_16px_32px_rgba(30,50,86,0.04)] p-8 relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-primary to-primary-container"></div>
+<form class="space-y-6" id="signup-form">
+<div>
+<label class="block font-headline font-bold text-sm text-on-surface mb-2 px-1" for="full_name">Full Name</label>
+<input class="w-full bg-surface-container-low border-none rounded-xl py-3.5 px-4 text-on-surface placeholder:text-outline focus:ring-2 focus:ring-primary-fixed-dim transition-all duration-200" id="full_name" name="full_name" placeholder="Alex Rivera" required="" type="text"/>
+</div>
+<div>
+<label class="block font-headline font-bold text-sm text-on-surface mb-2 px-1" for="email">Email Address</label>
+<input class="w-full bg-surface-container-low border-none rounded-xl py-3.5 px-4 text-on-surface placeholder:text-outline focus:ring-2 focus:ring-primary-fixed-dim transition-all duration-200" id="email" name="email" placeholder="alex@university.edu" required="" type="email"/>
+</div>
+<div>
+<label class="block font-headline font-bold text-sm text-on-surface mb-2 px-1" for="password">Password</label>
+<div class="relative">
+<input class="w-full bg-surface-container-low border-none rounded-xl py-3.5 px-4 text-on-surface placeholder:text-outline focus:ring-2 focus:ring-primary-fixed-dim transition-all duration-200" id="password" name="password" placeholder="••••••••" required="" type="password"/>
+<button class="absolute right-4 top-1/2 -translate-y-1/2 text-outline hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+</button>
+</div>
+</div>
+<p class="hidden text-sm font-medium rounded-xl px-4 py-3" id="auth-message"></p>
+<button class="w-full bg-gradient-to-r from-primary to-primary-dim text-on-primary font-headline font-bold py-4 rounded-full shadow-lg shadow-primary/20 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed" id="signup-submit" type="submit">
+                        Create Account
+                    </button>
+</form>
+<div class="relative my-8">
+<div class="absolute inset-0 flex items-center">
+<div class="w-full border-t border-outline-variant/20"></div>
+</div>
+<div class="relative flex justify-center text-xs">
+<span class="bg-surface-container-lowest px-4 text-outline font-headline font-bold tracking-widest">OR CONTINUE WITH</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<button class="flex items-center justify-center gap-2 py-3 px-4 rounded-full bg-surface-container-high hover:bg-surface-container-highest transition-colors duration-200 group" type="button">
+<img alt="Google Logo" class="w-5 h-5" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNzngWRyIK-66HIA_nqjmlHye3pPyQQEVbnGRMqlppNT-nbf4mchlPAWZwrJCqN3Z-5Z7hqP88pS01A5o27dBx6BMjK-3uQncj1vWlwLpyj5SARtW6YXmRln-h9BIFaN9tFYwWlpNEM_v6qp02X4w_jULaNBBywrtMZ8x4Ua9zkBJXs3MB4ywp6JGwrMmAy1CGX4iLf7m-1U5kgCE3rdED-4YEAVx0sWe3HZ2eLPrzirSOzVT1K41daG9Kdl9Yv7alsvBlJpR0VlTj"/>
+<span class="font-headline font-semibold text-sm text-on-surface">Google</span>
+</button>
+<button class="flex items-center justify-center gap-2 py-3 px-4 rounded-full bg-surface-container-high hover:bg-surface-container-highest transition-colors duration-200 group" type="button">
+<span class="material-symbols-outlined text-on-surface text-xl" data-icon="apple" style="font-variation-settings: 'FILL' 1;">ios</span>
+<span class="font-headline font-semibold text-sm text-on-surface">Apple</span>
+</button>
+</div>
+</div>
+<div class="text-center mt-8">
+<p class="text-on-surface-variant font-medium">
+                    Already have an account? 
+                    <a class="text-primary font-bold hover:underline underline-offset-4 decoration-2 ml-1" href="./login.html">Log In</a>
+</p>
+</div>
+</div>
+</main>
+<footer class="w-full py-12 border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 font-['Manrope'] text-sm">
+<div class="flex flex-col md:flex-row justify-between items-center px-8 max-w-7xl mx-auto gap-6 w-full">
+<div class="text-lg font-bold text-slate-900 dark:text-white">Pathfinder</div>
+<div class="flex gap-8">
+<a class="text-slate-500 dark:text-slate-400 hover:text-blue-500 underline decoration-blue-500 underline-offset-4 opacity-80 hover:opacity-100 transition-opacity" href="#">Privacy Policy</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-blue-500 underline decoration-blue-500 underline-offset-4 opacity-80 hover:opacity-100 transition-opacity" href="#">Terms of Service</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-blue-500 underline decoration-blue-500 underline-offset-4 opacity-80 hover:opacity-100 transition-opacity" href="#">Help Center</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-blue-500 underline decoration-blue-500 underline-offset-4 opacity-80 hover:opacity-100 transition-opacity" href="#">Contact</a>
+</div>
+<div class="text-slate-500 dark:text-slate-400">© 2024 Pathfinder Academic. All rights reserved.</div>
+</div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+const SUPABASE_URL = "https://ckccrigozrtrscirbvsn.supabase.co";
+const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNrY2NyaWdvenJ0cnNjaXJidnNuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ1ODAwOTMsImV4cCI6MjA5MDE1NjA5M30.lVUXcORfH3aoYB9d7VtnIwsby-Ru7nARpklj4ZEegkk";
+const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+const form = document.getElementById("signup-form");
+const submitButton = document.getElementById("signup-submit");
+const message = document.getElementById("auth-message");
+
+function showMessage(text, type) {
+  message.textContent = text;
+  message.className = `text-sm font-medium rounded-xl px-4 py-3 ${type === "error" ? "bg-red-50 text-red-700" : "bg-emerald-50 text-emerald-700"}`;
+}
+
+async function redirectIfAuthenticated() {
+  const { data } = await supabaseClient.auth.getSession();
+  if (data.session) {
+    window.location.href = "./dashboard.html";
+  }
+}
+
+form.addEventListener("submit", async (event) => {
+  event.preventDefault();
+  submitButton.disabled = true;
+  showMessage("Creating your account...", "success");
+
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value;
+  const fullName = document.getElementById("full_name").value.trim();
+
+  const { data, error } = await supabaseClient.auth.signUp({
+    email,
+    password,
+    options: {
+      data: {
+        full_name: fullName
+      },
+      emailRedirectTo: `${window.location.origin}/dashboard.html`
+    }
+  });
+
+  if (error) {
+    showMessage(error.message, "error");
+    submitButton.disabled = false;
+    return;
+  }
+
+  if (data.session) {
+    showMessage("Account created. Redirecting...", "success");
+    window.location.href = "./dashboard.html";
+    return;
+  }
+
+  showMessage("Account created. Check your email to confirm your sign-up, then log in.", "success");
+  submitButton.disabled = false;
+  form.reset();
+});
+
+redirectIfAuthenticated();
+</script>
+</body></html>

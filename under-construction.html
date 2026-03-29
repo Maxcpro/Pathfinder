@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Pathfinder | Under Construction</title>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#1565C0",
+            "primary-dim": "#0D47A1",
+            surface: "#F7F9FF",
+            ink: "#16315F"
+          },
+          fontFamily: {
+            headline: ["Plus Jakarta Sans", "sans-serif"],
+            body: ["Manrope", "sans-serif"]
+          },
+          boxShadow: {
+            soft: "0 32px 80px -28px rgba(21, 101, 192, 0.28)"
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 50% 18%, rgba(21, 101, 192, 0.10), transparent 28rem),
+        linear-gradient(180deg, #f8faff 0%, #f4f7ff 100%);
+    }
+  </style>
+</head>
+<body class="font-body text-ink">
+  <div class="min-h-screen flex flex-col">
+    <header class="px-6 py-6 md:px-10">
+      <a class="inline-flex flex-col leading-none" href="./index.html">
+        <span class="font-headline text-3xl font-extrabold tracking-tight text-primary">Pathfinder</span>
+        <span class="mt-1 text-[11px] font-bold uppercase tracking-[0.28em] text-slate-400">The Academic Navigator</span>
+      </a>
+    </header>
+    <main class="flex-1 flex items-center justify-center px-6 py-8">
+      <div class="w-full max-w-5xl text-center">
+        <div class="relative mx-auto mb-12 flex h-[260px] w-full max-w-[760px] items-center justify-center">
+          <div class="absolute h-[420px] w-[420px] rounded-full border border-primary/8"></div>
+          <div class="absolute h-[300px] w-[300px] rounded-full border border-primary/10"></div>
+          <div class="absolute left-[12%] top-[18%] flex h-16 w-32 items-center gap-3 rounded-2xl bg-white/90 px-4 shadow-soft backdrop-blur-sm">
+            <div class="flex h-8 w-8 items-center justify-center rounded-full bg-orange-100 text-orange-500">↻</div>
+            <div class="flex-1">
+              <div class="h-2.5 w-14 rounded-full bg-blue-100"></div>
+              <div class="mt-2 h-2 w-10 rounded-full bg-blue-50"></div>
+            </div>
+          </div>
+          <div class="absolute right-[12%] top-[58%] flex h-14 w-36 items-center gap-3 rounded-2xl bg-white/90 px-4 shadow-soft backdrop-blur-sm">
+            <div class="flex-1">
+              <div class="h-2.5 w-20 rounded-full bg-blue-100"></div>
+              <div class="mt-2 h-2 w-14 rounded-full bg-blue-50"></div>
+            </div>
+          </div>
+          <div class="relative w-[260px] rounded-[24px] bg-white/90 p-6 shadow-soft backdrop-blur-sm">
+            <div class="mx-auto h-1.5 w-28 rounded-full bg-blue-100"></div>
+            <div class="mt-5 grid grid-cols-3 gap-3">
+              <div class="h-12 rounded-xl bg-slate-100"></div>
+              <div class="h-12 rounded-xl bg-slate-100"></div>
+              <div class="h-12 rounded-xl bg-slate-100"></div>
+            </div>
+            <div class="mt-6 h-2 w-24 rounded-full bg-blue-100"></div>
+            <div class="mt-6 h-32 rounded-[20px] border-2 border-dashed border-blue-100"></div>
+            <div class="absolute right-6 bottom-6 text-3xl text-blue-300">⌖</div>
+            <div class="absolute right-0 top-0 h-20 w-20 rounded-bl-full bg-slate-100/90"></div>
+          </div>
+        </div>
+        <h1 class="font-headline text-5xl font-extrabold tracking-tight text-ink sm:text-6xl">
+          This Path is Still
+          <span class="block italic text-primary">Under Construction</span>
+        </h1>
+        <p class="mx-auto mt-6 max-w-2xl text-xl leading-relaxed text-slate-600">
+          Our architects are meticulously crafting the resources and insights for this section. Please check back soon.
+        </p>
+        <button class="mt-12 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-primary to-primary-dim px-10 py-4 font-headline text-xl font-bold text-white shadow-soft transition-transform hover:scale-105 active:scale-95" onclick="if (window.history.length > 1) { window.history.back(); } else { window.location.href = './index.html'; }" type="button">
+          <span aria-hidden="true">←</span>
+          <span>Go Back</span>
+        </button>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

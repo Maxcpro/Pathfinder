@@ -91,12 +91,12 @@ tailwind.config = {
     </a>
     <div class="hidden md:flex items-center gap-10">
       <a class="text-on-surface/60 hover:text-primary transition-colors font-bold text-xs uppercase tracking-widest" href="./journey.html">Journey</a>
-      <a class="text-on-surface/60 hover:text-primary transition-colors font-bold text-xs uppercase tracking-widest" href="#">Campus</a>
-      <a class="text-on-surface/60 hover:text-primary transition-colors font-bold text-xs uppercase tracking-widest" href="#">Mentor</a>
+      <a class="text-on-surface/60 hover:text-primary transition-colors font-bold text-xs uppercase tracking-widest" href="./under-construction.html">Campus</a>
+      <a class="text-on-surface/60 hover:text-primary transition-colors font-bold text-xs uppercase tracking-widest" href="./under-construction.html">Mentor</a>
       <a class="text-primary font-bold text-xs uppercase tracking-widest relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-full after:h-0.5 after:bg-primary" href="./profile-result.html">Profile</a>
     </div>
     <div class="flex items-center gap-5">
-      <button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-all" type="button">search</button>
+      <button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-all" onclick="window.location.href='./under-construction.html'" type="button">search</button>
       <div class="h-8 w-px bg-on-surface/10 mx-2"></div>
       <img alt="User" class="w-9 h-9 rounded-full ring-2 ring-primary/20 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlIQe7QUwB8Pi3T4_4wIPFsuVVZ3a-vSaQ3wf79OqaHeeYZfezdgwEy3EGOnz-lGr_tR2c0qyFS-mKve2Nfx5CcKKUCPnmyQkktNtUbWIzD50GIlEWI51RW25UjQpiR5WXSVhtuS2FI7nLGlQpUz1LsiyK4uA02fNQLFwsZobuiLX7qltg35pctPr5dz84sQ42JWYG8ucaDoNeX0rHmh-PF6c3j7Am6rMt7u0-7eLJpm3r-Hg8Vv3hxyjejKE5ghywBuzkIHbwkGB-"/>
     </div>
@@ -267,10 +267,10 @@ tailwind.config = {
           <h2 class="text-5xl font-headline font-extrabold leading-tight">Map Your Intelligence.</h2>
           <p class="text-xl text-white/80 leading-relaxed font-light" id="cta-copy"></p>
           <div class="flex flex-wrap gap-4 pt-4">
-            <button class="px-8 py-4 bg-white text-primary rounded-2xl font-black text-sm uppercase tracking-widest hover:scale-105 transition-transform" type="button">
+            <button class="px-8 py-4 bg-white text-primary rounded-2xl font-black text-sm uppercase tracking-widest hover:scale-105 transition-transform" onclick="window.location.href='./under-construction.html'" type="button">
               Explore Recommended Degrees
             </button>
-            <button class="px-8 py-4 bg-white/10 backdrop-blur-md border border-white/20 text-white rounded-2xl font-black text-sm uppercase tracking-widest hover:bg-white/20 transition-all flex items-center gap-2" type="button">
+            <button class="px-8 py-4 bg-white/10 backdrop-blur-md border border-white/20 text-white rounded-2xl font-black text-sm uppercase tracking-widest hover:bg-white/20 transition-all flex items-center gap-2" onclick="window.location.href='./under-construction.html'" type="button">
               <span class="material-symbols-outlined">download</span>
               Full PDF Report
             </button>
@@ -305,22 +305,22 @@ tailwind.config = {
         <ul class="space-y-2 text-sm text-on-surface-variant font-medium">
           <li><a class="hover:text-primary transition-colors" href="./journey.html">Journey</a></li>
           <li><a class="hover:text-primary transition-colors" href="./profile-result.html">Profiles</a></li>
-          <li><a class="hover:text-primary transition-colors" href="#">Mentor AI</a></li>
+          <li><a class="hover:text-primary transition-colors" href="./under-construction.html">Mentor AI</a></li>
         </ul>
       </div>
       <div class="space-y-4">
         <h4 class="font-bold text-xs uppercase tracking-widest text-on-surface">Institution</h4>
         <ul class="space-y-2 text-sm text-on-surface-variant font-medium">
-          <li><a class="hover:text-primary transition-colors" href="#">Admissions</a></li>
-          <li><a class="hover:text-primary transition-colors" href="#">Campus Life</a></li>
-          <li><a class="hover:text-primary transition-colors" href="#">Partnerships</a></li>
+          <li><a class="hover:text-primary transition-colors" href="./under-construction.html">Admissions</a></li>
+          <li><a class="hover:text-primary transition-colors" href="./under-construction.html">Campus Life</a></li>
+          <li><a class="hover:text-primary transition-colors" href="./under-construction.html">Partnerships</a></li>
         </ul>
       </div>
       <div class="space-y-4">
         <h4 class="font-bold text-xs uppercase tracking-widest text-on-surface">Legal</h4>
         <ul class="space-y-2 text-sm text-on-surface-variant font-medium">
-          <li><a class="hover:text-primary transition-colors" href="#">Privacy</a></li>
-          <li><a class="hover:text-primary transition-colors" href="#">Terms</a></li>
+          <li><a class="hover:text-primary transition-colors" href="./under-construction.html">Privacy</a></li>
+          <li><a class="hover:text-primary transition-colors" href="./under-construction.html">Terms</a></li>
         </ul>
       </div>
     </div>
@@ -641,7 +641,7 @@ function renderRoles(profile, counts) {
         <p class="text-sm text-on-surface-variant leading-relaxed mb-6 flex-grow">${roleDescription(role, profile)}</p>
         <div class="pt-6 border-t border-surface-container flex justify-between items-center">
           <span class="text-[10px] font-black uppercase tracking-widest ${style.text}">Match: ${match}%</span>
-          <button class="material-symbols-outlined ${style.text} hover:translate-x-1 transition-transform" type="button">arrow_forward</button>
+          <button class="material-symbols-outlined ${style.text} hover:translate-x-1 transition-transform" onclick="window.location.href='./under-construction.html'" type="button">arrow_forward</button>
         </div>
       </div>
     `;

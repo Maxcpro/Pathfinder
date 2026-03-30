@@ -404,8 +404,11 @@ async function readSubmission() {
   const localSubmission = readLocalSubmission();
 
   try {
-    const { data } = await supabaseClient.auth.getSession();
-    const user = data.session?.user;
+    const [{ data: sessionData }, { data: userData }] = await Promise.all([
+      supabaseClient.auth.getSession(),
+      supabaseClient.auth.getUser()
+    ]);
+    const user = userData.user || sessionData.session?.user;
     const remoteSubmission = parseSubmission(user?.user_metadata?.pathfinder_module_1_profile);
 
     if (remoteSubmission && (!localSubmission || compareSubmissionDates(remoteSubmission, localSubmission) >= 0)) {

@@ -579,14 +579,17 @@ function renderProfileDashboard(name, profile, counts) {
 }
 
 async function init() {
-  const { data } = await supabaseClient.auth.getSession();
-  const session = data.session;
+  const [{ data: sessionData }, { data: userData }] = await Promise.all([
+    supabaseClient.auth.getSession(),
+    supabaseClient.auth.getUser()
+  ]);
+  const session = sessionData.session;
   if (!session) {
     window.location.href = "./login.html";
     return;
   }
 
-  const user = session.user;
+  const user = userData.user || session.user;
   const name = firstName(user);
   document.getElementById("user-avatar").alt = `${name} avatar`;
 

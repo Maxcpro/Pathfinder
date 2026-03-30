@@ -211,7 +211,11 @@
 </div>
 </div>
 </footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
+        const SUPABASE_URL = "https://ckccrigozrtrscirbvsn.supabase.co";
+        const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNrY2NyaWdvenJ0cnNjaXJidnNuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ1ODAwOTMsImV4cCI6MjA5MDE1NjA5M30.lVUXcORfH3aoYB9d7VtnIwsby-Ru7nARpklj4ZEegkk";
+        const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
         const questions = [
             {
                 prompt: "When you start something new, what helps you feel most confident?",
@@ -428,21 +432,49 @@
             `;
         }
 
-        function saveResults() {
+        function buildPayload() {
             const answerMap = Object.fromEntries(
                 state.answers.map((answerIndex, index) => [
                     `Q${index + 1}`,
                     String.fromCharCode(65 + answerIndex)
                 ])
             );
-            const payload = {
+            return {
                 answers: answerMap,
                 completedAt: new Date().toISOString(),
                 runId: `module1-${Date.now()}`
             };
+        }
+
+        async function saveResults() {
+            const payload = buildPayload();
 
             localStorage.setItem(storageKey, JSON.stringify(payload));
+            localStorage.setItem(latestStorageKey, JSON.stringify(payload));
             sessionStorage.setItem(latestStorageKey, JSON.stringify(payload));
+            sessionStorage.setItem(storageKey, JSON.stringify(payload));
+
+            try {
+                const { data } = await supabaseClient.auth.getSession();
+                const user = data.session?.user;
+                if (!user) {
+                    return payload;
+                }
+
+                const mergedMetadata = {
+                    ...(user.user_metadata || {}),
+                    pathfinder_module_1_profile: payload,
+                    pathfinder_profile_last_updated: payload.completedAt
+                };
+
+                await supabaseClient.auth.updateUser({
+                    data: mergedMetadata
+                });
+            } catch (error) {
+                console.error("Unable to sync Module 1 profile to Supabase.", error);
+            }
+
+            return payload;
         }
 
         function render() {
@@ -476,7 +508,7 @@
             }
         });
 
-        nextButton.addEventListener("click", () => {
+        nextButton.addEventListener("click", async () => {
             if (state.answers[state.currentIndex] === null) {
                 return;
             }
@@ -485,7 +517,9 @@
             const isComplete = state.answers.every((answer) => answer !== null);
 
             if (isLastQuestion && isComplete) {
-                saveResults();
+                nextButton.disabled = true;
+                nextLabel.textContent = "Saving...";
+                await saveResults();
                 window.location.href = "./profile-result.html";
                 return;
             }

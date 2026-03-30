@@ -349,19 +349,72 @@ function sortCounts(counts) {
   return Object.entries(counts).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
 }
 
-function readSubmission(userId) {
+function parseSubmission(raw) {
+  if (!raw) return null;
+  if (typeof raw === "string") {
+    try {
+      return JSON.parse(raw);
+    } catch (error) {
+      return null;
+    }
+  }
+  return raw;
+}
+
+function compareSubmissionDates(a, b) {
+  const aTime = new Date(a?.completedAt || 0).getTime();
+  const bTime = new Date(b?.completedAt || 0).getTime();
+  return aTime - bTime;
+}
+
+function readLocalSubmission(userId) {
   const scopedLatest = localStorage.getItem(`pathfinder_module_1_profile_latest_${userId}`);
   const scoped = localStorage.getItem(`pathfinder_module_1_profile_${userId}`);
   const globalLatest = sessionStorage.getItem(LATEST_STORAGE_KEY) || localStorage.getItem(LATEST_STORAGE_KEY);
   const globalStored = localStorage.getItem(STORAGE_KEY);
   const raw = scopedLatest || scoped || globalLatest || globalStored;
-  if (!raw) return null;
-  const parsed = JSON.parse(raw);
+  const parsed = parseSubmission(raw);
+  if (!parsed) return null;
   if ((globalLatest || globalStored) && userId) {
-    localStorage.setItem(`pathfinder_module_1_profile_latest_${userId}`, raw);
-    localStorage.setItem(`pathfinder_module_1_profile_${userId}`, raw);
+    const serialized = JSON.stringify(parsed);
+    localStorage.setItem(`pathfinder_module_1_profile_latest_${userId}`, serialized);
+    localStorage.setItem(`pathfinder_module_1_profile_${userId}`, serialized);
   }
   return parsed;
+}
+
+async function readSubmission(user) {
+  const userId = user?.id;
+  const localSubmission = readLocalSubmission(userId);
+  const remoteSubmission = parseSubmission(user?.user_metadata?.pathfinder_module_1_profile);
+
+  if (remoteSubmission && (!localSubmission || compareSubmissionDates(remoteSubmission, localSubmission) >= 0)) {
+    const serialized = JSON.stringify(remoteSubmission);
+    localStorage.setItem(STORAGE_KEY, serialized);
+    localStorage.setItem(LATEST_STORAGE_KEY, serialized);
+    sessionStorage.setItem(LATEST_STORAGE_KEY, serialized);
+    if (userId) {
+      localStorage.setItem(`pathfinder_module_1_profile_latest_${userId}`, serialized);
+      localStorage.setItem(`pathfinder_module_1_profile_${userId}`, serialized);
+    }
+    return remoteSubmission;
+  }
+
+  if (localSubmission && user) {
+    try {
+      await supabaseClient.auth.updateUser({
+        data: {
+          ...(user.user_metadata || {}),
+          pathfinder_module_1_profile: localSubmission,
+          pathfinder_profile_last_updated: localSubmission.completedAt || new Date().toISOString()
+        }
+      });
+    } catch (error) {
+      console.error("Unable to sync local profile to Supabase.", error);
+    }
+  }
+
+  return localSubmission;
 }
 
 function pickProfileKey(data, counts) {
@@ -537,7 +590,7 @@ async function init() {
   const name = firstName(user);
   document.getElementById("user-avatar").alt = `${name} avatar`;
 
-  const submission = readSubmission(user.id);
+  const submission = await readSubmission(user);
   if (!submission || !submission.answers) {
     renderNoProfile(name);
     return;

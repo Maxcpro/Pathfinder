@@ -330,7 +330,11 @@ tailwind.config = {
   </div>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
+const SUPABASE_URL = "https://ckccrigozrtrscirbvsn.supabase.co";
+const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNrY2NyaWdvenJ0cnNjaXJidnNuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ1ODAwOTMsImV4cCI6MjA5MDE1NjA5M30.lVUXcORfH3aoYB9d7VtnIwsby-Ru7nARpklj4ZEegkk";
+const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 const STORAGE_KEY = "pathfinder_module_1_profile";
 const LATEST_STORAGE_KEY = "pathfinder_module_1_profile_latest";
 
@@ -372,11 +376,60 @@ const ROLE_ICON_MAP = [
   { match: /project|operations|program|manager|coordinator|delivery/i, icon: "event_note", color: "bg-primary-dim text-white shadow-primary/20", text: "text-primary" }
 ];
 
-function readSubmission() {
-  const preferred = sessionStorage.getItem(LATEST_STORAGE_KEY);
-  const fallback = localStorage.getItem(STORAGE_KEY);
-  const raw = preferred || fallback;
-  return raw ? JSON.parse(raw) : null;
+function parseSubmission(raw) {
+  if (!raw) return null;
+  if (typeof raw === "string") {
+    try {
+      return JSON.parse(raw);
+    } catch (error) {
+      return null;
+    }
+  }
+  return raw;
+}
+
+function compareSubmissionDates(a, b) {
+  const aTime = new Date(a?.completedAt || 0).getTime();
+  const bTime = new Date(b?.completedAt || 0).getTime();
+  return aTime - bTime;
+}
+
+function readLocalSubmission() {
+  const preferred = sessionStorage.getItem(LATEST_STORAGE_KEY) || localStorage.getItem(LATEST_STORAGE_KEY);
+  const fallback = localStorage.getItem(STORAGE_KEY) || sessionStorage.getItem(STORAGE_KEY);
+  return parseSubmission(preferred) || parseSubmission(fallback);
+}
+
+async function readSubmission() {
+  const localSubmission = readLocalSubmission();
+
+  try {
+    const { data } = await supabaseClient.auth.getSession();
+    const user = data.session?.user;
+    const remoteSubmission = parseSubmission(user?.user_metadata?.pathfinder_module_1_profile);
+
+    if (remoteSubmission && (!localSubmission || compareSubmissionDates(remoteSubmission, localSubmission) >= 0)) {
+      const serialized = JSON.stringify(remoteSubmission);
+      localStorage.setItem(STORAGE_KEY, serialized);
+      localStorage.setItem(LATEST_STORAGE_KEY, serialized);
+      sessionStorage.setItem(LATEST_STORAGE_KEY, serialized);
+      return remoteSubmission;
+    }
+
+    if (localSubmission && user) {
+      await supabaseClient.auth.updateUser({
+        data: {
+          ...(user.user_metadata || {}),
+          pathfinder_module_1_profile: localSubmission,
+          pathfinder_profile_last_updated: localSubmission.completedAt || new Date().toISOString()
+        }
+      });
+    }
+  } catch (error) {
+    console.error("Unable to load saved profile from Supabase.", error);
+  }
+
+  return localSubmission;
 }
 
 function countAnswers(answers) {
@@ -678,7 +731,7 @@ function renderProfile(data, submission) {
 }
 
 async function init() {
-  const submission = readSubmission();
+  const submission = await readSubmission();
   const emptyState = document.getElementById("empty-state");
   const profileContent = document.getElementById("profile-content");
 

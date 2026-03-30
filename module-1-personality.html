@@ -369,6 +369,7 @@
         };
         const storageKey = "pathfinder_module_1_profile";
         const latestStorageKey = "pathfinder_module_1_profile_latest";
+        const params = new URLSearchParams(window.location.search);
 
         const progressLabel = document.getElementById('progress-label');
         const progressBar = document.getElementById('progress-bar');
@@ -378,6 +379,32 @@
         const prevButton = document.getElementById('prev-button');
         const nextButton = document.getElementById('next-button');
         const nextLabel = document.getElementById('next-label');
+
+        async function resetStoredProfile() {
+            localStorage.removeItem(storageKey);
+            localStorage.removeItem(latestStorageKey);
+            sessionStorage.removeItem(storageKey);
+            sessionStorage.removeItem(latestStorageKey);
+
+            try {
+                const [{ data: sessionData }, { data: userData }] = await Promise.all([
+                    supabaseClient.auth.getSession(),
+                    supabaseClient.auth.getUser()
+                ]);
+                const user = userData.user || sessionData.session?.user;
+                if (!user) return;
+
+                const nextMetadata = { ...(user.user_metadata || {}) };
+                delete nextMetadata.pathfinder_module_1_profile;
+                delete nextMetadata.pathfinder_profile_last_updated;
+
+                await supabaseClient.auth.updateUser({
+                    data: nextMetadata
+                });
+            } catch (error) {
+                console.error("Unable to reset saved profile in Supabase.", error);
+            }
+        }
 
         function progressPercent() {
             const answered = state.answers.filter((answer) => answer !== null).length;
@@ -532,6 +559,12 @@
             }
         });
 
-        render();
+        (async function initModule() {
+            if (params.get("reset") === "1") {
+                await resetStoredProfile();
+                window.history.replaceState({}, "", "./module-1-personality.html");
+            }
+            render();
+        })();
     </script>
 </body></html>

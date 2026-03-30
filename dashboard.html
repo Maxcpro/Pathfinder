@@ -566,7 +566,8 @@ function renderProfileDashboard(name, profile, counts) {
   document.getElementById("top-path-copy").textContent = roleDescription(roles[0] || "");
   document.getElementById("resume-path-link").textContent = "Resume Path";
   document.getElementById("resume-path-link").href = "./profile-result.html";
-  document.getElementById("daily-task-link").href = "./profile-result.html";
+  document.getElementById("daily-task-link").textContent = "Retake Module 1";
+  document.getElementById("daily-task-link").href = "./module-1-personality.html?reset=1";
   document.getElementById("community-title").textContent = `${profile.archetype} Meetup`;
   document.getElementById("community-copy").textContent = `Join Pathfinder students with similar ${cleanText(profile.archetype).toLowerCase()} energy for a guided networking event this week.`;
   renderRecommendations(roles.length ? roles : ["Human-Computer Interaction", "Digital Media Design", "Innovation Strategy"]);
